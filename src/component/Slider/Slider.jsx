@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./slider.css";
-
+import logo from "../../images/logo.png";
 const Slider = () => {
   useEffect(() => {
     $(function () {

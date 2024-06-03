@@ -32,7 +32,7 @@ function Home() {
           </div>
           <div className="buttons flex gap-5">
             <button
-              className="btn1 pt-3 pb-3 pl-7 pr-7 w-52"
+              className="btn1 pt-3 pb-3 pl-7 pr-7 w-56"
               style={{ background: "#00A786", color: "white" }}
             >
               Explore product

@@ -1,5 +1,5 @@
 .section1 {
-  margin-top: 105px;
+  margin-top: 80px;
 }
 #headline {
   font-weight: bolder;
@@ -16,11 +16,12 @@
 }
 .buttons {
   margin-top: 40px;
+  font-family: "Poppins";
 }
 .btn1 {
   /* border-top-left-radius: 200px;
   border-top-right-radius: 200px; */
   border-radius: 200px;
-  font-family: "General Sans";
-  font-size: 23px;
+
+  font-size: 20px;
 }
