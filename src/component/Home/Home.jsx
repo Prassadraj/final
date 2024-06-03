@@ -47,7 +47,7 @@ function Home() {
             </button>
           </div>
         </div>
-        <div className="right " style={{ flex: 1 }}>
+        <div className="right overflow-hidden" style={{ flex: 1 }}>
           <div className="">
             <Slider />
           </div>
