@@ -11,17 +11,18 @@ function Home() {
           <p
             id="headline"
             style={{
-              fontSize: "48px",
+              fontSize: "45px",
               color: "#56575D",
-              fontFamily: "General Sans",
+              lineHeight: "1.2",
             }}
-            className=""
+            className="font-sans"
           >
-            Medical Laboratory <br /> Equipment Supplier in India
+            Medical Laboratory <br />
+            Equipment Supplier in India
           </p>
           <div
-            className="description"
-            style={{ width: "490px", fontFamily: "General Sans" }}
+            className="description "
+            style={{ width: "490px", fontFamily: "Poppins" }}
           >
             <p className="">
               We derive our strength through enduring relationships with

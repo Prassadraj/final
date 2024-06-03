@@ -1,15 +1,14 @@
 .section1 {
-  margin-top: 135px;
+  margin-top: 105px;
 }
 #headline {
-  font-family: sans-serif;
   font-weight: bolder;
   /* Adjust the spacing between letters */
   /* word-spacing: 0.1em; */
 }
 .description p {
   color: #3c4959;
-  margin-top: 10px;
+  margin-top: 34px;
   font-size: 18px;
   /* font-family: sans-serif; */
   letter-spacing: 1px;
