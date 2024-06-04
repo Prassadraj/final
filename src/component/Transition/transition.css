@@ -17,7 +17,7 @@
 .box {
   position: relative;
   flex: 1;
-  background: #667067;
+  background: #39c647;
   margin: -0.25px;
 }
 .transition-in .block {

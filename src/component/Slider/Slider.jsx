@@ -1,6 +1,13 @@
 import React, { useEffect } from "react";
 import "./slider.css";
 import logo from "../../images/logo.png";
+import image1 from "../../images/image1.jpg";
+
+import image3 from "../../images/image3.jpg";
+import image4 from "../../images/image4.jpg";
+import image5 from "../../images/image5.jpg";
+import image6 from "../../images/image6.jpg";
+
 const Slider = () => {
   useEffect(() => {
     $(function () {
@@ -49,19 +56,16 @@ const Slider = () => {
     <div className="">
       <div className="container">
         <div className="wrapper">
-          <ul id="sb-slider" className="sb-slider">
+          <ul id="sb-slider" className="sb-slider ">
             <li>
               <a
                 //   href="http://www.flickr.com/photos/strupler/2969141180"
                 target="_blank"
               >
-                <img
-                  src="https://tympanus.net/Development/Slicebox/images/1.jpg"
-                  alt="image1"
-                />
+                <img src={image1} alt="image1" />
               </a>
               <div className="sb-description">
-                <h3>Creative Lifesaver</h3>
+                <h3 className="text-gray-500 text-2xl">Nephelometer</h3>
               </div>
             </li>
             <li>
@@ -69,13 +73,10 @@ const Slider = () => {
                 //   href="http://www.flickr.com/photos/strupler/2968268187"
                 target="_blank"
               >
-                <img
-                  src="https://tympanus.net/Development/Slicebox/images/2.jpg"
-                  alt="image2"
-                />
+                <img src={image6} alt="image2" />
               </a>
               <div className="sb-description">
-                <h3>Honest Entertainer</h3>
+                <h3 className="text-gray-500 text-2xl">Honest Entertainer</h3>
               </div>
             </li>
             <li>
@@ -83,13 +84,10 @@ const Slider = () => {
                 //   href="http://www.flickr.com/photos/strupler/2968114825"
                 target="_blank"
               >
-                <img
-                  src="https://tympanus.net/Development/Slicebox/images/3.jpg"
-                  alt="image1"
-                />
+                <img src={image4} alt="image1" />
               </a>
               <div className="sb-description">
-                <h3>Brave Astronaut</h3>
+                <h3 className="text-gray-500 text-2xl">Ex-D-Ds_04</h3>
               </div>
             </li>
             <li>
@@ -97,13 +95,10 @@ const Slider = () => {
                 //   href="http://www.flickr.com/photos/strupler/2968122059"
                 target="_blank"
               >
-                <img
-                  src="https://tympanus.net/Development/Slicebox/images/4.jpg"
-                  alt="image1"
-                />
+                <img src={image4} alt="image1" />
               </a>
               <div className="sb-description">
-                <h3>Affectionate Decision Maker</h3>
+                <h3 className="text-gray-500 text-2xl">AST Plates</h3>
               </div>
             </li>
             <li>
@@ -111,13 +106,10 @@ const Slider = () => {
                 //   href="http://www.flickr.com/photos/strupler/2969119944"
                 target="_blank"
               >
-                <img
-                  src="https://tympanus.net/Development/Slicebox/images/5.jpg"
-                  alt="image1"
-                />
+                <img src={image5} alt="image1" />
               </a>
               <div className="sb-description">
-                <h3>Faithful Investor</h3>
+                <h3 className="text-gray-500 text-2xl">AIM-Automated</h3>
               </div>
             </li>
             <li>
@@ -125,13 +117,10 @@ const Slider = () => {
                 //   href="http://www.flickr.com/photos/strupler/2968126177"
                 target="_blank"
               >
-                <img
-                  src="https://tympanus.net/Development/Slicebox/images/6.jpg"
-                  alt="image1"
-                />
+                <img src={image6} alt="image1" />
               </a>
               <div className="sb-description">
-                <h3>Groundbreaking Artist</h3>
+                <h3 className="text-gray-500 text-2xl">Manual-Viewbox</h3>
               </div>
             </li>
             <li>
@@ -139,13 +128,12 @@ const Slider = () => {
                 //   href="http://www.flickr.com/photos/strupler/2968945158"
                 target="_blank"
               >
-                <img
-                  src="https://tympanus.net/Development/Slicebox/images/7.jpg"
-                  alt="image1"
-                />
+                <img src={image1} alt="image1" />
               </a>
               <div className="sb-description">
-                <h3>Selfless Philantropist</h3>
+                <h3 className="text-gray-500 text-2xl">
+                  Selfless Philantropist
+                </h3>
               </div>
             </li>
           </ul>

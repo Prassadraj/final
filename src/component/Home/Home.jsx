@@ -3,6 +3,7 @@ import Transition from "../Transition/Transition";
 import logo from "../../images/logo.png";
 import "./home.css";
 import Slider from "../Slider/Slider";
+import Scroll from "../Scroll/Scroll";
 function Home() {
   return (
     <div>
@@ -47,12 +48,13 @@ function Home() {
             </button>
           </div>
         </div>
-        <div className="right overflow-hidden" style={{ flex: 1 }}>
+        <div className=" overflow-hidden" style={{ flex: 1 }}>
           <div className="">
             <Slider />
           </div>
         </div>
       </div>
+      <div></div>
     </div>
   );
 }
