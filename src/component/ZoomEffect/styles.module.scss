@@ -1,6 +1,7 @@
 .container {
-  height: 300vh;
+  height: 200vh; // Adjust the height to fit the scroll effect and allow continuation to the next page
   position: relative;
+
   .sticky {
     position: sticky;
     overflow: hidden;
@@ -15,6 +16,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
       .imageContainer {
         position: relative;
         width: 25vw;
@@ -23,6 +25,7 @@
           object-fit: cover;
         }
       }
+
       &:nth-of-type(2) {
         .imageContainer {
           top: -30vh;
@@ -31,6 +34,7 @@
           height: 30vh;
         }
       }
+
       &:nth-of-type(3) {
         .imageContainer {
           top: -10vh;
@@ -39,6 +43,7 @@
           height: 45vh;
         }
       }
+
       &:nth-of-type(4) {
         .imageContainer {
           left: 27.5vw;
@@ -46,6 +51,7 @@
           height: 25vh;
         }
       }
+
       &:nth-of-type(5) {
         .imageContainer {
           top: 27.5vh;
@@ -54,6 +60,7 @@
           height: 25vh;
         }
       }
+
       &:nth-of-type(6) {
         .imageContainer {
           top: 27.5vh;
@@ -62,6 +69,7 @@
           height: 25vh;
         }
       }
+
       &:nth-of-type(7) {
         .imageContainer {
           top: 22.5vh;

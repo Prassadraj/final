@@ -4,6 +4,7 @@ import logo from "../../images/logo.png";
 import "./home.css";
 import Slider from "../Slider/Slider";
 import Scroll from "../Scroll/Scroll";
+import ZoomEffect from "../ZoomEffect/ZoomEffect";
 function Home() {
   return (
     <div>
@@ -54,7 +55,14 @@ function Home() {
           </div>
         </div>
       </div>
-      <div></div>
+      <div>
+        <div style={{ marginBottom: "10vh" }}>
+          <ZoomEffect />
+        </div>
+        <div style={{ height: "100vh", background: "lightgray" }}>
+          {/* Next page content here */}
+        </div>
+      </div>
     </div>
   );
 }

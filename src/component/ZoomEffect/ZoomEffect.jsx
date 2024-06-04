@@ -1,13 +1,14 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
-import "./zoom.scss";
-import Picture1 from "../../images/image1.jpg";
-import Picture2 from "../../images/image3.jpg";
+import styles from "./styles.module.scss";
+import Picture1 from "../../images/image4.jpg";
+import Picture2 from "../../images/image4.jpg";
 import Picture3 from "../../images/image4.jpg";
-import Picture4 from "../../images/image5.jpg";
-import Picture5 from "../../images/image6.jpg";
-import Picture6 from "../../images/image6.jpg";
-import Picture7 from "../../images/image6.jpg";
+import Picture4 from "../../images/image4.jpg";
+import Picture5 from "../../images/image4.jpg";
+import Picture6 from "../../images/image4.jpg";
+import Picture7 from "../../images/image4.jpg";
+
 function ZoomEffect() {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -25,6 +26,7 @@ function ZoomEffect() {
     {
       src: Picture1,
       scale: scale4,
+      zIndex: 999, // Add zIndex here
     },
     {
       src: Picture2,
@@ -55,11 +57,15 @@ function ZoomEffect() {
   return (
     <div ref={container} className={styles.container}>
       <div className={styles.sticky}>
-        {pictures.map(({ src, scale }, index) => {
+        {pictures.map(({ src, scale, zIndex }, index) => {
           return (
-            <motion.div key={index} style={{ scale }} className={styles.el}>
+            <motion.div
+              key={index}
+              style={{ scale, zIndex }}
+              className={styles.el}
+            >
               <div className={styles.imageContainer}>
-                <Image src={src} fill alt="image" placeholder="blur" />
+                <img src={src} fill alt="image" placeholder="blur" />
               </div>
             </motion.div>
           );
