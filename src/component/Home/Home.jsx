@@ -5,10 +5,11 @@ import "./home.css";
 import Slider from "../Slider/Slider";
 import Scroll from "../Scroll/Scroll";
 import ZoomEffect from "../ZoomEffect/ZoomEffect";
+import ScrollParallex from "../../pages/ScrollParallex";
 function Home() {
   return (
-    <div>
-      <div className="section1 flex">
+    <div className="">
+      <div className="section1 flex h-96 overflow-hidden">
         <div className="left " style={{ flex: 1, marginLeft: "70px" }}>
           <p
             id="headline"
@@ -60,8 +61,11 @@ function Home() {
           <ZoomEffect />
         </div>
         <div style={{ height: "100vh", background: "lightgray" }}>
-          {/* Next page content here */}
+          Next page content here
         </div>
+      </div>
+      <div>
+        <ScrollParallex />
       </div>
     </div>
   );
