@@ -20,6 +20,7 @@ function ScrollParallax() {
       scrollTrigger: {
         trigger: "#panel2",
         start: "50px 90%",
+
         markers: true,
 
         scrub: 1,
@@ -37,12 +38,6 @@ function ScrollParallax() {
         className="panel h-screen bg-yellow-300 flex justify-center items-center text-3xl scale-75"
       >
         page2
-      </div>
-      <div className="panel h-screen bg-red-500 flex justify-center items-center text-3xl">
-        page3
-      </div>
-      <div className="panel h-screen bg-blue-200 flex justify-center items-center text-3xl">
-        page4
       </div>
     </div>
   );
