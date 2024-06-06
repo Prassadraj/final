@@ -6,7 +6,8 @@ import Slider from "../Slider/Slider";
 import Scroll from "../Scroll/Scroll";
 import ZoomEffect from "../ZoomEffect/ZoomEffect";
 import ScrollParallex from "../../pages/ScrollParallex/ScrollParallex";
-import Counter from "../../pages/Counter/Counter";
+import Section2 from "../../homepages/Section2/Section2";
+
 function Home() {
   return (
     <div className="">
@@ -29,9 +30,8 @@ function Home() {
             style={{ width: "490px", fontFamily: "Poppins" }}
           >
             <p className="">
-              We derive our strength through enduring relationships with
-              customers, based on our commitment to deliver valuable products
-              and timely end-user support.
+              Discover our top-quality medical laboratory equipment, tailored
+              for hospitals and diagnostic labs across India.
             </p>
           </div>
           <div className="buttons flex gap-5">
@@ -57,10 +57,14 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* section2 */}
       <div className="section2">
-        <Counter />
+        <Section2 />
       </div>
+      {/* section3 */}
+      <div className="section3"></div>
       <div>
+        {/* section5 */}
         <div style={{ marginBottom: "10vh" }}>
           <ZoomEffect />
         </div>

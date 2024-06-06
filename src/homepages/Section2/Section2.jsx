@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Counter() {
+function Section2() {
   const countUpRefs = useRef([]);
   const containerRef = useRef(null);
 
@@ -102,4 +102,4 @@ function Counter() {
   );
 }
 
-export default Counter;
+export default Section2;
