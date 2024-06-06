@@ -5,8 +5,9 @@ import "./home.css";
 import Slider from "../Slider/Slider";
 import Scroll from "../Scroll/Scroll";
 import ZoomEffect from "../ZoomEffect/ZoomEffect";
-import ScrollParallex from "../../pages/ScrollParallex/ScrollParallex";
+import ScrollParallax from "../../pages/ScrollParallex/ScrollParallex";
 import Section2 from "../../homepages/Section2/Section2";
+import Section3 from "../../homepages/Section3/Section3";
 
 function Home() {
   return (
@@ -62,7 +63,9 @@ function Home() {
         <Section2 />
       </div>
       {/* section3 */}
-      <div className="section3"></div>
+      <div className="section3">
+        <Section3 />
+      </div>
       <div>
         {/* section5 */}
         <div style={{ marginBottom: "10vh" }}>
@@ -70,7 +73,7 @@ function Home() {
         </div>
       </div>
       <div>
-        <ScrollParallex />
+        <ScrollParallax />
       </div>
     </div>
   );
