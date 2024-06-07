@@ -64,11 +64,30 @@ function Section3() {
         },
       }
     );
+    gsap.utils.toArray(".imagebox").forEach((imgBox) => {
+      gsap.fromTo(
+        imgBox,
+        {
+          opacity: 0,
+          scale: 0.2,
+          skewY: 30,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          skewY: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: imgBox,
+
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
 
     // Cleanup function
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
   }, []);
 
   return (
@@ -138,7 +157,7 @@ function Section3() {
             </button>
           </div>
         </div>
-        <div className="right">
+        <div className="right imagebox">
           <div
             id="image1"
             className="relative w-[30vw] h-[50vh] top-0 right-10 rounded-2xl z-10"
@@ -158,8 +177,8 @@ function Section3() {
       </div>
 
       {/* section4 */}
-      <div className="section4 flex justify-around h-[100vh] pt-20 pl-20 pr-20">
-        <div className="left mr-10">
+      <div className="section4 flex justify-around h-[100vh] pt-20 pl-20 pr-10">
+        <div className="left mr-10 imagebox">
           <div
             id="image1"
             className=" relative w-[30vw] h-[50vh] top-10 left-10 rounded-2xl z-10"
@@ -171,7 +190,7 @@ function Section3() {
             />
           </div>
           <div
-            style={{ marginRight: "90px", marginTop: "-310px" }}
+            style={{ marginTop: "-310px" }}
             id="bg1"
             className="animate-leftUp relative w-[30vw] h-[60vh] rounded-2xl bg-gradient-to-t from-custom-green to-gray-200"
           ></div>
@@ -184,10 +203,10 @@ function Section3() {
                 fontFamily: "Poppins",
               }}
             >
-              Who We Are?
+              What We Do?
             </p>
           </div>
-          <div className="w-[50vw] textbox">
+          <div className="w-[49vw] textbox">
             <div className="text1 overflow-hidden">
               <p
                 className="text-2xl"
@@ -195,7 +214,7 @@ function Section3() {
                   fontFamily: "Poppins",
                 }}
               >
-                Everlife CPC Diagnostics is a premier medical
+                We manufacture and supply a variety of laboratory
               </p>
             </div>
             <div className="text1 overflow-hidden">
@@ -205,7 +224,7 @@ function Section3() {
                   fontFamily: "Poppins",
                 }}
               >
-                laboratory equipment supplier in India,
+                instruments, including biochemistry analyzers and
               </p>
             </div>
             <div className="text1 overflow-hidden">
@@ -215,7 +234,7 @@ function Section3() {
                   fontFamily: "Poppins",
                 }}
               >
-                providing a comprehensive range of in vitro
+                hospital medical equipment, ensuring high
               </p>
             </div>
             <div className="text1 overflow-hidden">
@@ -225,7 +244,7 @@ function Section3() {
                   fontFamily: "Poppins",
                 }}
               >
-                diagnostic (IVD) solutions.
+                performance and accuracy.
               </p>
             </div>
           </div>
