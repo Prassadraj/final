@@ -45,25 +45,28 @@ function Section3() {
         }
       );
     });
-    gsap.fromTo(
-      ".header1",
-      {
-        opacity: 0,
-        skewX: 45,
-        x: -100,
-      },
-      {
-        opacity: 1,
-        skewX: 0,
-        x: 0,
-        duration: 1,
-        delay: 0.4,
-        scrollTrigger: ".header1",
-        stagger: {
-          amount: 1,
+    gsap.utils.toArray(".header1").forEach((header) => {
+      gsap.fromTo(
+        header,
+        {
+          opacity: 0,
+          skewX: 45,
+          x: -100,
         },
-      }
-    );
+        {
+          opacity: 1,
+          skewX: 0,
+          x: 0,
+          duration: 1,
+          delay: 0.4,
+          scrollTrigger: {
+            trigger: header,
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
     gsap.utils.toArray(".imagebox").forEach((imgBox) => {
       gsap.fromTo(
         imgBox,
@@ -92,56 +95,34 @@ function Section3() {
 
   return (
     <div>
-      <div className="section3 flex justify-around h-[100vh] pt-20 pl-20 pr-20 ">
+      <div className="section3 flex justify-around h-[100vh] pt-20 pl-20 pr-20">
         <div className="flex flex-col pt-20">
           <div className="mb-5">
             <p
               className="font-bold text-gray-900 text-3xl header1"
-              style={{
-                fontFamily: "Poppins",
-              }}
+              style={{ fontFamily: "Poppins" }}
             >
               Who We Are?
             </p>
           </div>
           <div className="w-[50vw] textbox">
             <div className="text1 overflow-hidden">
-              <p
-                className="text-2xl"
-                style={{
-                  fontFamily: "Poppins",
-                }}
-              >
+              <p className="text-2xl" style={{ fontFamily: "Poppins" }}>
                 Everlife CPC Diagnostics is a premier medical
               </p>
             </div>
             <div className="text1 overflow-hidden">
-              <p
-                className="text-2xl"
-                style={{
-                  fontFamily: "Poppins",
-                }}
-              >
+              <p className="text-2xl" style={{ fontFamily: "Poppins" }}>
                 laboratory equipment supplier in India,
               </p>
             </div>
             <div className="text1 overflow-hidden">
-              <p
-                className="text-2xl"
-                style={{
-                  fontFamily: "Poppins",
-                }}
-              >
+              <p className="text-2xl" style={{ fontFamily: "Poppins" }}>
                 providing a comprehensive range of in vitro
               </p>
             </div>
             <div className="text1 overflow-hidden">
-              <p
-                className="text-2xl"
-                style={{
-                  fontFamily: "Poppins",
-                }}
-              >
+              <p className="text-2xl" style={{ fontFamily: "Poppins" }}>
                 diagnostic (IVD) solutions.
               </p>
             </div>
@@ -149,9 +130,7 @@ function Section3() {
           <div className="mt-10">
             <button
               className="btn1 pt-2 pb-2 pl-7 pr-7 w-52 text-[#00A786] hover:bg-[#00a986] hover:text-white"
-              style={{
-                border: "2px solid #00A786",
-              }}
+              style={{ border: "2px solid #00A786" }}
             >
               View Our Products
             </button>
@@ -176,12 +155,11 @@ function Section3() {
         </div>
       </div>
 
-      {/* section4 */}
       <div className="section4 flex justify-around h-[100vh] pt-20 pl-20 pr-10">
         <div className="left mr-10 imagebox">
           <div
             id="image1"
-            className=" relative w-[30vw] h-[50vh] top-10 left-10 rounded-2xl z-10"
+            className="relative w-[30vw] h-[50vh] top-10 left-10 rounded-2xl z-10"
           >
             <img
               src={image2}
@@ -199,51 +177,29 @@ function Section3() {
           <div className="mb-5">
             <p
               className="font-bold text-gray-900 text-3xl header1"
-              style={{
-                fontFamily: "Poppins",
-              }}
+              style={{ fontFamily: "Poppins" }}
             >
               What We Do?
             </p>
           </div>
           <div className="w-[49vw] textbox">
             <div className="text1 overflow-hidden">
-              <p
-                className="text-2xl"
-                style={{
-                  fontFamily: "Poppins",
-                }}
-              >
+              <p className="text-2xl" style={{ fontFamily: "Poppins" }}>
                 We manufacture and supply a variety of laboratory
               </p>
             </div>
             <div className="text1 overflow-hidden">
-              <p
-                className="text-2xl"
-                style={{
-                  fontFamily: "Poppins",
-                }}
-              >
+              <p className="text-2xl" style={{ fontFamily: "Poppins" }}>
                 instruments, including biochemistry analyzers and
               </p>
             </div>
             <div className="text1 overflow-hidden">
-              <p
-                className="text-2xl"
-                style={{
-                  fontFamily: "Poppins",
-                }}
-              >
+              <p className="text-2xl" style={{ fontFamily: "Poppins" }}>
                 hospital medical equipment, ensuring high
               </p>
             </div>
             <div className="text1 overflow-hidden">
-              <p
-                className="text-2xl"
-                style={{
-                  fontFamily: "Poppins",
-                }}
-              >
+              <p className="text-2xl" style={{ fontFamily: "Poppins" }}>
                 performance and accuracy.
               </p>
             </div>
@@ -251,9 +207,7 @@ function Section3() {
           <div className="mt-10">
             <button
               className="btn1 pt-2 pb-2 pl-7 pr-7 w-52 text-[#00A786] hover:bg-[#00a986] hover:text-white"
-              style={{
-                border: "2px solid #00A786",
-              }}
+              style={{ border: "2px solid #00A786" }}
             >
               View Our Products
             </button>
