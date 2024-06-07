@@ -41,7 +41,7 @@ function Section3() {
             end: "bottom 80%",
             scrub: true,
           },
-          delay: index * 0.5,
+          delay: index * 1,
         }
       );
     });

@@ -7,6 +7,7 @@ export default {
     extend: {
       colors: {
         "custom-green": "#10b981",
+        "light-green": "#D6FFF5",
       },
       keyframes: {
         moveUp: {

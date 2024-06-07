@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Transition from "../Transition/Transition";
 import logo from "../../images/logo.png";
 import "./home.css";
@@ -8,8 +8,32 @@ import ZoomEffect from "../ZoomEffect/ZoomEffect";
 import ScrollParallax from "../../pages/ScrollParallex/ScrollParallex";
 import Section2 from "../../homepages/Section2/Section2";
 import Section3 from "../../homepages/Section3/Section3";
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import FeaturedProducts from "../../homepages/FeaturedProducts/FeaturedProducts";
 function Home() {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      ".btn1",
+      {
+        skewX: 65,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        skewX: 0,
+
+        duration: 1,
+        delay: 0.5,
+        scrollTrigger: ".btn1",
+
+        stagger: {
+          amount: 1,
+        },
+      }
+    );
+  }, []);
   return (
     <div className="">
       <div className="section1 flex h-full overflow-hidden">
@@ -69,6 +93,8 @@ function Home() {
       <div className="section3">
         <Section3 />
       </div>
+      {/* featured Products */}
+      <FeaturedProducts />
       <div>
         {/* section5 */}
         <div style={{ marginBottom: "10vh" }}>
