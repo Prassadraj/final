@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className="">
       <div className="section1 flex h-full overflow-hidden">
-        <div className="left " style={{ flex: 1, marginLeft: "70px" }}>
+        <div className="left mt-12" style={{ flex: 1, marginLeft: "70px" }}>
           <p
             id="headline"
             style={{
@@ -52,7 +52,10 @@ function Home() {
             </button>
           </div>
         </div>
-        <div className=" overflow-hidden" style={{ flex: 1 }}>
+        <div
+          className=" overflow-hidden"
+          style={{ flex: 1, marginTop: "-20px" }}
+        >
           <div className="">
             <Slider />
           </div>

@@ -9,6 +9,23 @@ function Section2() {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    gsap.fromTo(
+      ".counterBox",
+      {
+        opacity: 0,
+        width: "0%",
+      },
+      {
+        opacity: 1,
+        width: "100%",
+        duration: 1,
+        delay: 0.4,
+        scrollTrigger: "counterBox",
+        stagger: {
+          amount: 1,
+        },
+      }
+    );
     countUpRefs.current.forEach((el) => {
       const endNumber = parseInt(el.dataset.end); // Retrieve the end number from dataset
       gsap.fromTo(
@@ -71,7 +88,7 @@ function Section2() {
       className="h-[264px] bg-white flex items-center justify-around pl-14 pr-14 counter-container"
     >
       {stats.map((stat, index) => (
-        <div key={index} className="flex flex-col items-center">
+        <div key={index} className="flex flex-col items-center counterBox">
           <div className="flex items-center justify-center">
             <span
               ref={(el) => (countUpRefs.current[index] = el)}

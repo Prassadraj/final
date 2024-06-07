@@ -15,17 +15,28 @@ export default {
         },
         rightDown: {
           "0%,100%": { transform: "translateY(0px) translateX(0px)" },
-          "50%": { transform: "translateY(80px) translateX(10px)" },
+          "50%": { transform: "translateY(10px) translateX(10px)" },
         },
-        moveDown: {
+        leftRight: {
           "0%,100%": { transform: "translateY(0px) translateX(-0px)" },
-          "50%": { transform: "translateY(-20px) translateX(20px)" },
+          "50%": { transform: "translateY(10px) translateX(-10px)" },
+        },
+        rightUp: {
+          "0%,100%": { transform: "translateY(0px) translateX(-0px)" },
+          "50%": { transform: "translateY(-10px) translateX(10px)" },
+        },
+        leftUp: {
+          "0%,100%": { transform: "translateY(0px) translateX(-0px)" },
+          "50%": { transform: "translateY(-10px) translateX(-10px)" },
         },
       },
       animation: {
         moveUp: "moveUp 5s ease-in-out infinite",
-        moveDown: "moveDown 8s ease-in-out infinite",
-        rightDown: "moveDown 8s ease-in-out infinite",
+        leftRight: "leftRight 8s ease-in-out infinite",
+        rightDown: "rightDown 8s ease-in-out infinite",
+        rightUp: "rightUp 8s ease-in-out infinite",
+
+        leftUp: "leftUp 8s ease-in-out infinite",
       },
     },
   },
