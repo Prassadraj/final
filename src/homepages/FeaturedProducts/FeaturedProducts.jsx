@@ -1,16 +1,46 @@
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
-import image1 from "../../images/section2&3/image1.png";
+import { useEffect, useRef } from "react";
+import image1 from "../../images/featured/product1.png";
+import image2 from "../../images/featured/product2.png";
+import image3 from "../../images/featured/product3.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { gsap } from "gsap/gsap-core";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 const FeaturedProducts = () => {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      ".heading",
+      { opacity: 0, y: "10px" },
+      {
+        opacity: 1,
+
+        y: "0px",
+        duration: 1,
+        delay: 0.5,
+        scrollTrigger: ".heading",
+
+        stagger: {
+          amount: 1,
+        },
+      }
+    );
+  }, []);
   return (
     <div className="bg-white">
-      <div className="flex h-10 items-center pl-24">
+      <div className="flex h-10 items-center pl-24 flex-col gap-4 heading">
         <span
-          className="font-semibold text-3xl uppercase"
+          className="font-semibold text-3xl uppercase heading"
           style={{ fontFamily: "Poppins" }}
         >
           Featured Products
         </span>
+
+        <p style={{ fontFamily: "Poppins" }} className="text-xl heading">
+          We use only the best quality materials on the market in order to
+          provide the best products to our patients.
+        </p>
       </div>
       <HorizontalScrollCarousel cards={featuredCards} />
     </div>
@@ -41,20 +71,26 @@ const HorizontalScrollCarousel = ({ cards }) => {
 
 const Card = ({ card }) => {
   return (
-    <div
-      key={card.id}
-      className="group relative h-[400px] w-[400px] overflow-hidden bg-light-green"
-    >
+    <div className="relative h-[400px] w-[350px] overflow-hidden bg-light-green rounded-2xl ">
+      <div className="flex justify-center items-center w-full mt-10">
+        <img width="150px" src={card.url} alt="" />
+      </div>
       <div
-        style={{}}
-        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+        className="absolute top-60 left-10 right-10 "
+        style={{ fontFamily: "Poppins" }}
       >
-        <img src={card.url} alt="" />
+        <div className="flex justify-start">
+          <h1 className="text-xl text-gray-700">{card.title}</h1>
+        </div>
+        <p>{card.content}</p>
       </div>
-      <div className="">
-        <p className="">{card.title}</p>
+      <div className=" absolute bottom-6 w-full">
+        <div className="flex justify-center items-center ">
+          <button className="w-72 bg-custom-green pt-2 pb-2 pl-3 pr-3 rounded-lg text-white">
+            View Products
+          </button>
+        </div>
       </div>
-      <button className="absolute bottom-0">allproduct</button>
     </div>
   );
 };
@@ -64,8 +100,11 @@ const AllProductsCard = () => {
     <div className=" group relative h-[400px] w-[200px] overflow-hidden  flex items-center justify-center">
       <div className="absolute inset-0 z-0 "></div>
       <div className="absolute inset-0 z-10 flex items-center justify-center">
-        <p className="text-xl font-black uppercase text-white bg-custom-green p-2 rounded-xl">
-          All Products
+        <p
+          className="text-xl font-black text-custom-green p-2 rounded-xl cursor-pointer"
+          style={{ fontFamily: "Poppins" }}
+        >
+          All Products <FontAwesomeIcon icon={faArrowRight} />
         </p>
       </div>
     </div>
@@ -78,26 +117,36 @@ const featuredCards = [
   {
     url: image1,
     title: "Title 1",
+    content:
+      " Lorem ipsum dolor sit, amet consectetur adipisicing elit Culpa non placeat vitae distinctio ",
     id: 1,
   },
   {
-    url: "/imgs/abstract/2.jpg",
+    url: image2,
     title: "Title 2",
+    content:
+      " Lorem ipsum dolor sit, amet consectetur adipisicing elit Culpa non placeat vitae distinctio ",
     id: 2,
   },
   {
-    url: "/imgs/abstract/3.jpg",
+    url: image3,
     title: "Title 3",
+    content:
+      " Lorem ipsum dolor sit, amet consectetur adipisicing elit Culpa non placeat vitae distinctio ",
     id: 3,
   },
   {
-    url: "/imgs/abstract/4.jpg",
+    url: image1,
     title: "Title 4",
+    content:
+      " Lorem ipsum dolor sit, amet consectetur adipisicing elit Culpa non placeat vitae distinctio ",
     id: 4,
   },
   {
-    url: "/imgs/abstract/5.jpg",
+    url: image3,
     title: "Title 5",
+    content:
+      " Lorem ipsum dolor sit, amet consectetur adipisicing elit Culpa non placeat vitae distinctio ",
     id: 5,
   },
 ];

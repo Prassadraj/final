@@ -42,7 +42,7 @@ const Slider = () => {
           startAutoChange = function () {
             setInterval(function () {
               slicebox.next();
-            }, 3000); // Change image every 3 seconds
+            }, 5000); // Change image every 3 seconds
           };
 
         return { init: init };
