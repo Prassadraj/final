@@ -9,10 +9,15 @@ import ScrollParallax from "../../pages/ScrollParallex/ScrollParallex";
 import Section2 from "../../homepages/Section2/Section2";
 import Section3 from "../../homepages/Section3/Section3";
 import { gsap } from "gsap";
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
+import Splitting from "splitting";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FeaturedProducts from "../../homepages/FeaturedProducts/FeaturedProducts";
+import TestimonialSlider from "../../homepages/TestimonialSlider/TestimonialSlider";
 function Home() {
   useEffect(() => {
+    Splitting();
     gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo(
       ".btn1",
@@ -33,21 +38,49 @@ function Home() {
         },
       }
     );
+
+    // GSAP animation for splitting effect
+    gsap.from(".char", {
+      duration: 1,
+      opacity: 0,
+      y: 120,
+      ease: "power4.out",
+      stagger: 0.05,
+    });
   }, []);
   return (
     <div className="">
       <div className="section1 flex h-full overflow-hidden">
-        <div className="left mt-12" style={{ flex: 1, marginLeft: "70px" }}>
+        <div
+          className="left mt-12"
+          style={{ flex: 1, marginLeft: "70px", lineHeight: "1.2" }}
+        >
           <p
             id="headline"
             style={{
               fontSize: "45px",
               color: "#56575D",
-              lineHeight: "1.2",
+
+              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
             }}
             className="font-sans"
+            data-splitting="chars"
           >
-            Medical Laboratory <br />
+            Medical Laboratory
+          </p>
+          <p
+            id="headline"
+            style={{
+              fontSize: "45px",
+              color: "#56575D",
+
+              clippath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            }}
+            className="font-sans"
+            data-splitting="chars"
+          >
             Equipment Supplier in India
           </p>
           <div
@@ -94,13 +127,18 @@ function Home() {
         <Section3 />
       </div>
       {/* featured Products */}
-      <FeaturedProducts />
       <div>
-        {/* section5 */}
-        <div style={{ marginBottom: "10vh" }}>
-          <ZoomEffect />
-        </div>
+        <FeaturedProducts />
       </div>
+
+      {/* section5 */}
+      <div style={{ marginBottom: "10vh" }}>
+        <ZoomEffect />
+      </div>
+      <div>
+        <TestimonialSlider />
+      </div>
+
       <div>
         <ScrollParallax />
       </div>

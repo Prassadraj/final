@@ -54,8 +54,8 @@ const Slider = () => {
 
   return (
     <div className="">
-      <div className="container">
-        <div className="wrapper">
+      <div className="container border-none">
+        <div className="wrapper border-none">
           <ul id="sb-slider" className="sb-slider ">
             <li>
               <a
