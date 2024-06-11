@@ -1,0 +1,48 @@
+#footer-abs {
+  background: linear-gradient(
+    90deg,
+    hsla(167, 68%, 73%, 1) 0%,
+    hsla(178, 59%, 48%, 1) 100%
+  );
+  padding: 1.7rem;
+  border-radius: 25px;
+  position: relative;
+  top: 70px;
+}
+#email-foot {
+  width: 70%;
+  border: none;
+  padding: 10px 13px;
+}
+#email-btn {
+  border: none;
+  background: #17202c;
+  padding: 10px 13px;
+  color: white;
+}
+.fa {
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  color: #01ab86;
+}
+.fa-linkedin {
+  color: #01ab86;
+}
+.fa-youtube {
+  color: #01ab86;
+}
+
+.fa-instagram {
+  color: #01ab86;
+}

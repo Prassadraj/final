@@ -1,82 +1,139 @@
 import React, { useEffect, useRef } from "react";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./TestimonialSlider.css";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+function TestimonialSlider() {
+  let sliderRef = useRef(null);
 
-const TestimonialSlider = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+  };
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".headline", {
+      skewX: 65,
+      opacity: 0.5,
+      rotateZ: "-3deg",
+      rotateY: "30deg",
+      duration: 1,
+      delay: 0.5,
+      stagger: 1,
+      // rotateX: "30deg",
+      scrollTrigger: ".headline",
+    });
+  }, []);
+
   return (
-    <div className="container mt-5 py-5">
-      <div className="row">
-        <h2 className="text-center" style={{ color: "#01ab86" }}>
+    <div className="h-screen p-10 ">
+      <div className="flex justify-center items-center flex-col gap-5">
+        <h1
+          className="text-4xl text-black font-bold headline"
+          style={{ fontFamily: "Poppins" }}
+        >
           Testimonials
-        </h2>
-        <div className="col-lg-2"></div>
-        <div className="col-lg-8 text-center mt-4">
-          <h4>
-            Our experience with CPC Diagnostics has been exceptional. Their
-            products are reliable, and their support is outstanding.
-          </h4>
-        </div>
-        <div className="col-lg-2"></div>
-        <div className="col-md-12 mt-5">
-          <div id="testimonial-slider" className="owl-carousel">
-            <div className="testimonial">
-              <div className="pic">
-                <img
-                  src="https://images.pexels.com/photos/704955/pexels-photo-704955.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
-                  alt="Jessica"
-                />
-              </div>
-              <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                malesuada vulputate nisi in fermentum. Vivamus ac libero quis
-                nisi auctor pulvinar. Aenean sit amet lectus posuere, mattis
-                massa eget, ullamcorper diam. Nunc sit amet felis eget arcu
-                congue dictum.
-              </p>
-              <h3 className="title">Jessica</h3>
-              <small className="post">- Architect</small>
-            </div>
+        </h1>
+        <p
+          className="text-xl"
+          style={{
+            fontFamily: "Poppins",
+          }}
+        >
+          We use only the best quality materials on the market in order to
+          provide the best products to our patients.
+        </p>
+      </div>
 
-            <div className="testimonial">
-              <div className="pic">
-                <img
-                  src="https://images.pexels.com/photos/638700/pexels-photo-638700.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
-                  alt="Pearl"
-                />
-              </div>
-              <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                malesuada vulputate nisi in fermentum. Vivamus ac libero quis
-                nisi auctor pulvinar. Aenean sit amet lectus posuere, mattis
-                massa eget, ullamcorper diam. Nunc sit amet felis eget arcu
-                congue dictum.
-              </p>
-              <h3 className="title">Pearl</h3>
-              <small className="post">- Engineer</small>
+      <div
+        className="mt-10
+      "
+      >
+        <Slider {...settings} className="">
+          <div className="w-[40vw] h-[40vh] bg-yellow-300 p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid ">
+            <div className="flex justify-start items-center gap-3 ">
+              <img
+                className="w-16 h-16 object-cover rounded-full"
+                src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?cs=srgb&dl=pexels-olly-762020.jpg&fm=jpg"
+                alt=""
+              />
+              <p className="text-2xl">Julie</p>
             </div>
-
-            <div className="testimonial">
-              <div className="pic">
-                <img
-                  src="https://images.pexels.com/photos/531139/pexels-photo-531139.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
-                  alt="Kellie"
-                />
-              </div>
-              <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                malesuada vulputate nisi in fermentum. Vivamus ac libero quis
-                nisi auctor pulvinar. Aenean sit amet lectus posuere, mattis
-                massa eget, ullamcorper diam. Nunc sit amet felis eget arcu
-                congue dictum.
+            <div>
+              <p className="text-md" style={{ fontFamily: "Poppins" }}>
+                We use only the best quality materials on the market in order to
+                provide the best products to our patients.We use only the best
+                quality materials on the market in order to provide the best
+                products to our patients.
               </p>
-              <h3 className="title">Kellie</h3>
-              <small className="post">- Graphic Designer</small>
             </div>
           </div>
-        </div>
+
+          <div className="w-[40vw] h-[40vh] bg-yellow-300 p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid ">
+            <div className="flex justify-start items-center gap-3 ">
+              <img
+                className="w-16 h-16 object-cover rounded-full"
+                src="https://st4.depositphotos.com/2884373/24534/i/450/depositphotos_245347128-stock-photo-red-haired-sexy-size-woman.jpg"
+                alt=""
+              />
+              <p className="text-2xl">Julie</p>
+            </div>
+            <div>
+              <p className="text-md" style={{ fontFamily: "Poppins" }}>
+                We use only the best quality materials on the market in order to
+                provide the best products to our patients.We use only the best
+                quality materials on the market in order to provide the best
+                products to our patients.
+              </p>
+            </div>
+          </div>
+          <div className="w-[40vw] h-[40vh] bg-yellow-300 p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid ">
+            <div className="flex justify-start items-center gap-3">
+              <img
+                className="w-16 h-16 object-cover rounded-full"
+                src="https://i.pinimg.com/736x/5c/09/c4/5c09c4dc82dc441dfb26975fe8dc1634.jpg"
+                alt=""
+              />
+              <p className="text-2xl">Julie</p>
+            </div>
+            <div>
+              <p className="text-md" style={{ fontFamily: "Poppins" }}>
+                We use only the best quality materials on the market in order to
+                provide the best products to our patients.We use only the best
+                quality materials on the market in order to provide the best
+                products to our patients.
+              </p>
+            </div>
+          </div>
+          <div className="w-[40vw] h-[40vh] bg-yellow-300 p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid ">
+            <div className="flex justify-start items-center gap-3 ">
+              <img
+                className="w-16 h-16 object-cover rounded-full"
+                src="https://st4.depositphotos.com/2884373/24534/i/450/depositphotos_245347128-stock-photo-red-haired-sexy-size-woman.jpg"
+                alt=""
+              />
+              <p className="text-2xl">Julie</p>
+            </div>
+            <div>
+              <p className="text-md" style={{ fontFamily: "Poppins" }}>
+                We use only the best quality materials on the market in order to
+                provide the best products to our patients.We use only the best
+                quality materials on the market in order to provide the best
+                products to our patients.
+              </p>
+            </div>
+          </div>
+        </Slider>
       </div>
     </div>
   );
-};
+}
 
 export default TestimonialSlider;

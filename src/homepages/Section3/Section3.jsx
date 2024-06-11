@@ -136,7 +136,13 @@ function Section3() {
             </button>
           </div>
         </div>
-        <div className="right imagebox">
+        <div
+          className="right imagebox"
+          style={{
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          }}
+        >
           <div
             id="image1"
             className="relative w-[30vw] h-[50vh] top-0 right-10 rounded-2xl z-10"

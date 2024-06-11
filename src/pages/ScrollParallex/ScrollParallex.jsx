@@ -52,12 +52,12 @@ function ScrollParallax() {
 
   return (
     <div>
-      <div className="panel h-screen bg-red-400 flex justify-center items-center text-3xl">
+      <div className="panel h-[100vh] bg-red-400 flex justify-center items-center text-3xl">
         <div>page1</div>
       </div>
       <div
         id="panel2"
-        className="panel h-screen bg-yellow-300 flex justify-center items-center text-3xl"
+        className="panel h-[100vh] bg-yellow-300 flex justify-center items-center text-3xl"
       >
         <p id="page" className="font-sans text-4xl font-bold">
           page2

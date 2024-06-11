@@ -15,6 +15,10 @@ import Splitting from "splitting";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FeaturedProducts from "../../homepages/FeaturedProducts/FeaturedProducts";
 import TestimonialSlider from "../../homepages/TestimonialSlider/TestimonialSlider";
+import NewOne from "../../newone/NewOne";
+import Tilt from "react-parallax-tilt";
+import Footer from "../../homepages/Footer/Footer";
+
 function Home() {
   useEffect(() => {
     Splitting();
@@ -38,12 +42,19 @@ function Home() {
         },
       }
     );
+    gsap.from(".subTitle", {
+      duration: 1,
+      opacity: 0,
+      y: 120,
+      scrollTrigger: ".subTitle",
+      stagger: 1,
+    });
 
     // GSAP animation for splitting effect
     gsap.from(".char", {
       duration: 1,
       opacity: 0,
-      y: 120,
+      y: 200,
       ease: "power4.out",
       stagger: 0.05,
     });
@@ -87,7 +98,13 @@ function Home() {
             className="description "
             style={{ width: "490px", fontFamily: "Poppins" }}
           >
-            <p className="">
+            <p
+              className="subTitle"
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              }}
+            >
               Discover our top-quality medical laboratory equipment, tailored
               for hospitals and diagnostic labs across India.
             </p>
@@ -139,8 +156,13 @@ function Home() {
         <TestimonialSlider />
       </div>
 
-      <div>
+      {/* <div>
         <ScrollParallax />
+      </div> */}
+
+      {/* footer */}
+      <div>
+        <Footer />
       </div>
     </div>
   );
