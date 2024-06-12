@@ -1,0 +1,14 @@
+/* contactUs.css */
+
+/* Set background of inputs and textarea to transparent */
+input[type="text"],
+textarea {
+  background-color: transparent;
+  border: 1px solid rgb(255, 255, 255); /* Add border style */
+}
+
+/* Change placeholder color for input fields and textarea */
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: #ffffff; /* Change this to your desired color */
+}
