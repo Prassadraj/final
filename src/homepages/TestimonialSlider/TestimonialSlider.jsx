@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./TestimonialSlider.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import qoute from "../../images/testimo/qoute.png";
 function TestimonialSlider() {
   let sliderRef = useRef(null);
 
@@ -33,18 +34,29 @@ function TestimonialSlider() {
   }, []);
 
   return (
-    <div className="h-screen p-10 ">
+    <div
+      className="h-[100vh] p-10 "
+      style={{
+        objectFit: "cover",
+        width: "100%",
+
+        backgroundImage:
+          "url('https://images.pexels.com/photos/9881353/pexels-photo-9881353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+      }}
+    >
       <div className="flex justify-center items-center flex-col gap-5">
         <h1
-          className="text-4xl text-black font-bold headline"
+          className="text-4xl text-white font-bold headline"
           style={{ fontFamily: "Poppins" }}
         >
           Testimonials
         </h1>
         <p
-          className="text-xl"
+          className="text-xl text-light-green"
           style={{
             fontFamily: "Poppins",
+            width: "120vh",
+            textAlign: "center",
           }}
         >
           We use only the best quality materials on the market in order to
@@ -57,7 +69,7 @@ function TestimonialSlider() {
       "
       >
         <Slider {...settings} className="">
-          <div className="w-[40vw] h-[40vh] bg-yellow-300 p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid ">
+          <div className="relative w-[40vw] h-[40vh] bg-white p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid shadow-2xl">
             <div className="flex justify-start items-center gap-3 ">
               <img
                 className="w-16 h-16 object-cover rounded-full"
@@ -74,9 +86,26 @@ function TestimonialSlider() {
                 products to our patients.
               </p>
             </div>
+            <div
+              className="text-2xl text-black absolute z-10"
+              style={{ fontFamily: "Poppins", top: "-0px", left: "0px" }}
+            >
+              <img src={qoute} alt="" className="animate-leftRightQ" />
+            </div>
+            <div
+              className="text-2xl text-black absolute z-10"
+              style={{
+                fontFamily: "Poppins",
+                bottom: "-0px",
+                right: "0px",
+                transform: "rotate(180deg)",
+              }}
+            >
+              <img src={qoute} alt="" className="animate-leftRightQ" />
+            </div>
           </div>
 
-          <div className="w-[40vw] h-[40vh] bg-yellow-300 p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid ">
+          <div className="relative w-[40vw] h-[40vh] bg-white p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid shadow-lg">
             <div className="flex justify-start items-center gap-3 ">
               <img
                 className="w-16 h-16 object-cover rounded-full"
@@ -93,8 +122,26 @@ function TestimonialSlider() {
                 products to our patients.
               </p>
             </div>
+            <div
+              className="text-2xl text-black absolute z-10"
+              style={{ fontFamily: "Poppins", top: "-0px", left: "0px" }}
+            >
+              <img src={qoute} alt="" className="animate-leftRightQ" />
+            </div>
+            <div
+              className="text-2xl text-black absolute z-10"
+              style={{
+                fontFamily: "Poppins",
+                bottom: "-0px",
+                right: "0px",
+                transform: "rotate(180deg)",
+              }}
+            >
+              <img src={qoute} alt="" className="animate-leftRightQ" />
+            </div>
           </div>
-          <div className="w-[40vw] h-[40vh] bg-yellow-300 p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid ">
+
+          <div className="relative w-[40vw] h-[40vh] bg-white p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid shadow-lg">
             <div className="flex justify-start items-center gap-3">
               <img
                 className="w-16 h-16 object-cover rounded-full"
@@ -111,8 +158,26 @@ function TestimonialSlider() {
                 products to our patients.
               </p>
             </div>
+            <div
+              className="text-2xl text-black absolute z-10"
+              style={{ fontFamily: "Poppins", top: "-0px", left: "0px" }}
+            >
+              <img src={qoute} alt="" className="animate-leftRightQ" />
+            </div>
+            <div
+              className="text-2xl text-black absolute z-10"
+              style={{
+                fontFamily: "Poppins",
+                bottom: "-0px",
+                right: "0px",
+                transform: "rotate(180deg)",
+              }}
+            >
+              <img src={qoute} alt="" className="animate-leftRightQ" />
+            </div>
           </div>
-          <div className="w-[40vw] h-[40vh] bg-yellow-300 p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid ">
+
+          <div className="relative w-[40vw] h-[40vh] bg-white p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid shadow-lg">
             <div className="flex justify-start items-center gap-3 ">
               <img
                 className="w-16 h-16 object-cover rounded-full"
@@ -128,6 +193,23 @@ function TestimonialSlider() {
                 quality materials on the market in order to provide the best
                 products to our patients.
               </p>
+            </div>
+            <div
+              className="text-2xl text-black absolute z-10"
+              style={{ fontFamily: "Poppins", top: "-0px", left: "0px" }}
+            >
+              <img src={qoute} alt="" className="animate-leftRightQ" />
+            </div>
+            <div
+              className="text-2xl text-black absolute z-10"
+              style={{
+                fontFamily: "Poppins",
+                bottom: "-0px",
+                right: "0px",
+                transform: "rotate(180deg)",
+              }}
+            >
+              <img src={qoute} alt="" className="animate-leftRightQ" />
             </div>
           </div>
         </Slider>

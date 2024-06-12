@@ -18,6 +18,8 @@ import TestimonialSlider from "../../homepages/TestimonialSlider/TestimonialSlid
 import NewOne from "../../newone/NewOne";
 import Tilt from "react-parallax-tilt";
 import Footer from "../../homepages/Footer/Footer";
+import Blog from "../../homepages/Blog/Blog";
+import ContactUs from "../../homepages/ContactUs/ContactUs";
 
 function Home() {
   useEffect(() => {
@@ -155,15 +157,12 @@ function Home() {
       <div>
         <TestimonialSlider />
       </div>
+      <Blog />
+      <ContactUs />
 
       {/* <div>
         <ScrollParallax />
       </div> */}
-
-      {/* footer */}
-      <div>
-        <Footer />
-      </div>
     </div>
   );
 }

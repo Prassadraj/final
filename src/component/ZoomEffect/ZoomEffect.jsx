@@ -56,7 +56,19 @@ function ZoomEffect() {
   ];
 
   return (
-    <div className=" flex flex-col gap-5">
+    <div
+      className=" flex flex-col gap-5 p-5"
+      style={{
+        width: "100%",
+        // Adjust the height as needed
+        height: "100%",
+        backgroundImage:
+          "url('https://images.pexels.com/photos/18069490/pexels-photo-18069490/free-photo-of-a-white-and-green-machine-with-people-on-it.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="flex justify-center items-center flex-col gap-4">
         <img style={{ objectFit: "cover" }} width="220px" src={itrack} alt="" />
         <p className="text-2xl">

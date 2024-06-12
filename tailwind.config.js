@@ -5,10 +5,14 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        poppnis: ["Poppins", "sans-serif"],
+      },
       colors: {
         "custom-green": "#10b981",
         "light-green": "#D6FFF5",
       },
+
       keyframes: {
         moveUp: {
           "0%,100%": { transform: "translateY(-10px)" },
@@ -30,12 +34,17 @@ export default {
           "0%,100%": { transform: "translateY(0px) translateX(-0px)" },
           "50%": { transform: "translateY(-10px) translateX(-10px)" },
         },
+        leftRightQ: {
+          "0%,100%": { transform: " rotate(-10deg)" },
+          "50%": { transform: " rotate(10deg)" },
+        },
       },
       animation: {
         moveUp: "moveUp 5s ease-in-out infinite",
         leftRight: "leftRight 8s ease-in-out infinite",
         rightDown: "rightDown 8s ease-in-out infinite",
         rightUp: "rightUp 8s ease-in-out infinite",
+        leftRightQ: "leftRightQ 4s ease-in-out infinite",
 
         leftUp: "leftUp 8s ease-in-out infinite",
       },
