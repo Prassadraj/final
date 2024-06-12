@@ -32,7 +32,7 @@ function Blog() {
     },
   ];
   return (
-    <div className="h-[100vh] bg-white p-10 pl-20 pr-20">
+    <div className="h-[100vh] bg-white p-10 pl-20 pr-20 rounded-lg">
       <div className=" flex justify-between gap-3">
         <div>
           <h1 className="text-left text-black text-3xl font-poppnis font-bold">

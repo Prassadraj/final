@@ -154,15 +154,8 @@ function Home() {
       <div style={{ marginBottom: "10vh" }}>
         <ZoomEffect />
       </div>
-      <div>
-        <TestimonialSlider />
-      </div>
-      <Blog />
+      <ScrollParallax />
       <ContactUs />
-
-      {/* <div>
-        <ScrollParallax />
-      </div> */}
     </div>
   );
 }

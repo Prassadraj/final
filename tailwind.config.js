@@ -38,6 +38,27 @@ export default {
           "0%,100%": { transform: " rotate(-10deg)" },
           "50%": { transform: " rotate(10deg)" },
         },
+        bouncing: {
+          "0%,100%": { transform: "translateY(-2px)" },
+          "50%": { transform: " translateY(2px)" },
+        },
+        bumble: {
+          "0%,100%": { transform: "translateY(-20px)" },
+          "50%": { transform: " translateY(20px)", scale: "1.2", delay: "0.5" },
+        },
+        smallbumble: {
+          "0%, 100%": {
+            transform: "translateY(-20px)",
+          },
+          "25%, 75%": {
+            transform: "translateY(10px)",
+            scale: "1.1",
+          },
+          "50%": {
+            transform: "translateY(20px)",
+            scale: "1.2",
+          },
+        },
       },
       animation: {
         moveUp: "moveUp 5s ease-in-out infinite",
@@ -45,7 +66,9 @@ export default {
         rightDown: "rightDown 8s ease-in-out infinite",
         rightUp: "rightUp 8s ease-in-out infinite",
         leftRightQ: "leftRightQ 4s ease-in-out infinite",
-
+        bouncing: "bouncing 4s ease-in-out infinite",
+        bumble: "bumble 7s ease-in-out infinite",
+        smallbumble: "smallbumble 4s ease-in-out infinite",
         leftUp: "leftUp 8s ease-in-out infinite",
       },
     },
