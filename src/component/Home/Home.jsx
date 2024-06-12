@@ -132,7 +132,7 @@ function Home() {
           className=" overflow-hidden"
           style={{ flex: 1, marginTop: "-20px" }}
         >
-          <div className="">
+          <div className="animate-bouncing">
             <Slider />
           </div>
         </div>

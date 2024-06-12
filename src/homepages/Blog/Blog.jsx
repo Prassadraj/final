@@ -1,6 +1,28 @@
-import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect } from "react";
 
 function Blog() {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      ".blogBox",
+      {
+        opacity: "0",
+        scale: 0.1,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        delay: 0.5,
+        stagger: { amount: 1 },
+
+        scrollTrigger: ".blogBox",
+      }
+    );
+  }, []);
+
   const data = [
     {
       img: "https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/enhancer/3.jpg",
@@ -32,7 +54,7 @@ function Blog() {
     },
   ];
   return (
-    <div className="h-[100vh] bg-white p-10 pl-20 pr-20 rounded-lg">
+    <div className="h-[100vh] bg-white p-10 pl-20 pr-20">
       <div className=" flex justify-between gap-3">
         <div>
           <h1 className="text-left text-black text-3xl font-poppnis font-bold">
@@ -51,7 +73,7 @@ function Blog() {
       </div>
       <div className="p-4 flex gap-5">
         {data.map((datas, index) => (
-          <div className="p-4 bg-light-green w-[20vw] rounded-lg h-[60vh]">
+          <div className="p-4 bg-light-green w-[20vw] rounded-lg h-[60vh] blogBox">
             <div>
               <img
                 style={{ objectFit: "cover", width: "20vw" }}
