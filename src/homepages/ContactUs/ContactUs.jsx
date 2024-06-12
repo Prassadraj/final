@@ -17,9 +17,10 @@ function ContactUs() {
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        <div className="absolute inset-0 w-full h-full object-cover z-0 bg-black opacity-35"></div>
         <div className="flex flex-col z-10">
           <div className="mt-40 ml-24">
-            <h1 className="relative font-poppins font-bold text-start text-custom-green text-3xl z-10">
+            <h1 className="relative font-poppins font-bold text-start text-white text-3xl z-10">
               Let's Get in Touch
             </h1>
           </div>
@@ -33,7 +34,7 @@ function ContactUs() {
           <div className="absolute bg-[#b9fcee] w-16 h-16 rounded-full top-60 left-56 animate-smallbumble"></div> */}
         </div>
         {/* right */}
-        <div className="flex flex-col gap-4 relative top-20  h-fit left-14 font-poppnis ">
+        <div className="flex flex-col gap-4 relative top-20  h-fit left-28 font-poppnis ">
           <div>
             <input
               type="text"
