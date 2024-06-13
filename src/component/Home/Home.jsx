@@ -144,13 +144,13 @@ function Home() {
       <Section3 />
       {/* featured Products */}
       <FeaturedProducts />
+      <Organisation />
       {/* section5 */}
       <div style={{ marginBottom: "10vh" }}>
         <ZoomEffect />
       </div>
       <ScrollParallax />
       <ContactUs />
-      <Organisation />
     </div>
   );
 }
