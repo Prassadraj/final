@@ -7,25 +7,28 @@ import video from "../../Video/contact.mp4";
 function ContactUs() {
   return (
     <div className="p-10 h-[100vh] bg-white">
-      <div className="h-[85vh] bg-light-green rounded-xl relative flex ">
+      <div className="h-[85vh] bg-light-green rounded-xl relative flex">
         <video
           autoPlay
           loop
           muted
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0 rounded-xl"
         >
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 w-full h-full object-cover z-0 bg-black opacity-35"></div>
+        <div className="absolute inset-0 w-full h-full object-cover z-0 bg-black opacity-40 rounded-xl"></div>
         <div className="flex flex-col z-10">
           <div className="mt-40 ml-24">
-            <h1 className="relative font-poppins font-bold text-start text-white text-3xl z-10">
+            <h1
+              className="relative  font-bold text-start text-white text-3xl z-10"
+              style={{ fontFamily: "Poppins" }}
+            >
               Let's Get in Touch
             </h1>
           </div>
           <div className="mt-2 ml-24 max-w-md z-10">
-            <p className="text-xl text-white">
+            <p className="text-xl text-white font-poppins">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Voluptatum eum
             </p>
@@ -34,7 +37,7 @@ function ContactUs() {
           <div className="absolute bg-[#b9fcee] w-16 h-16 rounded-full top-60 left-56 animate-smallbumble"></div> */}
         </div>
         {/* right */}
-        <div className="flex flex-col gap-4 relative top-20  h-fit left-28 font-poppnis ">
+        <div className="flex flex-col gap-4 relative top-16  h-fit left-36 font-poppins ">
           <div>
             <input
               type="text"

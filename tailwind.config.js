@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppnis: ["Poppins", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       colors: {
         "custom-green": "#10b981",

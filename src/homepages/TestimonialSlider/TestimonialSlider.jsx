@@ -120,7 +120,7 @@ function TestimonialSlider() {
                   src={datas.img}
                   alt=""
                 />
-                <p className="text-2xl font-poppnis">{datas.name}</p>
+                <p className="text-2xl font-poppins">{datas.name}</p>
               </div>
               <div>
                 <p className="text-md" style={{ fontFamily: "Poppins" }}>

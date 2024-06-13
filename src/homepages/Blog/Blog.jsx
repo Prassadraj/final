@@ -57,16 +57,16 @@ function Blog() {
     <div className="h-[100vh] bg-white p-10 pl-20 pr-20">
       <div className=" flex justify-between gap-3">
         <div>
-          <h1 className="text-left text-black text-3xl font-poppnis font-bold">
+          <h1 className="text-left text-black text-3xl font-poppins font-bold">
             Blog Snippets
           </h1>
-          <p className="max-w-xl text-lg font-poppnis mt-3">
+          <p className="max-w-xl text-lg font-poppins mt-3">
             We use only the best quality materials on the market in order to
             provide the best products to our patients.
           </p>
         </div>
         <div className="flex">
-          <p className="bg-custom-green pt-3 pb-3 pr-4 pl-4 w-[10vw] h-fit text-center text-white rounded-lg text-md font-semibold font-poppnis">
+          <p className="bg-custom-green pt-3 pb-3 pr-4 pl-4 w-[10vw] h-fit text-center text-white rounded-lg text-md font-semibold font-poppins">
             View All
           </p>
         </div>
@@ -84,7 +84,7 @@ function Blog() {
             </div>
             <div className="flex flex-col justify-start items-start gap-2 mt-3">
               <p className="bg-black p-1 text-white rounded-md">{datas.care}</p>
-              <p className="text-black font-poppnis font-semibold">
+              <p className="text-black font-poppins font-semibold">
                 {datas.title}
               </p>
               <p className="text-lg text-gray-600 max-w-md"> {datas.desc}</p>
