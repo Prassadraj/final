@@ -1,0 +1,39 @@
+.main-footer {
+  padding: 40px;
+  background: #d6fff5;
+}
+
+.widget > h5 {
+  color: #01ab86;
+}
+.widget > p {
+  color: rgb(114, 112, 112);
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  color: #01ab86;
+}
+
+.fa-linkedin {
+  color: #01ab86;
+}
+
+.fa-youtube {
+  color: #01ab86;
+}
+
+.fa-instagram {
+  color: #01ab86;
+}

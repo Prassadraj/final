@@ -151,6 +151,7 @@ function Home() {
       </div>
       <ScrollParallax />
       <ContactUs />
+      <Footer />
     </div>
   );
 }
