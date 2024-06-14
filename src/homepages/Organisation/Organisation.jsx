@@ -50,13 +50,21 @@ function Organisation() {
           <div
             className=""
             style={
-              scrollY > 3900
+              scrollY > 3900 && scrollY < 5520
                 ? {
                     top: "100px",
                     position: "fixed",
+                    transition:
+                      "position 1s ease-in-out, opacity 1s ease-in-out",
+                  }
+                : scrollY >= 5520
+                ? {
+                    display: "none",
+                    transition: "display 1s ease-in-out",
+                  }
+                : {
                     transition: "position 1s ease-in-out",
                   }
-                : {}
             }
           >
             <div className="flex gap-2 text-2xl text-black ">
@@ -117,13 +125,19 @@ function Organisation() {
           </div>
 
           <div
-            className={`my-class-name ${scrollY > 3850 ? "fixed" : ""}`}
+            className={`my-class-name ${
+              scrollY > 3850 && scrollY < 5370 ? "fixed" : ""
+            }`}
             style={
-              scrollY > 3850
+              scrollY > 3850 && scrollY < 5370
                 ? {
                     top: "270px",
                     position: "fixed",
                     transition: "top 2s ease-in-out",
+                  }
+                : scrollY >= 5370
+                ? {
+                    display: "none",
                   }
                 : {}
             }
@@ -176,7 +190,7 @@ function Organisation() {
               <p
                 className="max-w-sm text-justify"
                 style={
-                  (scrollY > 4360 && scrollY < 4940
+                  scrollY > 4360 && scrollY < 4940
                     ? {
                         opacity: 1,
                         transition: "opacity 1s ease-in-out",
@@ -184,13 +198,14 @@ function Organisation() {
                     : {
                         opacity: 0.2,
                         transition: "opacity 1s ease-in-out",
-                      },
-                  scrollY > 5367
-                    ? {
-                        opacity: 0,
-                        transition: "opacity 0.5s ease-in-out",
                       }
-                    : {})
+                  // ,
+                  // scrollY > 5367
+                  //   ? {
+                  //       opacity: 0,
+                  //       transition: "opacity 0.5s ease-in-out",
+                  //     }
+                  //   : {}
                 }
               >
                 Sachika, a first-of-its-kind initiative of CPC Diagnostics Pvt.
@@ -200,13 +215,20 @@ function Organisation() {
             </div>
           </div>
           <div
-            className={`my-class-name ${scrollY > 3700 ? "fixed" : ""}`}
+            className={`my-class-name ${
+              scrollY > 3700 && scrollY < 5220 ? "fixed" : ""
+            }`}
             style={
-              scrollY > 3700
+              scrollY > 3700 && scrollY < 5220
                 ? {
                     top: "420px",
                     position: "fixed",
                     transition: "position 2s ease-in-out",
+                  }
+                : scrollY >= 5220
+                ? {
+                    display: "none",
+                    transition: "display 2s ease-in-out",
                   }
                 : {}
             }
