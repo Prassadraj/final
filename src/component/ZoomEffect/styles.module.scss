@@ -20,7 +20,7 @@
       .imageContainer {
         position: relative;
         width: 25vw;
-        height: 30vh;
+        height: 25vh;
         img {
           object-fit: cover;
         }
@@ -37,7 +37,7 @@
 
       &:nth-of-type(3) {
         .imageContainer {
-          top: -10vh;
+          top: -20vh;
           left: -25vw;
           width: 20vw;
           height: 45vh;
@@ -46,7 +46,8 @@
 
       &:nth-of-type(4) {
         .imageContainer {
-          left: 32vw;
+          left: 28vw;
+          top: 5vh;
           width: 25vw;
           height: 30vh;
         }
@@ -63,19 +64,10 @@
 
       &:nth-of-type(6) {
         .imageContainer {
-          top: 27.5vh;
-          left: -30.5vw;
+          top: 23.5vh;
+          left: -29.5vw;
           width: 30vw;
           height: 50vh;
-        }
-      }
-
-      &:nth-of-type(7) {
-        .imageContainer {
-          top: 22.5vh;
-          left: 25vw;
-          width: 20vw;
-          height: 15vh;
         }
       }
     }

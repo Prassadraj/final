@@ -4,6 +4,8 @@ import organisation2 from "../../images/organisation/organisation2.png";
 import organisation3 from "../../images/organisation/organisation3.png";
 import "./organisation.css";
 import Heading from "./Heading";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 function Organisation() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -26,6 +28,22 @@ function Organisation() {
   //       // Do something when scrollY is greater than 100
   //     }
   //   }, [scrollY]);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".fade-in").forEach((element) => {
+      gsap.from(element, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%", // Adjust as needed
+          end: "bottom 20%", // Adjust as needed
+          scrub: true, // Smooth animation scrubbing
+        },
+      });
+    });
+  }, []);
 
   return (
     <>
@@ -57,7 +75,7 @@ function Organisation() {
                     transition:
                       "position 1s ease-in-out, opacity 1s ease-in-out",
                   }
-                : scrollY >= 5520
+                : scrollY >= 5450
                 ? {
                     display: "none",
                     transition: "display 1s ease-in-out",

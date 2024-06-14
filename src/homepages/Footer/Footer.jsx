@@ -1,60 +1,162 @@
 import "./footer.css";
-import img from "../../images/logo.png";
+import logo from "../../images/logo.png";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Footer() {
+  const col2Ref = useRef(null);
+  const col3Ref = useRef(null);
+  const col4Ref = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const animateColumns = (ref) => {
+      gsap.from(ref.current.children, {
+        opacity: 0,
+        x: 50,
+        duration: 1,
+        delay: 0.5,
+        stagger: {
+          amount: 1,
+        },
+        scrollTrigger: {
+          trigger: ref.current,
+          start: "top 80%", // Adjust the start position based on your layout
+        },
+      });
+    };
+
+    animateColumns(col2Ref);
+    animateColumns(col3Ref);
+    animateColumns(col4Ref);
+  }, []);
+
   return (
-    <div className="container-fluid main-footer text-center">
-      {" "}
-      {/* Added text-center class */}
-      <div className="row">
-        <div className="col-lg-3 image-widget mt-4">
-          <img src={img} alt="" width={"180px"} height={"100px"} />
-          <p className="mt-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint{" "}
+    <div className="h-[75vh] bg-light-green">
+      <div className="flex justify-around pr-14">
+        {/* col 1 */}
+        <div className="flex items-center flex-col gap-3 mt-28 col1">
+          <div className="glassy-effect-container">
+            <img
+              src={logo}
+              alt="Logo"
+              className="glassy-effect"
+              width="200px"
+            />
+          </div>
+          <p className="text-md max-w-xs text-center font-poppins font-semibold">
+            Experience personalized medical care from the comfort of your home.
           </p>
         </div>
+        {/* col 2 */}
+        <div
+          className="flex flex-col items-start mt-16 font-poppins gap-2 col2"
+          ref={col2Ref}
+        >
+          <h1 className="text-xl text-custom-green font-poppins">
+            Quick Links
+          </h1>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>About</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Contact</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Career</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>CSR Policy</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Our Brand</p>
+          </Link>
+        </div>
+        {/* col 3 */}
+        <div
+          className="flex flex-col items-start mt-16 font-poppins gap-2 col3"
+          ref={col3Ref}
+        >
+          <h1 className="text-xl text-custom-green font-poppins">Products</h1>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Biochemistry</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Hematology</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>POC</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Electrolyte</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Clinical Microbiology</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Pre Analytical Automation</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>COVID-19</p>
+          </Link>
+        </div>
+        {/* col 4 */}
+        <div
+          className="flex flex-col items-start mt-16 font-poppins gap-2 col4"
+          ref={col4Ref}
+        >
+          <h1 className="text-xl text-custom-green font-poppins">Others</h1>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Help and Support</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Resources</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Residential Address</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Cookie Preferences</p>
+          </Link>
+          <Link to="/" className="text-lg hover:underline hover:text-black">
+            <p>Corporate Address</p>
+          </Link>
+        </div>
+      </div>
 
-        <div className="col-lg-3 widget px-5">
-          <h5>Quick Links</h5> <br />
-          <p>About</p>
-          <p>Contact</p>
-          <p>Career</p>
-          <p>CSR Policy</p>
-          <p>Our Brand</p>
+      <div className="h-[1px] w-[90%] flex justify-center items-center text-center bg-custom-green mx-auto mt-4"></div>
+      <div className="flex justify-between mt-4 pl-16 pr-16">
+        <div className="text-3xl text-custom-green flex gap-3">
+          <Link className="hover:text-sky-600">
+            <FontAwesomeIcon icon={faFacebook} />
+          </Link>
+          <Link>
+            <FontAwesomeIcon
+              className="hover:text-red-500"
+              icon={faInstagram}
+            />
+          </Link>
+          <Link>
+            <FontAwesomeIcon icon={faLinkedin} />
+          </Link>
+          <Link>
+            <FontAwesomeIcon className="hover:text-red-500" icon={faYoutube} />
+          </Link>
         </div>
-        <div className="col-lg-3 widget">
-          <h5>Products</h5> <br />
-          <p>Biochemistry</p>
-          <p>Heamotology</p>
-          <p>POC</p>
-          <p>Electrolyte</p>
-          <p>Clinical Micorbiology</p>
-          <p>Pre Analytical Automation</p>
-          <p>COVID 19</p>
-        </div>
-        <div className="col-lg-3 widget">
-          <h5>Others</h5> <br />
-          <p>Help and Support</p>
-          <p>Resources</p>
-          <p>Residential Address</p> {/* Corrected spelling of Residential */}
-          <p>Cookie Preferences</p> {/* Corrected spelling of Preferences */}
-          <p>Corporate Address</p>
+        <div className=" text-lg font-poppins font-semibold">
+          <p>Everlife CPC 2024 © All Rights Reserved</p>
         </div>
       </div>
-      <hr style={{}} />
-      <div className="row">
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          {" "}
-          {/* Center-align social media icons */}
-          <a href="#" className="fa fa-facebook"></a>
-          <a href="#" className="fa fa-linkedin"></a>
-          <a href="#" className="fa fa-youtube"></a>
-          <a href="#" className="fa fa-instagram"></a>
-        </div>
-      </div>
-      <p style={{ float: "right", position: "relative", top: "-50px" }}>
-        Everlife CPC 2024 &#169; All rights reserved
-      </p>
     </div>
   );
 }

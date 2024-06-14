@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Tilt from "react-parallax-tilt";
 const FeaturedProducts = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -73,7 +74,9 @@ const Card = ({ card }) => {
   return (
     <div className="relative h-[400px] w-[350px] overflow-hidden bg-light-green rounded-2xl ">
       <div className="flex justify-center items-center w-full mt-10">
-        <img width="150px" src={card.url} alt="" />
+        <Tilt scale={1.3} transitionSpeed={2500}>
+          <img width="150px" src={card.url} alt="" />
+        </Tilt>
       </div>
       <div
         className="absolute top-60 left-10 right-10 "

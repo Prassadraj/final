@@ -1,39 +1,33 @@
-.main-footer {
-  padding: 40px;
-  background: #d6fff5;
+.glassy-effect-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
 }
 
-.widget > h5 {
-  color: #01ab86;
-}
-.widget > p {
-  color: rgb(114, 112, 112);
-}
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
+.glassy-effect {
+  position: relative;
+  z-index: 1;
 }
 
-.fa:hover {
-  opacity: 0.7;
+.glassy-effect::before {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+  transition: top 1s, left 1s;
 }
 
-.fa-facebook {
-  color: #01ab86;
-}
-
-.fa-linkedin {
-  color: #01ab86;
-}
-
-.fa-youtube {
-  color: #01ab86;
-}
-
-.fa-instagram {
-  color: #01ab86;
+.glassy-effect-container:hover .glassy-effect::before {
+  top: 150%;
+  left: 150%;
 }
