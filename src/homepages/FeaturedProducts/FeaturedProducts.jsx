@@ -74,7 +74,7 @@ const Card = ({ card }) => {
   return (
     <div className="relative h-[400px] w-[350px] overflow-hidden bg-light-green rounded-2xl ">
       <div className="flex justify-center items-center w-full mt-10">
-        <Tilt scale={1.3} transitionSpeed={2500}>
+        <Tilt scale={1.2} transitionSpeed={2500}>
           <img width="150px" src={card.url} alt="" />
         </Tilt>
       </div>
@@ -83,7 +83,7 @@ const Card = ({ card }) => {
         style={{ fontFamily: "Poppins" }}
       >
         <div className="flex justify-start">
-          <h1 className="text-xl text-gray-700">{card.title}</h1>
+          <h1 className="text-xl text-gray-700 font-poppins">{card.title}</h1>
         </div>
         <p>{card.content}</p>
       </div>
