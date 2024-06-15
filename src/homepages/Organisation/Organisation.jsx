@@ -129,7 +129,7 @@ function Organisation() {
               <p
                 className="h-36 w-[2px]  relative right-7 bottom-1 border-dotted border-3"
                 style={
-                  scrollY > 3900
+                  scrollY > 4360
                     ? {
                         background: "black",
                         transition: "background 1s ease-in-out",
@@ -192,11 +192,11 @@ function Organisation() {
                   scrollY > 4360 && scrollY < 4940
                     ? {
                         opacity: 1,
-                        transition: "background 1s ease-in-out",
+                        transition: "opacity 1s ease-in-out",
                       }
                     : {
                         opacity: 0.2,
-                        transition: "background 1s ease-in-out",
+                        transition: "opacity 1s ease-in-out",
                       }
                 }
               >
@@ -207,7 +207,7 @@ function Organisation() {
               <p
                 className="h-28 w-[2px]  relative right-7 bottom-2 border-dotted border-3"
                 style={
-                  scrollY > 4360
+                  scrollY > 4940
                     ? {
                         background: "black",
                         transition: "background 1s ease-in-out",
