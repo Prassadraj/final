@@ -26,6 +26,8 @@ function Home() {
   useEffect(() => {
     Splitting();
     gsap.registerPlugin(ScrollTrigger);
+
+    // Button animation
     gsap.fromTo(
       ".btn1",
       {
@@ -35,33 +37,44 @@ function Home() {
       {
         opacity: 1,
         skewX: 0,
-
         duration: 1,
         delay: 0.5,
-        scrollTrigger: ".btn1",
-
-        stagger: {
-          amount: 1,
+        scrollTrigger: {
+          trigger: ".btn1",
+          once: true, // Play animation only once
+          stagger: {
+            amount: 1,
+          },
         },
       }
     );
+
+    // Subtitle animation
     gsap.from(".subTitle", {
       duration: 1,
       opacity: 0,
       y: 120,
-      scrollTrigger: ".subTitle",
-      stagger: 1,
+      scrollTrigger: {
+        trigger: ".subTitle",
+        once: true, // Play animation only once
+        stagger: 1,
+      },
     });
 
-    // GSAP animation for splitting effect
+    // Character animation
     gsap.from(".char", {
       duration: 1,
       opacity: 0,
       y: 200,
       ease: "power4.out",
       stagger: 0.05,
+      scrollTrigger: {
+        trigger: ".char",
+        once: true, // Play animation only once
+      },
     });
   }, []);
+
   return (
     <div className="">
       <div className="section1 flex h-full overflow-hidden">

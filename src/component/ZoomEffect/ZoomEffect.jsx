@@ -21,37 +21,25 @@ function ZoomEffect() {
     offset: ["start start", "end end"],
   });
 
-  // Debounce scroll event
-  const handleScroll = debounce(() => {
-    // Your scroll handling logic
-  }, 20); // Adjust debounce time as needed
-
-  React.useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   // Your scale transforms
   const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
   const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
   const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
-  const scale8 = useTransform(scrollYProgress, [0, 1], [1, 7]);
-  const scale9 = useTransform(scrollYProgress, [0, 1], [1, 8]);
+  const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
+  const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
 
   const pictures = [
-    { src: itrackImg1, scale: scale4, zIndex: 999 },
+    { src: itrackImg1, scale: scale4, zIndex: 1 },
     { src: itrackImg2, scale: scale5 },
     { src: itrackImg3, scale: scale6 },
-    { src: itrackImg4, scale: scale8 },
-    { src: itrackImg5, scale: scale9 },
-    { src: itrackImg5, scale: scale9 },
+    { src: itrackImg4, scale: scale5 },
+    { src: itrackImg5, scale: scale6 },
+    { src: itrackImg5, scale: scale8 },
   ];
 
   return (
     <div
-      className="flex flex-col gap-5 p-5"
+      className="flex flex-col gap-5"
       style={{
         width: "100%",
         height: "100%",
@@ -71,20 +59,21 @@ function ZoomEffect() {
       </div>
       <div ref={container} className={styles.container}>
         <div className={styles.sticky}>
-          <AnimatePresence>
-            {pictures.map(({ src, scale, zIndex }, index) => (
-              <motion.div
-                key={index}
-                style={{ scale, zIndex, willChange: "transform" }}
-                className={styles.el}
-                transition={{ duration: 0.3, ease: "easeOut" }} // Adjust duration and easing
-              >
-                <div className={styles.imageContainer}>
-                  <img src={src} alt="image" />
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          {/* <AnimatePresence> */}
+          {pictures.map(({ src, scale, zIndex }, index) => (
+            <motion.div
+              key={index}
+              style={{ scale, zIndex }}
+              className={styles.el}
+              // transition={{ duration: 0.3, ease: "easeOut" }}
+              // Adjust duration and easing
+            >
+              <div className={styles.imageContainer}>
+                <img src={src} alt="image" placeholder="blur" />
+              </div>
+            </motion.div>
+          ))}
+          {/* </AnimatePresence> */}
         </div>
       </div>
     </div>
