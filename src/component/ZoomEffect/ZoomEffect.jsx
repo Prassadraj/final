@@ -50,7 +50,7 @@ function ZoomEffect() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex justify-center items-center flex-col gap-4">
+      <div className="flex justify-center items-center flex-col gap-4 mt-5">
         <img style={{ objectFit: "cover" }} width="220px" src={itrack} alt="" />
         <p className="text-2xl">
           CPC developed i-track, a proprietary system for remote instrument

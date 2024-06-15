@@ -21,6 +21,7 @@ import Footer from "../../homepages/Footer/Footer";
 import Blog from "../../homepages/Blog/Blog";
 import ContactUs from "../../homepages/ContactUs/ContactUs";
 import Organisation from "../../homepages/Organisation/Organisation";
+import { Parallax } from "react-parallax";
 
 function Home() {
   useEffect(() => {
@@ -157,7 +158,16 @@ function Home() {
       <Section3 />
       {/* featured Products */}
       <FeaturedProducts />
-      <Organisation />
+
+      <Parallax
+        blur={10}
+        bgImage="https://img.freepik.com/premium-psd/white-background-with-triangle-pattern_691560-10152.jpg?w=360"
+        bgImageAlt="the cat"
+        strength={200}
+      >
+        <Organisation />
+      </Parallax>
+
       {/* section5 */}
       <div style={{ marginBottom: "10vh" }}>
         <ZoomEffect />
