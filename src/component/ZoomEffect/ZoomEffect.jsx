@@ -53,9 +53,10 @@ function ZoomEffect() {
       <div className="flex justify-center items-center flex-col gap-4">
         <img style={{ objectFit: "cover" }} width="220px" src={itrack} alt="" />
         <p className="text-2xl">
-          In yet another pioneering venture, CPC created i-track, our home-grown
-          design for remote maintenance of instruments.
+          CPC developed i-track, a proprietary system for remote instrument
+          maintenance, in a groundbreaking initiative.
         </p>
+        <p className="text-xl text-center">For SupportDial: 1800 571 1101</p>
       </div>
       <div ref={container} className={styles.container}>
         <div className={styles.sticky}>

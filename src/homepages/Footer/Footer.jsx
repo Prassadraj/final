@@ -177,6 +177,9 @@ function Footer() {
           <p>Everlife CPC 2024 © All Rights Reserved</p>
         </div>
       </div>
+      <p className="text-[6px] relative bottom-0 flex justify-center items-center text-name ">
+        Prassad Raj
+      </p>
     </div>
   );
 }

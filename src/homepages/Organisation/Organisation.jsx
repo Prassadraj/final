@@ -90,7 +90,7 @@ function Organisation() {
             style={
               scrollY > 3900 && scrollY < 5480
                 ? {
-                    top: "100px",
+                    top: "75px",
                     position: "fixed",
                     transition:
                       "position 1s ease-in-out, opacity 1s ease-in-out",
@@ -127,7 +127,7 @@ function Organisation() {
             </div>
             <div className="flex justify-center items-center mt-2 ml-12 text-lg">
               <p
-                className="h-32 w-[2px]  relative right-7 bottom-2 border-dotted border-3"
+                className="h-36 w-[2px]  relative right-7 bottom-1 border-dotted border-3"
                 style={
                   scrollY > 3900
                     ? {
@@ -155,9 +155,10 @@ function Organisation() {
                       }
                 }
               >
-                Sachika, a first-of-its-kind initiative of CPC Diagnostics Pvt.
-                Ltd, is a centre for learning life sciences. Sachika empowers
-                clinicians by ...
+                Jeev Diagnostics Pvt. Ltd. is a collaborative venture between
+                Awareness Technology Inc. (USA) and CPC Diagnostics Pvt. Ltd.
+                (India), focusing on cutting-edge in vitro clinical chemistry
+                reagents.
               </p>
             </div>
           </div>
@@ -166,7 +167,8 @@ function Organisation() {
             style={
               scrollY > 3850 && scrollY < 5330
                 ? {
-                    top: "270px",
+                    top: "265px",
+                    right: "96px",
                     position: "fixed",
                     transition: "top 2s ease-in-out",
                   }
@@ -244,9 +246,9 @@ function Organisation() {
                   //   : {}
                 }
               >
-                Sachika, a first-of-its-kind initiative of CPC Diagnostics Pvt.
-                Ltd, is a centre for learning life sciences. Sachika empowers
-                clinicians by ...
+                Sachika, an initiative by CPC Diagnostics Pvt. Ltd., focuses on
+                life sciences education, empowering clinicians with contemporary
+                bioscience skills.
               </p>
             </div>
           </div>
@@ -312,9 +314,9 @@ function Organisation() {
               }
             >
               <p className="max-w-sm text-justify">
-                Sachika, a first-of-its-kind initiative of CPC Diagnostics Pvt.
-                Ltd, is a centre for learning life sciences. Sachika empowers
-                clinicians by ...
+                CPC’s division for diagnostic instrument manufacturing aims at
+                empowerment, reliability, and innovation in indigenous
+                manufacturing practices
               </p>
             </div>
           </div>

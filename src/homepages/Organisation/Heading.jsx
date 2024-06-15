@@ -7,8 +7,8 @@ function Heading() {
         Our Sister Organizations
       </h1>
       <p className=" font-poppins text-lg max-w-xl text-center">
-        We use only the best quality materials on the market in order to provide
-        the best products to our patients.
+        Explore our network of affiliated companies that enhance healthcare
+        globally.
       </p>
     </div>
   );
