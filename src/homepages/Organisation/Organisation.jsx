@@ -20,16 +20,17 @@ function Organisation() {
     };
   }, []); // Empty dependency array ensures this effect runs only once on mount
   console.log(scrollY);
-  //   useEffect(() => {
-  // Optionally, you can log or do something with scrollY here
+  useEffect(() => {
+    // Example of how you might conditionally use scrollY value
+    if (scrollY > 100) {
+      // Do something when scrollY is greater than 100
+    }
+  }, [scrollY]);
 
-  //     // Example of how you might conditionally use scrollY value
-  //     if (scrollY > 100) {
-  //       // Do something when scrollY is greater than 100
-  //     }
-  //   }, [scrollY]);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    // Fade-in animations
     gsap.utils.toArray(".fade-in").forEach((element) => {
       gsap.from(element, {
         opacity: 0,
@@ -37,13 +38,32 @@ function Organisation() {
         duration: 1,
         scrollTrigger: {
           trigger: element,
-          start: "top 80%", // Adjust as needed
-          end: "bottom 20%", // Adjust as needed
+          start: "top 80%", // Start animation when top of element reaches 80% of viewport height
+          end: "bottom 20%", // End animation when bottom of element reaches 20% of viewport height
           scrub: true, // Smooth animation scrubbing
         },
       });
     });
-  }, []);
+
+    // Image animations
+    gsap.utils.toArray(".image").forEach((image) => {
+      gsap.from(image, {
+        scale: 0,
+        duration: 1,
+        delay: 0.5,
+        opacity: 0,
+        stagger: {
+          amount: 1,
+        },
+        scrollTrigger: {
+          trigger: image,
+          start: "top 100%", // Start animation when top of image reaches 100% of viewport height
+          end: "center center", // End animation when image is at the center of viewport
+          scrub: true,
+        },
+      });
+    });
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <>
@@ -51,16 +71,16 @@ function Organisation() {
       <div className="h-[300vh] flex">
         <div className="flex-1 flex justify-center items-center flex-col">
           <div className="h-[100vh] flex flex-col justify-center items-center">
-            <img src={organisation1} alt="" />
-            <p className="text-2xl font-poppins">Jeev</p>
+            <img src={organisation1} alt="" width="200px" className="image" />
+            <p className="text-2xl font-poppins image">Jeev</p>
           </div>
           <div className="h-[100vh] flex flex-col justify-center items-center">
-            <img src={organisation2} alt="" />
-            <p className="text-2xl font-poppins">Sachika</p>
+            <img src={organisation2} alt="" width="200px" className="image" />
+            <p className="text-2xl font-poppins image">Sachika</p>
           </div>
           <div className="h-[100vh] flex flex-col justify-center items-center">
-            <img src={organisation3} alt="" />
-            <p className="text-2xl font-poppins">Jeev</p>
+            <img src={organisation3} alt="" width="200px" className="image" />
+            <p className="text-2xl font-poppins image">Jeev</p>
           </div>
         </div>
         {/* rightSide */}
@@ -68,14 +88,14 @@ function Organisation() {
           <div
             className=""
             style={
-              scrollY > 3900 && scrollY < 5520
+              scrollY > 3900 && scrollY < 5480
                 ? {
                     top: "100px",
                     position: "fixed",
                     transition:
                       "position 1s ease-in-out, opacity 1s ease-in-out",
                   }
-                : scrollY >= 5450
+                : scrollY >= 5480
                 ? {
                     display: "none",
                     transition: "display 1s ease-in-out",
@@ -143,19 +163,17 @@ function Organisation() {
           </div>
 
           <div
-            className={`my-class-name ${
-              scrollY > 3850 && scrollY < 5370 ? "fixed" : ""
-            }`}
             style={
-              scrollY > 3850 && scrollY < 5370
+              scrollY > 3850 && scrollY < 5330
                 ? {
                     top: "270px",
                     position: "fixed",
                     transition: "top 2s ease-in-out",
                   }
-                : scrollY >= 5370
+                : scrollY >= 5330
                 ? {
                     display: "none",
+                    transition: "display 1s ease-in-out",
                   }
                 : {}
             }
@@ -233,17 +251,14 @@ function Organisation() {
             </div>
           </div>
           <div
-            className={`my-class-name ${
-              scrollY > 3700 && scrollY < 5220 ? "fixed" : ""
-            }`}
             style={
-              scrollY > 3700 && scrollY < 5220
+              scrollY > 3700 && scrollY < 5190
                 ? {
                     top: "420px",
                     position: "fixed",
                     transition: "position 2s ease-in-out",
                   }
-                : scrollY >= 5220
+                : scrollY >= 5190
                 ? {
                     display: "none",
                     transition: "display 2s ease-in-out",

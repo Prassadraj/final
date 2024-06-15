@@ -19,12 +19,32 @@ function Footer() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".logo", {
+      scale: 0,
+      duration: 0.5,
+      skewX: 65,
+      delay: 0.5,
+      stagger: {
+        amount: 1,
+      },
+      scrollTrigger: ".logo",
+    });
+    gsap.from(".contentt", {
+      scale: 0,
+      duration: 0.5,
+      skewX: 65,
+      delay: 0.5,
+      stagger: {
+        amount: 1,
+      },
+      scrollTrigger: ".contentt",
+    });
 
     const animateColumns = (ref) => {
       gsap.from(ref.current.children, {
         opacity: 0,
         x: 50,
-        duration: 1,
+        duration: 0.5,
         delay: 0.5,
         stagger: {
           amount: 1,
@@ -50,11 +70,11 @@ function Footer() {
             <img
               src={logo}
               alt="Logo"
-              className="glassy-effect"
+              className="glassy-effect logo"
               width="200px"
             />
           </div>
-          <p className="text-md max-w-xs text-center font-poppins font-semibold">
+          <p className="text-md max-w-xs text-center font-poppins font-semibold contentt">
             Experience personalized medical care from the comfort of your home.
           </p>
         </div>

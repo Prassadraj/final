@@ -138,7 +138,7 @@ const Slider = () => {
             </li>
           </ul>
 
-          <div id="shadow" className="shadow"></div>
+          {/* <div id="shadow" className="shadow"></div> */}
 
           <div id="nav-arrows" className="nav-arrows">
             {/* <a>Next</a>

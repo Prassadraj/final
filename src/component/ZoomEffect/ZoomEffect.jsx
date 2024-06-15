@@ -75,9 +75,9 @@ function ZoomEffect() {
             {pictures.map(({ src, scale, zIndex }, index) => (
               <motion.div
                 key={index}
-                style={{ scale, zIndex }}
+                style={{ scale, zIndex, willChange: "transform" }}
                 className={styles.el}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                transition={{ duration: 0.3, ease: "easeOut" }} // Adjust duration and easing
               >
                 <div className={styles.imageContainer}>
                   <img src={src} alt="image" />
