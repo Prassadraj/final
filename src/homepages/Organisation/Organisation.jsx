@@ -68,7 +68,16 @@ function Organisation() {
   return (
     <>
       <Heading />
-      <div className="h-[300vh] flex">
+      <div
+        className="h-[300vh] flex"
+        style={{
+          backgroundImage: "url('')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          width: "100%",
+        }}
+      >
         <div className="flex-1 flex justify-center items-center flex-col">
           <div className="h-[100vh] flex flex-col justify-center items-center">
             <img src={organisation1} alt="" width="200px" className="image" />
