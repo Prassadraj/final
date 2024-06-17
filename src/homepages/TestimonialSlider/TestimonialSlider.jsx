@@ -83,19 +83,19 @@ function TestimonialSlider() {
         objectFit: "cover",
         width: "100%",
 
-        backgroundImage:
-          "url('https://images.pexels.com/photos/9881353/pexels-photo-9881353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+        // backgroundImage:
+        //   "url('https://images.pexels.com/photos/9881353/pexels-photo-9881353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
       }}
     >
       <div className="flex justify-center items-center flex-col gap-5">
         <h1
-          className="text-4xl text-white font-bold headline"
+          className="text-4xl text-black font-bold headline"
           style={{ fontFamily: "Poppins" }}
         >
           Testimonials
         </h1>
         <p
-          className="text-xl text-light-green"
+          className="text-xl text-custom-green"
           style={{
             fontFamily: "Poppins",
             width: "120vh",

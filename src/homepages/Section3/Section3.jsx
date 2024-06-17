@@ -138,19 +138,20 @@ function Section3() {
         </div>
         <div
           className="right imagebox"
-          style={{
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          }}
+          // style={{
+          //   clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          //   WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          // }}
         >
           <div
             id="image1"
             className="relative w-[30vw] h-[50vh] top-0 right-10 rounded-2xl z-10"
           >
             <img
-              src={image1}
+              // src={image1}
+              src="https://img.freepik.com/free-vector/hand-drawn-nurse-team_23-2148161551.jpg?t=st=1718609731~exp=1718613331~hmac=67cc7b0b2da4a64c3b3036c6e139c4bb18e8b408aba2d4fec1814f3b3e5a70c8&w=740"
               alt="Description of image1"
-              className="animate-leftRight"
+              className="animate-leftRight rounded-lg"
             />
           </div>
           <div
@@ -168,7 +169,8 @@ function Section3() {
             className="relative w-[30vw] h-[50vh] top-10 left-10 rounded-2xl z-10"
           >
             <img
-              src={image2}
+              // src={image2}
+              src="https://img.freepik.com/free-vector/employee-engagement-concept-illustration_114360-13904.jpg?w=740&t=st=1718610168~exp=1718610768~hmac=c24101451cb65007b2aa11de43b714db18794a1b6733a150026bcf17156d6c60"
               alt="Description of image1"
               className="animate-rightDown rounded-lg"
             />
