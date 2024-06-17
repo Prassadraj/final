@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   useScroll,
   useTransform,
   motion,
-  AnimatePresence,
+  useSpring,
 } from "framer-motion";
 import debounce from "lodash.debounce";
 import styles from "./styles.module.scss";
@@ -16,17 +16,32 @@ import itrackImg5 from "../../images/itrack/itrack5.png";
 
 function ZoomEffect() {
   const container = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  const handleScroll = debounce(() => {
+    setScrollY(window.scrollY);
+  }, 10); // Adjust the debounce delay as needed
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
   });
 
-  // Your scale transforms
-  const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
-  const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
-  const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
-  const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
-  const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
+  const springConfig = { damping: 20, stiffness: 100 };
+  const smoothScrollYProgress = useSpring(scrollYProgress, springConfig);
+
+  const scale4 = useTransform(smoothScrollYProgress, [0, 1], [1, 4]);
+  const scale5 = useTransform(smoothScrollYProgress, [0, 1], [1, 5]);
+  const scale6 = useTransform(smoothScrollYProgress, [0, 1], [1, 6]);
+  const scale8 = useTransform(smoothScrollYProgress, [0, 1], [1, 8]);
+  const scale9 = useTransform(smoothScrollYProgress, [0, 1], [1, 9]);
 
   const pictures = [
     { src: itrackImg1, scale: scale4, zIndex: 1 },
@@ -60,21 +75,17 @@ function ZoomEffect() {
       </div>
       <div ref={container} className={styles.container}>
         <div className={styles.sticky}>
-          {/* <AnimatePresence> */}
           {pictures.map(({ src, scale, zIndex }, index) => (
             <motion.div
               key={index}
               style={{ scale, zIndex }}
               className={styles.el}
-              // transition={{ duration: 0.3, ease: "easeOut" }}
-              // Adjust duration and easing
             >
               <div className={styles.imageContainer}>
                 <img src={src} alt="image" placeholder="blur" />
               </div>
             </motion.div>
           ))}
-          {/* </AnimatePresence> */}
         </div>
       </div>
     </div>
