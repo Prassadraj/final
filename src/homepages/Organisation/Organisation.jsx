@@ -51,7 +51,9 @@ function Organisation() {
         scale: 0,
         duration: 1,
         delay: 0.5,
+        clipPath: "polygon (0% 100%,100% 100%,100% 0%,0% 0%)",
         opacity: 0,
+        ease: "power3.out",
         stagger: {
           amount: 1,
         },

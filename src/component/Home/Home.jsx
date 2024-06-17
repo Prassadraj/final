@@ -22,6 +22,7 @@ import Blog from "../../homepages/Blog/Blog";
 import ContactUs from "../../homepages/ContactUs/ContactUs";
 import Organisation from "../../homepages/Organisation/Organisation";
 import { Parallax } from "react-parallax";
+import ProductCategaries from "../../homepages/ProductCategaries/ProductCategaries";
 
 function Home() {
   useEffect(() => {
@@ -174,6 +175,7 @@ function Home() {
       </div>
       <ScrollParallax />
       <ContactUs />
+      <ProductCategaries />
       <Footer />
     </div>
   );
