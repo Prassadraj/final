@@ -102,7 +102,7 @@ function Organisation() {
             style={
               scrollY > 3900 && scrollY < 5480
                 ? {
-                    top: "75px",
+                    top: "50px",
                     position: "fixed",
                     transition:
                       "position 1s ease-in-out, opacity 1s ease-in-out",
@@ -179,7 +179,7 @@ function Organisation() {
             style={
               scrollY > 3850 && scrollY < 5330
                 ? {
-                    top: "265px",
+                    top: "245px",
                     right: "96px",
                     position: "fixed",
                     transition: "top 2s ease-in-out",
@@ -212,7 +212,7 @@ function Organisation() {
                       }
                 }
               >
-                Jeev2
+                Sachika
               </p>
             </div>
             <div className="flex justify-center items-center mt-1 ml-12 text-lg">
@@ -268,7 +268,7 @@ function Organisation() {
             style={
               scrollY > 3700 && scrollY < 5190
                 ? {
-                    top: "420px",
+                    top: "410px",
                     position: "fixed",
                     transition: "position 2s ease-in-out",
                   }
@@ -303,7 +303,7 @@ function Organisation() {
               <p className="bg-transparent border-2 border-solid border-gray-500 h-10 w-10 text-center rounded-full flex items-center justify-center">
                 3
               </p>
-              <p>Jeev3</p>
+              <p>CPC Med Sys</p>
             </div>
             <div
               className="flex justify-center items-center mt-0 ml-12 text-lg"

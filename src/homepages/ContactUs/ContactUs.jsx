@@ -17,7 +17,7 @@ function ContactUs() {
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 w-full h-full object-cover z-0 bg-black opacity-40 rounded-xl"></div>
+        <div className="absolute inset-0 w-full h-full object-cover z-0 bg-black opacity-0 rounded-xl"></div>
         <div className="flex flex-col z-10">
           <div className="mt-40 ml-24">
             <h1

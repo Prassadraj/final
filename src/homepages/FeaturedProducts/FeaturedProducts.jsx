@@ -27,9 +27,32 @@ const FeaturedProducts = () => {
         },
       }
     );
+    gsap.fromTo(
+      ".products",
+      {
+        opacity: 0,
+        width: "0%",
+      },
+      {
+        opacity: 1,
+        width: "100%",
+        duration: 1,
+        delay: 1.5,
+        scrollTrigger: ".products",
+        stagger: {
+          amount: 1,
+        },
+      }
+    );
   }, []);
   return (
-    <div className="bg-white">
+    <div
+      className="pt-10"
+      style={{
+        clipPath:
+          " polygon(50% 0%, 100% 3%, 100% 92%, 51% 100%, 0 100%, 0% 60%, 0 3%);",
+      }}
+    >
       <div className="flex h-10 items-center pl-24 flex-col gap-4 heading">
         <span
           className="font-semibold text-3xl uppercase heading"
@@ -57,7 +80,7 @@ const HorizontalScrollCarousel = ({ cards }) => {
   const x = useTransform(scrollYProgress, [0, 1.6], ["1%", "-95%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh]">
+    <section ref={targetRef} className="relative h-[300vh] products">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-8">
           {cards.slice(0, 7).map((card) => {

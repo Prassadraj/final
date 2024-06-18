@@ -163,7 +163,7 @@ function Home() {
 
       <Parallax
         blur={10}
-        bgImage={organisationBG}
+        // bgImage={organisationBG}
         bgImageAlt="the cat"
         strength={200}
       >
