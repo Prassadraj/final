@@ -98,7 +98,7 @@ function Section3() {
         className="section3 flex justify-around h-[100vh] pt-28 pl-20 pr-20 bg-slate-200"
         style={{ clipPath: "polygon(0 20%, 100% 0, 100% 73%, 0% 100%)" }}
       >
-        <div className="flex flex-col pt-20">
+        <div className="flex flex-col pt-20 -mt-10">
           <div className="mb-5">
             <p
               className="font-bold text-gray-900 text-3xl header1"
@@ -184,7 +184,7 @@ function Section3() {
             className="animate-leftUp relative w-[30vw] h-[60vh] rounded-2xl bg-gradient-to-t from-custom-green to-gray-200"
           ></div>
         </div>
-        <div className="flex flex-col pt-20 ml-10">
+        <div className="flex flex-col pt-20 ml-10 -mt-20">
           <div className="mb-5">
             <p
               className="font-bold text-gray-900 text-3xl header1"
