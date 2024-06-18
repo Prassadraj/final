@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import world from "./images/humanitarian.gif";
+import Employees from "./images/management.gif";
+import Customers from "./images/loyalty.gif";
+import Principles from "./images/consultation.gif";
+import partners from "./images/warehouse.gif";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,11 +80,11 @@ function Section2() {
   }, []);
 
   const stats = [
-    { end: 3, label: "Country presence" },
-    { end: 250, label: "Employees" },
-    { end: 1000, label: "Customers" },
-    { end: 16, label: "Principles" },
-    { end: 300, label: "Channel partners" },
+    { end: 3, label: "Country presence", img: world },
+    { end: 250, label: "Employees", img: Employees },
+    { end: 1000, label: "Customers", img: Customers },
+    { end: 16, label: "Principles", img: Principles },
+    { end: 300, label: "Channel partners", img: partners },
   ];
 
   return (
@@ -90,6 +95,7 @@ function Section2() {
       {stats.map((stat, index) => (
         <div key={index} className="flex flex-col items-center counterBox">
           <div className="flex items-center justify-center">
+            <img width="50px" src={stat.img} alt="" />
             <span
               ref={(el) => (countUpRefs.current[index] = el)}
               data-end={stat.end}

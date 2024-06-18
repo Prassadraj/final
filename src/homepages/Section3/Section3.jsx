@@ -131,7 +131,8 @@ function Section3() {
           </div>
           <div className="mt-10">
             <button
-              className="btn1 pt-2 pb-2 pl-7 pr-7 w-52 text-[#00A786] hover:bg-[#00a986] hover:text-white"
+              className="btn1 pt-3 pb-3 pl-7 pr-7  max-w-md text-[#00A786] hover:bg-[#00a986] hover:text-white
+              font-poppins text-md"
               style={{ border: "2px solid #00A786" }}
             >
               View Our Products
@@ -216,7 +217,7 @@ function Section3() {
           </div>
           <div className="mt-10">
             <button
-              className="btn1 pt-2 pb-2 pl-7 pr-7 w-52 text-[#00A786] hover:bg-[#00a986] hover:text-white"
+              className="font-poppins btn1 pt-3 pb-3 pl-7 pr-7 max-w-md text-[#00A786] hover:bg-[#00a986] hover:text-white text-md"
               style={{ border: "2px solid #00A786" }}
             >
               View Our Products
