@@ -39,11 +39,9 @@ function ScrollParallax() {
   return (
     <div>
       <div className="panel h-screen flex justify-center items-center">
-        <TestimonialSlider />
+        {/* <TestimonialSlider /> */}
       </div>
-      <div id="panel2">
-        <Blog />
-      </div>
+      <div id="panel2"></div>
     </div>
   );
 }

@@ -1,10 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import {
-  useScroll,
-  useTransform,
-  motion,
-  useSpring,
-} from "framer-motion";
+import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 import debounce from "lodash.debounce";
 import styles from "./styles.module.scss";
 import itrack from "../../images/itrack/itrack.png";

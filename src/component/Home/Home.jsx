@@ -173,9 +173,10 @@ function Home() {
       <div style={{ marginBottom: "10vh" }}>
         <ZoomEffect />
       </div>
-      <ScrollParallax />
-      <ContactUs />
+      <TestimonialSlider />
       <ProductCategaries />
+      <Blog />
+      <ContactUs />
       <Footer />
     </div>
   );
