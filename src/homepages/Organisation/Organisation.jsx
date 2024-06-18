@@ -6,6 +6,7 @@ import "./organisation.css";
 import Heading from "./Heading";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import organisationBG from "./OrganisationBG.png";
 function Organisation() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -72,13 +73,13 @@ function Organisation() {
       <Heading />
       <div
         className="h-[300vh] flex"
-        style={{
-          backgroundImage: "url('')",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          width: "100%",
-        }}
+        // style={{
+        //   backgroundImage: `url(${organisationBG})`,
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        //   width: "100%",
+        // }}
       >
         <div className="flex-1 flex justify-center items-center flex-col">
           <div className="h-[100vh] flex flex-col justify-center items-center">

@@ -23,6 +23,7 @@ import ContactUs from "../../homepages/ContactUs/ContactUs";
 import Organisation from "../../homepages/Organisation/Organisation";
 import { Parallax } from "react-parallax";
 import ProductCategaries from "../../homepages/ProductCategaries/ProductCategaries";
+import organisationBG from "../../homepages/Organisation/OrganisationBG.png";
 
 function Home() {
   useEffect(() => {
@@ -162,7 +163,7 @@ function Home() {
 
       <Parallax
         blur={10}
-        bgImage="https://img.freepik.com/premium-psd/white-background-with-triangle-pattern_691560-10152.jpg?w=360"
+        bgImage={organisationBG}
         bgImageAlt="the cat"
         strength={200}
       >

@@ -43,17 +43,23 @@ function ProductCategaries() {
       {/* Container */}
       <div className="flex w-full">
         {/* Left Section */}
-        <div className="flex flex-col flex-[1.5] gap-10 pl-24 pt-12 mt-36">
-          <h1 className="text-4xl max-w-lg text-start font-poppins font-semibold">
-            Product Categories
-          </h1>
+        <div className="flex flex-col flex-[1.5] gap-3 pl-24 pt-12 mt-32">
+          {/* <h1 className="text-4xl max-w-lg text-start font-poppins font-semibold"></h1> */}
+          <div className="text-white" style={{ lineHeight: "3px" }}>
+            <p className="text-6xl max-w-lg text-start font-poppins font-semibold">
+              Product
+            </p>
+            <p className="text-6xl max-w-lg text-start font-poppins font-semibold">
+              Categories
+            </p>
+          </div>
           <h2 className="text-xl max-w-lg text-start font-poppins">
             Our Area Of Expertise: Research-based innovative and quality
             products.
           </h2>
           <button
-            className="text-left text-xl bg-white font-poppins w-fit pl-3 pr-3 pt-2 pb-2 rounded-md
-          font-medium"
+            className="text-left text-[#0082c7] text-xl bg-white font-poppins w-fit pl-3 pr-3 pt-2 pb-2 rounded-md
+          font-medium hover:scale-90 transition-all"
           >
             Explore Products
           </button>
