@@ -18,8 +18,8 @@ const FeaturedProducts = () => {
         opacity: 1,
 
         y: "0px",
-        duration: 0.4,
-        delay: 0.5,
+        duration: 0.2,
+        delay: 0.2,
         scrollTrigger: ".heading",
 
         stagger: {

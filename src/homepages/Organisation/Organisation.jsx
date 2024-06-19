@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import organisation1 from "../../images/organisation/organisation1.png";
-import organisation2 from "../../images/organisation/organisation2.png";
-import organisation3 from "../../images/organisation/organisation3.png";
+import organisation1 from "../../images/organisation/1.png";
+import organisation2 from "../../images/organisation/2.png";
+import organisation3 from "../../images/organisation/3.png";
 import "./organisation.css";
 import Heading from "./Heading";
 import { gsap } from "gsap";
@@ -84,15 +84,15 @@ function Organisation() {
         <div className="flex-1 flex justify-center items-center flex-col">
           <div className="h-[100vh] flex flex-col justify-center items-center">
             <img src={organisation1} alt="" width="200px" className="image" />
-            <p className="text-2xl font-poppins image">Jeev</p>
+            {/* <p className="text-2xl font-poppins image">Jeev</p> */}
           </div>
           <div className="h-[100vh] flex flex-col justify-center items-center">
             <img src={organisation2} alt="" width="200px" className="image" />
-            <p className="text-2xl font-poppins image">Sachika</p>
+            {/* <p className="text-2xl font-poppins image">Sachika</p> */}
           </div>
           <div className="h-[100vh] flex flex-col justify-center items-center">
             <img src={organisation3} alt="" width="200px" className="image" />
-            <p className="text-2xl font-poppins image">Jeev</p>
+            {/* <p className="text-2xl font-poppins image">Jeev</p> */}
           </div>
         </div>
         {/* rightSide */}
@@ -266,13 +266,13 @@ function Organisation() {
           </div>
           <div
             style={
-              scrollY > 3700 && scrollY < 5190
+              scrollY > 3700 && scrollY < 5240
                 ? {
                     top: "410px",
                     position: "fixed",
                     transition: "position 2s ease-in-out",
                   }
-                : scrollY >= 5190
+                : scrollY >= 5240
                 ? {
                     display: "none",
                     transition: "display 2s ease-in-out",

@@ -17,49 +17,49 @@ function Footer() {
   const col3Ref = useRef(null);
   const col4Ref = useRef(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from(".logo", {
-      scale: 0,
-      duration: 0.5,
-      skewX: 65,
-      delay: 0.5,
-      stagger: {
-        amount: 1,
-      },
-      scrollTrigger: ".logo",
-    });
-    gsap.from(".contentt", {
-      scale: 0,
-      duration: 0.5,
-      skewX: 65,
-      delay: 0.5,
-      stagger: {
-        amount: 1,
-      },
-      scrollTrigger: ".contentt",
-    });
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   gsap.from(".logo", {
+  //     scale: 0,
+  //     duration: 0.5,
+  //     skewX: 65,
+  //     delay: 0.5,
+  //     stagger: {
+  //       amount: 1,
+  //     },
+  //     scrollTrigger: ".logo",
+  //   });
+  //   gsap.from(".contentt", {
+  //     scale: 0,
+  //     duration: 0.5,
+  //     skewX: 65,
+  //     delay: 0.5,
+  //     stagger: {
+  //       amount: 1,
+  //     },
+  //     scrollTrigger: ".contentt",
+  //   });
 
-    const animateColumns = (ref) => {
-      gsap.from(ref.current.children, {
-        opacity: 0,
-        x: 50,
-        duration: 0.5,
-        delay: 0.5,
-        stagger: {
-          amount: 1,
-        },
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 80%", // Adjust the start position based on your layout
-        },
-      });
-    };
+  //   const animateColumns = (ref) => {
+  //     gsap.from(ref.current.children, {
+  //       opacity: 0,
+  //       x: 50,
+  //       duration: 0.5,
+  //       delay: 0.5,
+  //       stagger: {
+  //         amount: 1,
+  //       },
+  //       scrollTrigger: {
+  //         trigger: ref.current,
+  //         start: "top 80%", // Adjust the start position based on your layout
+  //       },
+  //     });
+  //   };
 
-    animateColumns(col2Ref);
-    animateColumns(col3Ref);
-    animateColumns(col4Ref);
-  }, []);
+  //   animateColumns(col2Ref);
+  //   animateColumns(col3Ref);
+  //   animateColumns(col4Ref);
+  // }, []);
 
   return (
     <div className="h-[75vh] bg-light-green">
