@@ -7,6 +7,7 @@ import Heading from "./Heading";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import organisationBG from "./OrganisationBG.png";
+
 function Organisation() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -21,12 +22,6 @@ function Organisation() {
     };
   }, []); // Empty dependency array ensures this effect runs only once on mount
   console.log(scrollY);
-  useEffect(() => {
-    // Example of how you might conditionally use scrollY value
-    if (scrollY > 100) {
-      // Do something when scrollY is greater than 100
-    }
-  }, [scrollY]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -71,38 +66,27 @@ function Organisation() {
   return (
     <>
       <Heading />
-      <div
-        className="h-[300vh] flex"
-        // style={{
-        //   backgroundImage: `url(${organisationBG})`,
-        //   backgroundRepeat: "no-repeat",
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        //   width: "100%",
-        // }}
-      >
-        <div className="flex-1 flex justify-center items-center flex-col">
+      <div className="h-[300vh] flex">
+        <div className="w-[50vw] bg-black flex justify-center items-center flex-col">
           <div className="h-[100vh] flex flex-col justify-center items-center">
             <img src={organisation1} alt="" width="200px" className="image" />
-            {/* <p className="text-2xl font-poppins image">Jeev</p> */}
           </div>
           <div className="h-[100vh] flex flex-col justify-center items-center">
             <img src={organisation2} alt="" width="200px" className="image" />
-            {/* <p className="text-2xl font-poppins image">Sachika</p> */}
           </div>
           <div className="h-[100vh] flex flex-col justify-center items-center">
             <img src={organisation3} alt="" width="200px" className="image" />
-            {/* <p className="text-2xl font-poppins image">Jeev</p> */}
           </div>
         </div>
         {/* rightSide */}
-        <div className="flex-1 flex justify-center items-center  font-poppins">
+        <div className="w-[50vw] flex justify-end items-center font-poppins pr-10">
           <div
             className=""
             style={
               scrollY > 3900 && scrollY < 5480
                 ? {
-                    top: "50px",
+                    top: "10vh",
+                    left: "50vw",
                     position: "fixed",
                     transition:
                       "position 1s ease-in-out, opacity 1s ease-in-out",
@@ -117,7 +101,7 @@ function Organisation() {
                   }
             }
           >
-            <div className="flex gap-2 text-2xl text-black ">
+            <div className="flex gap-2 text-2xl text-black">
               <p className="bg-transparent border-2 border-solid border-gray-500 h-10 w-10 text-center rounded-full flex items-center justify-center">
                 1
               </p>
@@ -137,9 +121,9 @@ function Organisation() {
                 Jeev
               </p>
             </div>
-            <div className="flex justify-center items-center mt-2 ml-12 text-lg">
-              <p
-                className="h-36 w-[2px]  relative right-7 bottom-1 border-dotted border-3"
+            <div className="flex justify-end items-center mt-2 text-lg pr-10">
+              {/* <p
+                className="h-36 w-[2px] relative right-7 bottom-1 border-dotted border-3"
                 style={
                   scrollY > 4360
                     ? {
@@ -152,9 +136,9 @@ function Organisation() {
                         transition: "background 1s ease-in-out",
                       }
                 }
-              ></p>
+              ></p> */}
               <p
-                className="max-w-sm text-justify"
+                className="max-w-lg min-w-xs text-justify pl-12"
                 style={
                   scrollY > 3900 && scrollY < 4360
                     ? {
@@ -179,8 +163,8 @@ function Organisation() {
             style={
               scrollY > 3850 && scrollY < 5330
                 ? {
-                    top: "245px",
-                    right: "96px",
+                    top: "43vh",
+                    left: "50vw",
                     position: "fixed",
                     transition: "top 2s ease-in-out",
                   }
@@ -215,9 +199,9 @@ function Organisation() {
                 Sachika
               </p>
             </div>
-            <div className="flex justify-center items-center mt-1 ml-12 text-lg">
-              <p
-                className="h-28 w-[2px]  relative right-7 bottom-2 border-dotted border-3"
+            <div className="flex justify-end items-center mt-1 text-lg pr-10">
+              {/* <p
+                className="h-28 w-[2px] relative right-7 bottom-2 border-dotted border-3"
                 style={
                   scrollY > 4940
                     ? {
@@ -229,16 +213,10 @@ function Organisation() {
                         opacity: 0.2,
                         transition: "background 1s ease-in-out",
                       }
-                  // scrollY > 5367
-                  //   ? {
-                  //       opacity: 0,
-                  //       transition: "opacity 0.5s ease-in-out",
-                  //     }
-                  //   : {}
                 }
-              ></p>
+              ></p> */}
               <p
-                className="max-w-sm text-justify"
+                className="max-w-lg min-w-xs text-justify pl-12"
                 style={
                   scrollY > 4360 && scrollY < 4940
                     ? {
@@ -249,13 +227,6 @@ function Organisation() {
                         opacity: 0.2,
                         transition: "opacity 1s ease-in-out",
                       }
-                  // ,
-                  // scrollY > 5367
-                  //   ? {
-                  //       opacity: 0,
-                  //       transition: "opacity 0.5s ease-in-out",
-                  //     }
-                  //   : {}
                 }
               >
                 Sachika, an initiative by CPC Diagnostics Pvt. Ltd., focuses on
@@ -268,7 +239,8 @@ function Organisation() {
             style={
               scrollY > 3700 && scrollY < 5240
                 ? {
-                    top: "410px",
+                    top: "70vh",
+                    left: "50vw",
                     position: "fixed",
                     transition: "position 2s ease-in-out",
                   }
@@ -292,12 +264,6 @@ function Organisation() {
                       opacity: 0.2,
                       transition: "opacity 0.5s ease-in-out",
                     }
-                // scrollY > 5326
-                //   ? {
-                //       opacity: 0,
-                //       transition: "opacity 0.5s ease-in-out",
-                //     }
-                //   : {}
               }
             >
               <p className="bg-transparent border-2 border-solid border-gray-500 h-10 w-10 text-center rounded-full flex items-center justify-center">
@@ -306,7 +272,7 @@ function Organisation() {
               <p>CPC Med Sys</p>
             </div>
             <div
-              className="flex justify-center items-center mt-0 ml-12 text-lg"
+              className="flex justify-end items-center mt-0 text-lg pr-10"
               style={
                 scrollY > 4940
                   ? {
@@ -317,18 +283,25 @@ function Organisation() {
                       opacity: 0.2,
                       transition: "opacity 0.5s ease-in-out",
                     }
-                // scrollY > 5220
-                //   ? {
-                //       opacity: 0,
-                //       transition: "opacity 0.5s ease-in-out",
-                //     }
-                //   : {}
               }
             >
-              <p className="max-w-sm text-justify">
-                CPC’s division for diagnostic instrument manufacturing aims at
-                empowerment, reliability, and innovation in indigenous
-                manufacturing practices
+              <p
+                className="max-w-lg min-w-xs text-justify mt-2 pl-12"
+                style={
+                  scrollY > 4940
+                    ? {
+                        opacity: 1,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                    : {
+                        opacity: 0.2,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                }
+              >
+                CPC Med Sys specializes in medical systems, offering advanced
+                healthcare solutions and equipment to improve patient care
+                standards.
               </p>
             </div>
           </div>
