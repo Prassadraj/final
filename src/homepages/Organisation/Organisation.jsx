@@ -101,11 +101,11 @@ function Organisation() {
                   }
             }
           >
-            <div className="flex gap-2 text-2xl text-black">
-              <p className="bg-transparent border-2 border-solid border-gray-500 h-10 w-10 text-center rounded-full flex items-center justify-center">
+            <div className="flex gap-2 text-2xl text-custom-green">
+              <p className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center">
                 1
               </p>
-              <p
+              <img
                 style={
                   scrollY > 3900 && scrollY < 4360
                     ? {
@@ -117,9 +117,11 @@ function Organisation() {
                         transition: "opacity 1s ease-in-out",
                       }
                 }
-              >
-                Jeev
-              </p>
+                src={organisation1}
+                width="70wv"
+                alt=""
+              />
+              {/* <p>Jeev</p> */}
             </div>
             <div className="flex justify-end items-center mt-2 text-lg pr-10">
               {/* <p
@@ -157,6 +159,20 @@ function Organisation() {
                 reagents.
               </p>
             </div>
+            <div
+              style={
+                scrollY > 4360
+                  ? {
+                      opacity: 1,
+                      transition: "opacity 1s ease-in-out",
+                    }
+                  : {
+                      opacity: 0.2,
+                      transition: "opacity 1s ease-in-out",
+                    }
+              }
+              className="w-[2px] h-[25vh] bg-custom-green relative -top-[20vh] left-[3vh]"
+            ></div>
           </div>
 
           <div
@@ -176,14 +192,15 @@ function Organisation() {
                 : {}
             }
           >
-            <div className="flex gap-2 text-2xl text-black">
+            <div className="flex gap-2 text-2xl text-custom-green">
               <p
                 style={scrollY > 4360 ? { opacity: 1 } : { opacity: 0.2 }}
-                className="bg-transparent border-2 border-solid border-gray-500 h-10 w-10 text-center rounded-full flex items-center justify-center"
+                className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center"
               >
                 2
               </p>
-              <p
+              <img
+                width="70vw"
                 style={
                   scrollY > 4360 && scrollY < 4940
                     ? {
@@ -195,9 +212,10 @@ function Organisation() {
                         transition: "opacity 1s ease-in-out",
                       }
                 }
-              >
-                Sachika
-              </p>
+                src={organisation2}
+                alt=""
+              />
+              {/* <p>Sachika</p> */}
             </div>
             <div className="flex justify-end items-center mt-1 text-lg pr-10">
               {/* <p
@@ -234,6 +252,20 @@ function Organisation() {
                 bioscience skills.
               </p>
             </div>
+            <div
+              style={
+                scrollY > 4940
+                  ? {
+                      opacity: 1,
+                      transition: "opacity 0.5s ease-in-out",
+                    }
+                  : {
+                      opacity: 0.2,
+                      transition: "opacity 0.5s ease-in-out",
+                    }
+              }
+              className="w-[2px] h-[19vh] bg-custom-green relative -top-[15vh] left-[3vh]"
+            ></div>
           </div>
           <div
             style={
@@ -253,7 +285,7 @@ function Organisation() {
             }
           >
             <div
-              className="flex gap-2 text-2xl text-black"
+              className="flex gap-2 text-2xl text-custom-green"
               style={
                 scrollY > 4940
                   ? {
@@ -266,10 +298,11 @@ function Organisation() {
                     }
               }
             >
-              <p className="bg-transparent border-2 border-solid border-gray-500 h-10 w-10 text-center rounded-full flex items-center justify-center">
+              <p className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center">
                 3
               </p>
-              <p>CPC Med Sys</p>
+              <img src={organisation3} width="70vw" alt="" />
+              {/* <p>CPC Med Sys</p> */}
             </div>
             <div
               className="flex justify-end items-center mt-0 text-lg pr-10"
