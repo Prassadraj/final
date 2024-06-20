@@ -76,7 +76,10 @@ function Blog() {
           <div className="p-4 bg-light-green w-[20vw] rounded-lg h-[60vh] blogBox">
             <div>
               <img
-                style={{ objectFit: "cover", width: "20vw" }}
+                style={{
+                  objectFit: "cover",
+                  width: "20vw",
+                }}
                 className="rounded-lg"
                 src={datas.img}
                 alt=""

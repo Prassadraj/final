@@ -66,7 +66,7 @@ function ContactUs() {
             ></textarea>
           </div>
           <div className="flex items-center justify-center bg-custom-green rounded-lg ">
-            <button className="text-white py-2 px-4 rounded text-xl">
+            <button className="text-white py-2 px-4 rounded text-xl ">
               Send
             </button>
             <FontAwesomeIcon
