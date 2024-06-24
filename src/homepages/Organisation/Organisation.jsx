@@ -40,6 +40,45 @@ function Organisation() {
         },
       });
     });
+    gsap.fromTo(
+      ".bg",
+      {
+        opacity: 0,
+        width: "0%",
+      },
+      {
+        opacity: 1,
+        width: "100%",
+        duration: 1,
+        delay: 0.5,
+        ease: "circ.inOut",
+        scrollTrigger: ".bg",
+        stagger: {
+          amount: 1,
+        },
+      }
+    );
+    // contents
+    // gsap.utils.toArray(".rightside").forEach((contents) => {
+    //   gsap.from(contents, {
+    //     scale: 0,
+    //     duration: 1,
+    //     delay: 0.5,
+    //     clipPath: "polygon (0% 100%,100% 100%,100% 0%,0% 0%)",
+    //     opacity: 0,
+    //     ease: "power3.out",
+    //     stagger: {
+    //       amount: 1,
+    //     },
+    //     scrollTrigger: {
+    //       trigger: contents,
+    //       start: "top 0%", // Start animation when top of image reaches 100% of viewport height
+    //       end: "center center", // End animation when image is at the center of viewport
+    //       scrub: true,
+    //       markers: true,
+    //     },
+    //   });
+    // });
 
     // Image animations
     gsap.utils.toArray(".image").forEach((image) => {
@@ -66,7 +105,7 @@ function Organisation() {
   return (
     <>
       <Heading />
-      <div className="h-[300vh] flex">
+      <div className="h-[300vh] flex bg">
         <div className="w-[50vw] bg-black flex justify-center items-center flex-col">
           <div className="h-[100vh] flex flex-col justify-center items-center">
             <img src={organisation1} alt="" width="200px" className="image" />
@@ -79,9 +118,10 @@ function Organisation() {
           </div>
         </div>
         {/* rightSide */}
+        {/* content1 */}
         <div className="w-[50vw] flex justify-end items-center font-poppins pr-10">
           <div
-            className=""
+            className="rightside"
             style={
               scrollY > 3900 && scrollY < 5480
                 ? {
@@ -174,8 +214,9 @@ function Organisation() {
               className="w-[2px] h-[25vh] bg-custom-green relative -top-[20vh] left-[3vh]"
             ></div>
           </div>
-
+          {/* content2 */}
           <div
+            className="rightside"
             style={
               scrollY > 3850 && scrollY < 5330
                 ? {
@@ -267,7 +308,9 @@ function Organisation() {
               className="w-[2px] h-[19vh] bg-custom-green relative -top-[15vh] left-[3vh]"
             ></div>
           </div>
+          {/* content3 */}
           <div
+            className="rightside"
             style={
               scrollY > 3700 && scrollY < 5240
                 ? {

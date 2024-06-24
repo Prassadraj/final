@@ -25,7 +25,7 @@ function Section2() {
         width: "100%",
         duration: 1,
         delay: 0.4,
-        scrollTrigger: "counterBox",
+        scrollTrigger: ".counterBox",
         stagger: {
           amount: 1,
         },
