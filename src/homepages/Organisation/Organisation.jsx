@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import AOS from "aos";
 import TsParticle from "../../component/Tsparticle/TsParticle";
+// import { tsParticles } from "tsparticles";
 
 const Organisation = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -47,6 +48,7 @@ const Organisation = () => {
         scale: 0,
         duration: 1,
         delay: 0.5,
+        // clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
         opacity: 0,
         ease: "power3.out",
         stagger: {
@@ -61,205 +63,264 @@ const Organisation = () => {
       });
     });
 
-    gsap.fromTo(
-      ".bg",
-      {
-        width: 0,
-        opacity: 0,
-      },
-      {
-        scrollTrigger: ".bg",
-        width: "100%",
-        opacity: 1,
-      }
-    );
-
     AOS.init();
   }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
-    <div className="bg-black">
-      {/* <TsParticle /> */}
+    <>
+      <Heading />
 
-      <>
-        <Heading />
-
-        <div className="h-[300vh] flex bg">
-          <div className="w-[50vw] flex justify-center items-center flex-col">
-            <div className="h-[100vh] flex flex-col justify-center items-center">
-              <img src={organisation1} alt="" width="200px" className="image" />
-            </div>
-            <div className="h-[100vh] flex flex-col justify-center items-center">
-              <img src={organisation2} alt="" width="200px" className="image" />
-            </div>
-            <div className="h-[100vh] flex flex-col justify-center items-center">
-              <img src={organisation3} alt="" width="200px" className="image" />
-            </div>
+      <div className="h-[300vh] flex bg">
+        <div className="md:w-[50vw] w-[25vw] bg-slate-50 flex justify-center items-center flex-col">
+          <div className="h-[100vh] flex flex-col justify-center items-center">
+            <img src={organisation1} alt="" width="200px" className="image" />
           </div>
-          <div className="w-[50vw] flex justify-end items-center font-poppins pr-10">
-            {/* Content 1 */}
-            <div
-              className="rightside"
-              style={{
-                top: scrollY > 3900 && scrollY < 5480 ? "10vh" : "initial",
-                left: "50vw",
-                position:
-                  scrollY > 3900 && scrollY < 5480 ? "absolute" : "relative",
-                transition: "position 1s ease-in-out, opacity 1s ease-in-out",
-                display: scrollY >= 5480 ? "none" : "block",
-              }}
-            >
-              <div className="flex gap-2 text-2xl text-custom-green">
-                <p className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center">
-                  1
-                </p>
-                <img
-                  style={
-                    scrollY > 3900 && scrollY < 4360
-                      ? {
-                          opacity: 1,
-                          transition: "opacity 1s ease-in-out",
-                        }
-                      : {
-                          opacity: 0.2,
-                          transition: "opacity 1s ease-in-out",
-                        }
-                  }
-                  src={organisation1}
-                  width="70wv"
-                  alt=""
-                />
-              </div>
-              <div className="flex justify-end items-center mt-2 text-lg pr-10">
-                <p
-                  className="max-w-lg min-w-xs text-justify pl-12"
-                  style={
-                    scrollY > 3900 && scrollY < 4360
-                      ? {
-                          opacity: 1,
-                          transition: "opacity 1s ease-in-out",
-                        }
-                      : {
-                          opacity: 0.2,
-                          transition: "opacity 1s ease-in-out",
-                        }
-                  }
-                >
-                  Jeev Diagnostics Pvt. Ltd. is a collaborative venture between
-                  Awareness Technology Inc. (USA) and CPC Diagnostics Pvt. Ltd.
-                  (India), focusing on cutting-edge in vitro clinical chemistry
-                  reagents.
-                </p>
-              </div>
-              <div
-                style={
-                  scrollY > 4360
-                    ? {
-                        opacity: 1,
-                        transition: "opacity 1s ease-in-out",
-                      }
-                    : {
-                        opacity: 0.2,
-                        transition: "opacity 1s ease-in-out",
-                      }
-                }
-                className="w-[2px] h-[25vh] bg-custom-green relative -top-[20vh] left-[3vh]"
-              ></div>
-            </div>
-            {/* Content 2 */}
-            <div
-              className="rightside"
-              style={{
-                top: scrollY > 3850 && scrollY < 5330 ? "43vh" : "initial",
-                left: "50vw",
-                position:
-                  scrollY > 3850 && scrollY < 5330 ? "absolute" : "relative",
-                transition: "top 2s ease-in-out",
-                display: scrollY >= 5330 ? "none" : "block",
-              }}
-            >
-              <div className="flex gap-2 text-2xl text-custom-green">
-                <p
-                  style={scrollY > 4360 ? { opacity: 1 } : { opacity: 0.2 }}
-                  className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center"
-                >
-                  2
-                </p>
-                <img
-                  src={organisation2}
-                  width="70wv"
-                  alt=""
-                  style={scrollY > 4360 ? { opacity: 1 } : { opacity: 0.2 }}
-                />
-              </div>
-              <div className="flex justify-end items-center mt-2 text-lg pr-10">
-                <p
-                  className="max-w-lg min-w-xs text-justify pl-12"
-                  style={scrollY > 4360 ? { opacity: 1 } : { opacity: 0.2 }}
-                >
-                  Awareness Technology is a market leader in semi-automated
-                  systems for Clinical Diagnostics, offering comprehensive
-                  laboratory instrumentation and immunoassay test kits to over
-                  100 countries worldwide.
-                </p>
-              </div>
-              <div
-                style={
-                  scrollY > 4780
-                    ? {
-                        opacity: 1,
-                        transition: "opacity 1s ease-in-out",
-                      }
-                    : {
-                        opacity: 0.2,
-                        transition: "opacity 1s ease-in-out",
-                      }
-                }
-                className="w-[2px] h-[25vh] bg-custom-green relative -top-[20vh] left-[3vh]"
-              ></div>
-            </div>
-            {/* Content 3 */}
-            <div
-              className="rightside"
-              style={{
-                top: scrollY > 5280 && scrollY < 5480 ? "75vh" : "initial",
-                left: "50vw",
-                position:
-                  scrollY > 5280 && scrollY < 5480 ? "absolute" : "relative",
-                transition: "top 1.5s ease-in-out",
-                display: scrollY >= 5480 ? "none" : "block",
-              }}
-            >
-              <div className="flex gap-2 text-2xl text-custom-green">
-                <p
-                  style={scrollY > 4780 ? { opacity: 1 } : { opacity: 0.2 }}
-                  className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center"
-                >
-                  3
-                </p>
-                <img
-                  src={organisation3}
-                  width="70wv"
-                  alt=""
-                  style={scrollY > 4780 ? { opacity: 1 } : { opacity: 0.2 }}
-                />
-              </div>
-              <div className="flex justify-end items-center mt-2 text-lg pr-10">
-                <p
-                  className="max-w-lg min-w-xs text-justify pl-12"
-                  style={scrollY > 4780 ? { opacity: 1 } : { opacity: 0.2 }}
-                >
-                  CPC Diagnostics, a leading provider of In-Vitro Diagnostics
-                  solutions in India, collaborates with renowned international
-                  manufacturers to offer a comprehensive range of diagnostic
-                  products and services.
-                </p>
-              </div>
-            </div>
+          <div className="h-[100vh] flex flex-col justify-center items-center">
+            <img src={organisation2} alt="" width="200px" className="image" />
+          </div>
+          <div className="h-[100vh] flex flex-col justify-center items-center">
+            <img src={organisation3} alt="" width="200px" className="image" />
           </div>
         </div>
-      </>
-    </div>
+        <div className="w-[50vw] flex justify-end items-center font-poppins pr-10">
+          {/* Content 1 */}
+          <div
+            className="rightside"
+            style={
+              scrollY > 3900 && scrollY < 5480
+                ? {
+                    top: "10vh",
+                    left: "50vw",
+                    position: "fixed",
+                    transition:
+                      "position 1s ease-in-out, opacity 1s ease-in-out",
+                  }
+                : scrollY >= 5480
+                ? {
+                    display: "none",
+                    transition: "display 1s ease-in-out",
+                  }
+                : {
+                    transition: "position 1s ease-in-out",
+                  }
+            }
+          >
+            <div className="flex gap-2 text-2xl text-custom-green">
+              <p className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center">
+                1
+              </p>
+              <img
+                style={
+                  scrollY > 3900 && scrollY < 4360
+                    ? {
+                        opacity: 1,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                    : {
+                        opacity: 0.2,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                }
+                src={organisation1}
+                width="70wv"
+                alt=""
+              />
+            </div>
+            <div className="flex justify-end items-center mt-2 text-lg pr-10">
+              <p
+                className="max-w-lg min-w-xs text-justify pl-12"
+                style={
+                  scrollY > 3900 && scrollY < 4360
+                    ? {
+                        opacity: 1,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                    : {
+                        opacity: 0.2,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                }
+              >
+                Jeev Diagnostics Pvt. Ltd. is a collaborative venture between
+                Awareness Technology Inc. (USA) and CPC Diagnostics Pvt. Ltd.
+                (India), focusing on cutting-edge in vitro clinical chemistry
+                reagents.
+              </p>
+            </div>
+            <div
+              style={
+                scrollY > 4360
+                  ? {
+                      opacity: 1,
+                      transition: "opacity 1s ease-in-out",
+                    }
+                  : {
+                      opacity: 0.2,
+                      transition: "opacity 1s ease-in-out",
+                    }
+              }
+              className="w-[2px] h-[25vh] bg-custom-green relative -top-[20vh] left-[3vh]"
+            ></div>
+          </div>
+          {/* Content 2 */}
+          <div
+            className="rightside"
+            style={
+              scrollY > 3850 && scrollY < 5330
+                ? {
+                    top: "43vh",
+                    left: "50vw",
+                    position: "fixed",
+                    transition: "top 2s ease-in-out",
+                  }
+                : scrollY >= 5330
+                ? {
+                    display: "none",
+                    transition: "display 1s ease-in-out",
+                  }
+                : {}
+            }
+          >
+            <div className="flex gap-2 text-2xl text-custom-green">
+              <p
+                style={scrollY > 4360 ? { opacity: 1 } : { opacity: 0.2 }}
+                className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center"
+              >
+                2
+              </p>
+              <img
+                width="70vw"
+                style={
+                  scrollY > 4360 && scrollY < 4940
+                    ? {
+                        opacity: 1,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                    : {
+                        opacity: 0.2,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                }
+                src={organisation2}
+                alt=""
+              />
+            </div>
+            <div className="flex justify-end items-center mt-1 text-lg pr-10">
+              <p
+                className="max-w-lg min-w-xs text-justify pl-12"
+                style={
+                  scrollY > 4360 && scrollY < 4940
+                    ? {
+                        opacity: 1,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                    : {
+                        opacity: 0.2,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                }
+              >
+                Sachika, an initiative by CPC Diagnostics Pvt. Ltd., focuses on
+                life sciences education, empowering clinicians with contemporary
+                bioscience skills.
+              </p>
+            </div>
+            <div
+              style={
+                scrollY > 4940
+                  ? {
+                      opacity: 1,
+                      transition: "opacity 0.5s ease-in-out",
+                    }
+                  : {
+                      opacity: 0.2,
+                      transition: "opacity 0.5s ease-in-out",
+                    }
+              }
+              className="w-[2px] h-[19vh] bg-custom-green relative -top-[15vh] left-[3vh]"
+            ></div>
+          </div>
+          {/* Content 3 */}
+          <div
+            className="rightside"
+            style={
+              scrollY > 3700 && scrollY < 5240
+                ? {
+                    top: "70vh",
+                    left: "50vw",
+                    position: "fixed",
+                    transition: "position 2s ease-in-out",
+                  }
+                : scrollY >= 5240
+                ? {
+                    display: "none",
+                    transition: "display 2s ease-in-out",
+                  }
+                : {}
+            }
+          >
+            <div className="flex gap-2 text-2xl text-custom-green">
+              <p
+                style={scrollY > 4940 ? { opacity: 1 } : { opacity: 0.2 }}
+                className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center"
+              >
+                3
+              </p>
+              <img
+                width="70vw"
+                style={
+                  scrollY > 4940 && scrollY < 5480
+                    ? {
+                        opacity: 1,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                    : {
+                        opacity: 0.2,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                }
+                src={organisation3}
+                alt=""
+              />
+            </div>
+            <div className="flex justify-end items-center mt-1 text-lg pr-10">
+              <p
+                className="max-w-lg min-w-xs text-justify pl-12"
+                style={
+                  scrollY > 4940 && scrollY < 5480
+                    ? {
+                        opacity: 1,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                    : {
+                        opacity: 0.2,
+                        transition: "opacity 1s ease-in-out",
+                      }
+                }
+              >
+                Aggapo is a rapidly growing startup by CPC Diagnostics Pvt.
+                Ltd., catering to the diagnostic needs of the African market
+                with a broad range of in vitro diagnostic solutions.
+              </p>
+            </div>
+            <div
+              style={
+                scrollY > 5480
+                  ? {
+                      opacity: 1,
+                      transition: "opacity 2s ease-in-out",
+                    }
+                  : {
+                      opacity: 0.2,
+                      transition: "opacity 2s ease-in-out",
+                    }
+              }
+              className="w-[2px] h-[13vh] bg-custom-green relative -top-[12vh] left-[3vh]"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

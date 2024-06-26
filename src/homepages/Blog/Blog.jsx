@@ -73,7 +73,10 @@ function Blog() {
       </div>
       <div className="p-4 flex gap-5">
         {data.map((datas, index) => (
-          <div className="p-4 bg-light-green w-[20vw] rounded-lg h-[60vh] blogBox">
+          <div
+            key={index}
+            className="p-4 bg-light-green w-[20vw] rounded-lg h-[60vh] blogBox"
+          >
             <div>
               <img
                 style={{

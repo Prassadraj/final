@@ -113,7 +113,10 @@ function TestimonialSlider() {
       >
         <Slider {...settings} className="">
           {data.map((datas, i) => (
-            <div className="relative w-[40vw] h-[40vh] bg-white p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid shadow-2xl container">
+            <div
+              key={i}
+              className="relative w-[40vw] h-[40vh] bg-white p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid shadow-2xl container"
+            >
               <div className="flex justify-start items-center gap-3 ">
                 <img
                   className="w-16 h-16 object-cover rounded-full"
