@@ -18,7 +18,7 @@ const FeaturedProducts = () => {
         opacity: 1,
 
         y: "0px",
-        duration: 0.2,
+        duration: 0.4,
         delay: 0.2,
         scrollTrigger: ".heading",
 
@@ -37,7 +37,7 @@ const FeaturedProducts = () => {
         opacity: 1,
         width: "100%",
         duration: 1,
-        delay: 1.5,
+        delay: 1,
         scrollTrigger: ".products",
         stagger: {
           amount: 1,

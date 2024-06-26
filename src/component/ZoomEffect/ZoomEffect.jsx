@@ -8,7 +8,7 @@ import itrackImg2 from "../../images/itrack/itrack2.png";
 import itrackImg3 from "../../images/itrack/itrack3.jpg";
 import itrackImg4 from "../../images/itrack/itrack4.jpg";
 import itrackImg5 from "../../images/itrack/itrack5.png";
-
+import AOS from "aos";
 function ZoomEffect() {
   const container = useRef(null);
   const [scrollY, setScrollY] = useState(0);
@@ -22,6 +22,7 @@ function ZoomEffect() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    AOS.init();
   }, []);
 
   const { scrollYProgress } = useScroll({
@@ -61,12 +62,26 @@ function ZoomEffect() {
       }}
     >
       <div className="flex justify-center items-center flex-col gap-4 mt-5">
-        <img style={{ objectFit: "cover" }} width="220px" src={itrack} alt="" />
-        <p className="text-2xl">
+        <img
+          data-aos="flip-down"
+          style={{ objectFit: "cover" }}
+          width="220px"
+          src={itrack}
+          alt=""
+        />
+        <p
+          data-aos="zoom-in-up"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="600" // Ensure correct attribute
+          className="text-2xl"
+        >
           CPC developed i-track, a proprietary system for remote instrument
           maintenance, in a groundbreaking initiative.
         </p>
-        <p className="text-xl text-center">For SupportDial: 1800 571 1101</p>
+        <p className="text-xl text-center " data-aos="zoom-in-up">
+          For SupportDial: 1800 571 1101
+        </p>
       </div>
       <div ref={container} className={styles.container}>
         <div className={styles.sticky}>

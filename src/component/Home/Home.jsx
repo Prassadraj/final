@@ -24,6 +24,7 @@ import Organisation from "../../homepages/Organisation/Organisation";
 import { Parallax } from "react-parallax";
 import ProductCategaries from "../../homepages/ProductCategaries/ProductCategaries";
 import organisationBG from "../../homepages/Organisation/OrganisationBG.png";
+import TsParticle from "../Tsparticle/TsParticle";
 
 function Home() {
   useEffect(() => {
@@ -174,8 +175,11 @@ function Home() {
       <div style={{ marginBottom: "10vh" }}>
         <ZoomEffect />
       </div>
+
       <TestimonialSlider />
+
       <ProductCategaries />
+
       <Blog />
       <ContactUs />
       <Footer />
