@@ -69,13 +69,7 @@ function ZoomEffect() {
           src={itrack}
           alt=""
         />
-        <p
-          data-aos="zoom-in-up"
-          data-aos-anchor="#example-anchor"
-          data-aos-offset="500"
-          data-aos-duration="600" // Ensure correct attribute
-          className="text-2xl"
-        >
+        <p data-aos="zoom-in-up" className="text-2xl">
           CPC developed i-track, a proprietary system for remote instrument
           maintenance, in a groundbreaking initiative.
         </p>
@@ -83,7 +77,11 @@ function ZoomEffect() {
           For SupportDial: 1800 571 1101
         </p>
       </div>
-      <div ref={container} className={styles.container}>
+      <div
+        ref={container}
+        id={styles.container}
+        className="md:h-[200vh] w-100vh"
+      >
         <div className={styles.sticky}>
           {pictures.map(({ src, scale, zIndex }, index) => (
             <motion.div

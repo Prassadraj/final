@@ -90,22 +90,22 @@ function Section2() {
   return (
     <div
       ref={containerRef}
-      className="h-[264px] bg-white flex items-center justify-around pl-14 pr-14 counter-container"
+      className="h-[264px] bg-white flex items-center justify-around pl-1 pr-1 sm:pl-14 sm:pr-14 counter-container"
     >
       {stats.map((stat, index) => (
         <div key={index} className="flex flex-col items-center counterBox">
           <div className="flex items-center justify-center">
-            <img width="50px" src={stat.img} alt="" />
+            <img className="w-[25px]" src={stat.img} alt="" />
             <span
               ref={(el) => (countUpRefs.current[index] = el)}
               data-end={stat.end}
-              className="text-5xl font-semibold"
+              className="text-xl sm:text-5xl font-semibold"
               style={{ fontFamily: "Poppins", color: "#00A786" }}
             >
               0
             </span>
             <span
-              className="text-3xl"
+              className="text-sm sm:text-3xl"
               style={{ fontFamily: "Poppins, sans-serif", color: "#00A786" }}
             >
               +
@@ -113,7 +113,7 @@ function Section2() {
           </div>
           <div className="flex items-center">
             <p
-              className="text-base font-bold"
+              className="text-base sm:font-bold font-semibold "
               style={{ fontFamily: "Poppins" }}
             >
               {stat.label}

@@ -25,6 +25,8 @@ import { Parallax } from "react-parallax";
 import ProductCategaries from "../../homepages/ProductCategaries/ProductCategaries";
 import organisationBG from "../../homepages/Organisation/OrganisationBG.png";
 import TsParticle from "../Tsparticle/TsParticle";
+import ServiceType from "../Career/Career";
+import Organization2 from "../../homepages/Organisation/Organization2";
 
 function Home() {
   useEffect(() => {
@@ -162,14 +164,15 @@ function Home() {
       {/* featured Products */}
       <FeaturedProducts />
 
-      <Parallax
+      {/* <Parallax
         blur={10}
         // bgImage={organisationBG}
         bgImageAlt="the cat"
         strength={200}
       >
         <Organisation />
-      </Parallax>
+      </Parallax> */}
+      <Organization2 />
 
       {/* section5 */}
       <div style={{ marginBottom: "10vh" }}>
@@ -183,6 +186,7 @@ function Home() {
       <Blog />
       <ContactUs />
       <Footer />
+      {/* <ServiceType /> */}
     </div>
   );
 }
