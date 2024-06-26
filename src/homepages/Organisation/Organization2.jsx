@@ -37,7 +37,7 @@ function Organization2() {
       <Heading />
       <Box className="gallery gap-8" sx={{ display: "flex" }}>
         <Box
-          className="left"
+          className="left font-poppins"
           sx={{
             width: "50%",
             marginLeft: "auto",
@@ -50,7 +50,7 @@ function Organization2() {
               marginLeft: "auto",
               color: "#000",
               fontSize: "2rem",
-              fontWeight: 900,
+              fontWeight: 500,
             },
           }}
         >
