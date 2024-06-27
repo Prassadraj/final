@@ -48,10 +48,10 @@ const TsParticle = ({ id }) => {
       },
       particles: {
         color: {
-          value: "#FFFFFF",
+          value: "#071A30",
         },
         links: {
-          color: "#2F3645",
+          color: "#071A30",
           distance: 150,
           enable: true,
           opacity: 0.3,
@@ -75,13 +75,13 @@ const TsParticle = ({ id }) => {
             enable: true,
             area: 800,
           },
-          value: 80,
+          value: 100,
         },
         opacity: {
           value: 0.5,
         },
         shape: {
-          type: "circle",
+          type: "triangle",
         },
         size: {
           value: { min: 1, max: 5 },

@@ -50,7 +50,7 @@ const FeaturedProducts = () => {
       className="pt-10"
       style={{
         clipPath:
-          " polygon(50% 0%, 100% 3%, 100% 92%, 51% 100%, 0 100%, 0% 60%, 0 3%);",
+          " polygon(50% 0%, 100% 3%, 100% 92%, 51% 100%, 0 100%, 0% 60%, 0 3%)",
       }}
     >
       <div className="flex h-10 items-center pl-24 flex-col gap-4 heading">

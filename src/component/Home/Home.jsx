@@ -27,6 +27,7 @@ import organisationBG from "../../homepages/Organisation/OrganisationBG.png";
 import TsParticle from "../Tsparticle/TsParticle";
 import ServiceType from "../Career/Career";
 import Organization2 from "../../homepages/Organisation/Organization2";
+import Section1 from "../../homepages/Section1/Section1";
 
 function Home() {
   useEffect(() => {
@@ -83,80 +84,8 @@ function Home() {
 
   return (
     <div className="">
-      <div className="section1 flex h-full overflow-hidden">
-        <div
-          className="left mt-12"
-          style={{ flex: 1, marginLeft: "70px", lineHeight: "1.2" }}
-        >
-          <p
-            id="headline"
-            style={{
-              fontSize: "45px",
-              color: "#56575D",
+      <Section1 />
 
-              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-              WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            }}
-            className="font-sans"
-            data-splitting="chars"
-          >
-            Medical Laboratory
-          </p>
-          <p
-            id="headline"
-            style={{
-              fontSize: "45px",
-              color: "#56575D",
-
-              clippath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-              WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            }}
-            className="font-sans"
-            data-splitting="chars"
-          >
-            Equipment Supplier in India
-          </p>
-          <div
-            className="description "
-            style={{ width: "490px", fontFamily: "Poppins" }}
-          >
-            <p
-              className="subTitle"
-              style={{
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-              }}
-            >
-              Discover our top-quality medical laboratory equipment, tailored
-              for hospitals and diagnostic labs across India.
-            </p>
-          </div>
-          <div className="buttons flex gap-5">
-            <button
-              className="btn1 pt-3 pb-3 pl-7 pr-7 w-56"
-              style={{ background: "#00A786", color: "white" }}
-            >
-              Explore product
-            </button>
-            <button
-              className="btn1 pt-3 pb-3 pl-7 pr-7 w-52 text-[#00A786] hover:bg-[#00a986] hover:text-white"
-              style={{
-                border: "2px solid #00A786",
-              }}
-            >
-              Contact Us
-            </button>
-          </div>
-        </div>
-        <div
-          className=" overflow-hidden"
-          style={{ flex: 1, marginTop: "-20px" }}
-        >
-          <div className="animate-bouncing">
-            <Slider />
-          </div>
-        </div>
-      </div>
       {/* section2 */}
       <Section2 />
       {/* section3 */}

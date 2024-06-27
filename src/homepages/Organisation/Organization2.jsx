@@ -98,7 +98,8 @@ function Organization2() {
                 width: "100%",
                 height: "100%",
                 "& img": {
-                  height: "100%",
+                  height: { md: "100%" },
+
                   width: "100%",
                 },
               },
