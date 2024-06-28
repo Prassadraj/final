@@ -6,7 +6,7 @@ function Section1() {
   return (
     <div className="section1 md:flex md:flex-row grid grid-cols-1 justify-center items-center h-full w-full overflow-hidden">
       <div className="flex-1 md:w-1/2 w-full mt-0 sm:mt-24 sm:ml-4 lg:ml-14 px-4 sm:px-0">
-        <TsParticle />
+        {/* <TsParticle /> */}
         <p
           id="headline"
           style={{

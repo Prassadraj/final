@@ -93,15 +93,15 @@ function Home() {
       {/* featured Products */}
       <FeaturedProducts />
 
-      {/* <Parallax
+      <Parallax
         blur={10}
         // bgImage={organisationBG}
         bgImageAlt="the cat"
         strength={200}
       >
         <Organisation />
-      </Parallax> */}
-      <Organization2 />
+      </Parallax>
+      {/* <Organization2 /> */}
 
       {/* section5 */}
       <div style={{ marginBottom: "10vh" }}>

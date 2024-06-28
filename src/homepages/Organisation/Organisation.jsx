@@ -70,7 +70,7 @@ const Organisation = () => {
     <>
       <Heading />
 
-      <div className="h-[300vh] flex bg">
+      <div className="h-[300vh] flex font-poppins" id="mm">
         <div className="md:w-[50vw] w-[25vw] bg-slate-50 flex justify-center items-center flex-col">
           <div className="h-[100vh] flex flex-col justify-center items-center">
             <img src={organisation1} alt="" width="200px" className="image" />
@@ -114,11 +114,17 @@ const Organisation = () => {
                   scrollY > 3900 && scrollY < 4360
                     ? {
                         opacity: 1,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1.1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                     : {
                         opacity: 0.2,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                 }
                 src={organisation1}
@@ -133,11 +139,17 @@ const Organisation = () => {
                   scrollY > 3900 && scrollY < 4360
                     ? {
                         opacity: 1,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1.1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                     : {
                         opacity: 0.2,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                 }
               >
@@ -147,6 +159,7 @@ const Organisation = () => {
                 reagents.
               </p>
             </div>
+
             <div
               style={
                 scrollY > 4360
@@ -194,11 +207,17 @@ const Organisation = () => {
                   scrollY > 4360 && scrollY < 4940
                     ? {
                         opacity: 1,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1.1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                     : {
                         opacity: 0.2,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                 }
                 src={organisation2}
@@ -212,11 +231,17 @@ const Organisation = () => {
                   scrollY > 4360 && scrollY < 4940
                     ? {
                         opacity: 1,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1.1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                     : {
                         opacity: 0.2,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                 }
               >
@@ -259,7 +284,7 @@ const Organisation = () => {
                 : {}
             }
           >
-            <div className="flex gap-2 text-2xl text-custom-green">
+            <div className="flex gap-2 text-2xl text-custom-green items-center">
               <p
                 style={scrollY > 4940 ? { opacity: 1 } : { opacity: 0.2 }}
                 className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center"
@@ -272,29 +297,41 @@ const Organisation = () => {
                   scrollY > 4940 && scrollY < 5480
                     ? {
                         opacity: 1,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1.1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                     : {
                         opacity: 0.2,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                 }
                 src={organisation3}
                 alt=""
               />
             </div>
-            <div className="flex justify-end items-center mt-1 text-lg pr-10">
+            <div className="flex justify-end items-center mt-0 text-lg pr-10">
               <p
                 className="max-w-lg min-w-xs text-justify pl-12"
                 style={
                   scrollY > 4940 && scrollY < 5480
                     ? {
                         opacity: 1,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1.1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                     : {
                         opacity: 0.2,
-                        transition: "opacity 1s ease-in-out",
+                        transform: "scale(1)",
+
+                        transition:
+                          "opacity 1s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out",
                       }
                 }
               >
@@ -303,20 +340,6 @@ const Organisation = () => {
                 with a broad range of in vitro diagnostic solutions.
               </p>
             </div>
-            <div
-              style={
-                scrollY > 5480
-                  ? {
-                      opacity: 1,
-                      transition: "opacity 2s ease-in-out",
-                    }
-                  : {
-                      opacity: 0.2,
-                      transition: "opacity 2s ease-in-out",
-                    }
-              }
-              className="w-[2px] h-[13vh] bg-custom-green relative -top-[12vh] left-[3vh]"
-            ></div>
           </div>
         </div>
       </div>

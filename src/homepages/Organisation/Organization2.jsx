@@ -122,6 +122,7 @@ function Organization2() {
             <Box className="photo">
               <img
                 // src={organisation2}
+                //  src="http://static.showit.co/800/M0IzUCMvQCqlJn1YtNlikw/59514/pexels-yan-5793641-1.jpg"
                 src="http://static.showit.co/800/3kOLYaOCS1SMieN6Y88Fqg/59514/mukuko-studio-mu88mlefcou-unsplash.jpg"
                 alt="img-3"
               />

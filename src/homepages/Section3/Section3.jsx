@@ -95,8 +95,11 @@ function Section3() {
   return (
     <div>
       <div
-        className="section3 flex justify-around h-[100vh] pt-28 pl-20 pr-20 bg-slate-200"
-        style={{ clipPath: "polygon(0 20%, 100% 0, 100% 73%, 0% 100%)" }}
+        className="section3 flex justify-around h-[100vh] pt-28 pl-20 pr-20  "
+        // style={{ clipPath: "polygon(0 20%, 100% 0, 100% 73%, 0% 100%)" }}
+        style={{
+          background: "linear-gradient(180deg, #ffffff 0%, #7de4c2 150%)",
+        }}
       >
         <div className="flex flex-col pt-20 -mt-10">
           <div className="mb-5">
@@ -130,13 +133,13 @@ function Section3() {
             </div>
           </div>
           <div className="mt-10">
-            <button
+            {/* <button
               className="btn1 pt-3 pb-3 pl-7 pr-7  max-w-md text-[#00A786] hover:bg-[#00a986] hover:text-white
               font-poppins text-md"
               style={{ border: "2px solid #00A786" }}
             >
               View Our Products
-            </button>
+            </button> */}
           </div>
         </div>
         <div
@@ -164,8 +167,13 @@ function Section3() {
           ></div>
         </div>
       </div>
-
-      <div className="section4 flex justify-around h-[100vh] pt-20 pl-20 pr-10">
+      {/* section4 */}
+      <div
+        className="section4 flex justify-around h-[100vh] pt-20 pl-20 pr-10"
+        style={{
+          background: "linear-gradient(0deg, #ffffff 0%, #7de4c2 150%)",
+        }}
+      >
         <div className="left mr-10 imagebox">
           <div
             id="image1"
@@ -216,12 +224,12 @@ function Section3() {
             </div>
           </div>
           <div className="mt-10">
-            <button
+            {/* <button
               className="font-poppins btn1 pt-3 pb-3 pl-7 pr-7 max-w-md text-[#00A786] hover:bg-[#00a986] hover:text-white text-md"
               style={{ border: "2px solid #00A786" }}
             >
               View Our Products
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

@@ -8,6 +8,8 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tilt from "react-parallax-tilt";
+// import bgImg from "../../images/featured/Designer.png";
+import bgImg from "../../images/featured/bgOrg.png";
 const FeaturedProducts = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -47,21 +49,37 @@ const FeaturedProducts = () => {
   }, []);
   return (
     <div
-      className="pt-10"
+      className="pt-10 "
       style={{
-        clipPath:
-          " polygon(50% 0%, 100% 3%, 100% 92%, 51% 100%, 0 100%, 0% 60%, 0 3%)",
+        backgroundImage: `url(${bgImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100%", // Adjust width and height as needed
+        height: "100%",
       }}
+      // style={{
+      // background:
+      //   "linear-gradient(180deg, #ffffff 0%, #7de4c2 50%, #ffffff 100%)",
+      // clipPath:
+      //   " polygon(50% 0%, 100% 3%, 100% 92%, 51% 100%, 0 100%, 0% 60%, 0 3%)",
+      // }}
+
+      // style={{
+
+      // }}
     >
       <div className="flex h-10 items-center pl-24 flex-col gap-4 heading">
         <span
-          className="font-semibold text-3xl uppercase heading"
+          className="font-semibold text-4xl uppercase heading"
           style={{ fontFamily: "Poppins" }}
         >
           Featured Products
         </span>
 
-        <p style={{ fontFamily: "Poppins" }} className="text-xl heading">
+        <p
+          style={{ fontFamily: "Poppins" }}
+          className="text-xl heading font-bold"
+        >
           We use only the best quality materials on the market in order to
           provide the best products to our patients.
         </p>
@@ -95,7 +113,8 @@ const HorizontalScrollCarousel = ({ cards }) => {
 
 const Card = ({ card }) => {
   return (
-    <div className="relative h-[400px] w-[350px] overflow-hidden bg-light-green rounded-2xl ">
+    // <div className="relative h-[400px] w-[350px] overflow-hidden  bg-light-green rounded-2xl ">
+    <div className="relative h-[400px] w-[350px] overflow-hidden  bg-opacity-10 backdrop-blur-2xl rounded-2xl ">
       <div className="flex justify-center items-center w-full mt-10">
         <Tilt scale={1.2} transitionSpeed={2500}>
           <img width="150px" src={card.url} alt="" />
@@ -106,9 +125,12 @@ const Card = ({ card }) => {
         style={{ fontFamily: "Poppins" }}
       >
         <div className="flex justify-start">
-          <h1 className="text-xl text-gray-700 font-poppins">{card.title}</h1>
+          {/* <h1 className="text-xl text-gray-700 font-poppins">{card.title}</h1> */}
+          <p className="text-xl text-white font-poppins font-bold">
+            {card.title}
+          </p>
         </div>
-        <p>{card.content}</p>
+        <p className="text-white">{card.content}</p>
       </div>
       <div className=" absolute bottom-6 w-full">
         <div className="flex justify-center items-center ">
