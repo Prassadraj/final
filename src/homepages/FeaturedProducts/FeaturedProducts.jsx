@@ -50,13 +50,13 @@ const FeaturedProducts = () => {
   return (
     <div
       className="pt-10 "
-      style={{
-        backgroundImage: `url(${bgImg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        width: "100%", // Adjust width and height as needed
-        height: "100%",
-      }}
+      // style={{
+      //   backgroundImage: `url(${bgImg})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   width: "100%", // Adjust width and height as needed
+      //   height: "100%",
+      // }}
       // style={{
       // background:
       //   "linear-gradient(180deg, #ffffff 0%, #7de4c2 50%, #ffffff 100%)",
@@ -113,8 +113,8 @@ const HorizontalScrollCarousel = ({ cards }) => {
 
 const Card = ({ card }) => {
   return (
-    // <div className="relative h-[400px] w-[350px] overflow-hidden  bg-light-green rounded-2xl ">
-    <div className="relative h-[400px] w-[350px] overflow-hidden  bg-opacity-10 backdrop-blur-2xl rounded-2xl ">
+    <div className="relative h-[400px] w-[350px] overflow-hidden  bg-light-green rounded-2xl ">
+      {/* <div className="relative h-[400px] w-[350px] overflow-hidden  bg-opacity-10 backdrop-blur-2xl rounded-2xl "> */}
       <div className="flex justify-center items-center w-full mt-10">
         <Tilt scale={1.2} transitionSpeed={2500}>
           <img width="150px" src={card.url} alt="" />
@@ -126,11 +126,9 @@ const Card = ({ card }) => {
       >
         <div className="flex justify-start">
           {/* <h1 className="text-xl text-gray-700 font-poppins">{card.title}</h1> */}
-          <p className="text-xl text-white font-poppins font-bold">
-            {card.title}
-          </p>
+          <p className="text-xl  font-poppins font-bold">{card.title}</p>
         </div>
-        <p className="text-white">{card.content}</p>
+        <p className="">{card.content}</p>
       </div>
       <div className=" absolute bottom-6 w-full">
         <div className="flex justify-center items-center ">

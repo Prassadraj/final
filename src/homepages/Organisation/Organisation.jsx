@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import organisation1 from "../../images/organisation/1.png";
 import organisation2 from "../../images/organisation/2.png";
 import organisation3 from "../../images/organisation/3.png";
+import image1 from "../../images/organisation/Designer1.png";
+import image2 from "../../images/organisation/Designer2.png";
+import image3 from "../../images/organisation/Designer3.png";
 import "./organisation.css";
 import Heading from "./Heading";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import AOS from "aos";
 import TsParticle from "../../component/Tsparticle/TsParticle";
+import organisationBG from "../../images/organisation/Designer4.png";
 // import { tsParticles } from "tsparticles";
 
 const Organisation = () => {
@@ -16,7 +20,15 @@ const Organisation = () => {
   const scrollHandler = () => {
     setScrollY(window.scrollY);
   };
-
+  const images = [
+    {
+      img: image1,
+    },
+    {
+      img: image2,
+    },
+    { img: image3 },
+  ];
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler);
     return () => {
@@ -48,7 +60,6 @@ const Organisation = () => {
         scale: 0,
         duration: 1,
         delay: 0.5,
-        // clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
         opacity: 0,
         ease: "power3.out",
         stagger: {
@@ -69,20 +80,27 @@ const Organisation = () => {
   return (
     <>
       <Heading />
-
       <div className="h-[300vh] flex font-poppins" id="mm">
         <div className="md:w-[50vw] w-[25vw] bg-slate-50 flex justify-center items-center flex-col">
-          <div className="h-[100vh] flex flex-col justify-center items-center">
-            <img src={organisation1} alt="" width="200px" className="image" />
-          </div>
-          <div className="h-[100vh] flex flex-col justify-center items-center">
-            <img src={organisation2} alt="" width="200px" className="image" />
-          </div>
-          <div className="h-[100vh] flex flex-col justify-center items-center">
-            <img src={organisation3} alt="" width="200px" className="image" />
-          </div>
+          {images.map((image, i) => (
+            <div
+              key={i}
+              className="h-[100vh] flex flex-col justify-center items-center p-10"
+            >
+              <img src={image.img} alt="" className="image w-fit rounded-2xl" />
+            </div>
+          ))}
         </div>
-        <div className="w-[50vw] flex justify-end items-center font-poppins pr-10">
+
+        <div
+          className="w-[50vw] flex justify-end items-center font-poppins pr-10"
+          // style={{
+          //   backgroundImage: `url(${organisationBG})`,
+          //   backgroundPosition: "center",
+          //   backgroundRepeat: "no-repeat",
+          //   backgroundSize: "cover",
+          // }}
+        >
           {/* Content 1 */}
           <div
             className="rightside"

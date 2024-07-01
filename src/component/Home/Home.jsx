@@ -23,7 +23,7 @@ import ContactUs from "../../homepages/ContactUs/ContactUs";
 import Organisation from "../../homepages/Organisation/Organisation";
 import { Parallax } from "react-parallax";
 import ProductCategaries from "../../homepages/ProductCategaries/ProductCategaries";
-import organisationBG from "../../homepages/Organisation/OrganisationBG.png";
+import organisationBG from "../../images/organisation/Designer4.png";
 import TsParticle from "../Tsparticle/TsParticle";
 import ServiceType from "../Career/Career";
 import Organization2 from "../../homepages/Organisation/Organization2";
@@ -94,7 +94,7 @@ function Home() {
       <FeaturedProducts />
 
       <Parallax
-        blur={10}
+        // blur={}
         // bgImage={organisationBG}
         bgImageAlt="the cat"
         strength={200}

@@ -43,10 +43,10 @@ function TestimonialSlider() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(".headline", {
-      skewX: 65,
-      opacity: 0.5,
+      skewX: 30,
+      opacity: 0,
       rotateZ: "-3deg",
-      rotateY: "30deg",
+      rotateY: "90deg",
       duration: 1,
       delay: 0.5,
       stagger: 1,
