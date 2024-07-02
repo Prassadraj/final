@@ -70,18 +70,23 @@ const FeaturedProducts = () => {
     >
       <div className="flex h-10 items-center pl-24 flex-col gap-4 heading">
         <span
-          className="font-semibold text-4xl uppercase heading"
-          style={{ fontFamily: "Poppins" }}
+          className="font-semibold text-4xl uppercase heading font-lato"
+          style={{
+            background: "linear-gradient(to right, #10b981, black)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
         >
           Featured Products
         </span>
-
-        <p
-          style={{ fontFamily: "Poppins" }}
-          className="text-xl heading font-bold"
-        >
-          We use only the best quality materials on the market in order to
-          provide the best products to our patients.
+        <p className="text-xl heading font-poppins text-gray-500">
+          We use only the{" "}
+          <span className="text-custom-green font-mont">
+            best quality materials
+          </span>{" "}
+          on the market in order to provide the{" "}
+          <span className="text-custom-green">best products </span> to our
+          patients.
         </p>
       </div>
       <HorizontalScrollCarousel cards={featuredCards} />

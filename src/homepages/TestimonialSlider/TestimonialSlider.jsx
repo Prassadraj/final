@@ -87,23 +87,20 @@ function TestimonialSlider() {
         //   "url('https://images.pexels.com/photos/9881353/pexels-photo-9881353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
       }}
     >
-      <div className="flex justify-center items-center flex-col gap-5">
-        <h1
-          className="text-4xl text-black font-bold headline"
-          style={{ fontFamily: "Poppins" }}
-        >
+      <div className="flex justify-center items-center flex-col gap-2">
+        <h1 className="text-4xl text-black font-bold headline font-lato uppercase">
           Testimonials
         </h1>
         <p
-          className="text-xl text-custom-green"
+          className="text-xl text-gray-500"
           style={{
             fontFamily: "Poppins",
             width: "120vh",
             textAlign: "center",
           }}
         >
-          We use only the best quality materials on the market in order to
-          provide the best products to our patients.
+          Our experience with CPC Diagnostics has been exceptional. Their
+          products are reliable, and their support is outstanding.
         </p>
       </div>
 
@@ -126,7 +123,10 @@ function TestimonialSlider() {
                 <p className="text-2xl font-poppins">{datas.name}</p>
               </div>
               <div>
-                <p className="text-md" style={{ fontFamily: "Poppins" }}>
+                <p
+                  className="text-md text-start"
+                  style={{ fontFamily: "Poppins" }}
+                >
                   {datas.desc}
                 </p>
               </div>

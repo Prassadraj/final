@@ -354,9 +354,9 @@ const Organisation = () => {
                       }
                 }
               >
-                Aggapo is a rapidly growing startup by CPC Diagnostics Pvt.
-                Ltd., catering to the diagnostic needs of the African market
-                with a broad range of in vitro diagnostic solutions.
+                CPC’s division for diagnostic instrument manufacturing aims at
+                empowerment, reliability, and innovation in indigenous
+                manufacturing practices.
               </p>
             </div>
           </div>

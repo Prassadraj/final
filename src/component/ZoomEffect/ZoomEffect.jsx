@@ -76,7 +76,8 @@ function ZoomEffect() {
           maintenance, in a groundbreaking initiative.
         </p>
         <p className="text-xl text-center " data-aos="zoom-in-up">
-          For SupportDial: 1800 571 1101
+          For SupportDial:
+          <span className="text-custom-green">1800 571 1101</span>
         </p>
       </div>
       <div
