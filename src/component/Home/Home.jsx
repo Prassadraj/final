@@ -28,6 +28,7 @@ import TsParticle from "../Tsparticle/TsParticle";
 import ServiceType from "../Career/Career";
 import Organization2 from "../../homepages/Organisation/Organization2";
 import Section1 from "../../homepages/Section1/Section1";
+import itrackBG from "../../images/itrack/itrackBG.png";
 
 function Home() {
   useEffect(() => {
@@ -83,7 +84,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="">
+    <div className="font-poppins">
       <Section1 />
 
       {/* section2 */}

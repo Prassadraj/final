@@ -8,6 +8,8 @@ import itrackImg2 from "../../images/itrack/itrack2.png";
 import itrackImg3 from "../../images/itrack/itrack3.jpg";
 import itrackImg4 from "../../images/itrack/itrack4.jpg";
 import itrackImg5 from "../../images/itrack/itrack5.png";
+import itrackBG from "../../images/itrack/Designer.png";
+
 import AOS from "aos";
 function ZoomEffect() {
   const container = useRef(null);
@@ -61,7 +63,7 @@ function ZoomEffect() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex justify-center items-center flex-col gap-4 mt-5">
+      <div className="flex justify-center items-center flex-col gap-1 mt-5 font-poppins">
         <img
           data-aos="flip-down"
           style={{ objectFit: "cover" }}
@@ -69,7 +71,7 @@ function ZoomEffect() {
           src={itrack}
           alt=""
         />
-        <p data-aos="zoom-in-up" className="text-2xl">
+        <p data-aos="zoom-in-up" className="text-xl">
           CPC developed i-track, a proprietary system for remote instrument
           maintenance, in a groundbreaking initiative.
         </p>
@@ -81,6 +83,12 @@ function ZoomEffect() {
         ref={container}
         id={styles.container}
         className="md:h-[200vh] w-100vh"
+        // style={{
+        //   backgroundImage: `url(${itrackBG})`,
+        //   backgroundPosition: "center",
+        //   backgroundSize: "cover",
+        //   backgroundRepeat: "no-repeat",
+        // }}
       >
         <div className={styles.sticky}>
           {pictures.map(({ src, scale, zIndex }, index) => (
