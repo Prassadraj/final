@@ -14,12 +14,12 @@ function Heading() {
 
   return (
     <div className="flex flex-col justify-center items-center h-[30vh] gap-2">
-      <h1
+      <p
         data-aos="zoom-in-right"
-        className="font-poppins text-3xl text-black font-semibold title1"
+        className=" text-3xl text-custom-green font-semibold title1 font-lato"
       >
         Our Sister Organizations
-      </h1>
+      </p>
       <p
         data-aos="zoom-in-left"
         className="font-poppins text-lg max-w-xl text-center title2"

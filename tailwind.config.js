@@ -7,6 +7,8 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        mont: ["Montserrat", "serif"],
+        lato: ["Lato", "serif"],
       },
       colors: {
         "custom-green": "#10b981",

@@ -95,7 +95,7 @@ function Section3() {
   return (
     <div>
       <div
-        className="section3 flex justify-around h-[100vh] pt-28 pl-20 pr-20  "
+        className="section3 flex justify-around h-[80vh] pt-28 pl-20 pr-20  "
         // style={{ clipPath: "polygon(0 20%, 100% 0, 100% 73%, 0% 100%)" }}
         style={{
           background: "linear-gradient(180deg, #ffffff 0%, #7de4c2 150%)",

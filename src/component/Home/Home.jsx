@@ -91,17 +91,17 @@ function Home() {
       <Section2 />
       {/* section3 */}
       <Section3 />
-      {/* featured Products */}
-      <FeaturedProducts />
 
-      <Parallax
+      <ProductCategaries />
+
+      {/* <Parallax
         // blur={}
         // bgImage={organisationBG}
         bgImageAlt="the cat"
         strength={200}
-      >
-        <Organisation />
-      </Parallax>
+      > */}
+      <Organisation />
+      {/* </Parallax> */}
       {/* <Organization2 /> */}
 
       {/* section5 */}
@@ -111,8 +111,8 @@ function Home() {
 
       <TestimonialSlider />
 
-      <ProductCategaries />
-
+      {/* featured Products */}
+      <FeaturedProducts />
       <Blog />
       <ContactUs />
       <Footer />
