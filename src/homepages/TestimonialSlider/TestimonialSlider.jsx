@@ -6,6 +6,7 @@ import "./TestimonialSlider.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import qoute from "../../images/testimo/qoute.png";
+import bgImage from "../../images/BgImages/testimonial-bg.webp";
 function TestimonialSlider() {
   let sliderRef = useRef(null);
 
@@ -62,7 +63,7 @@ function TestimonialSlider() {
         },
         {
           opacity: 1,
-          duration: 1,
+          duration: 0.5,
           delay: 0.5,
           scaleX: 1,
           stagger: { amount: 1 },
@@ -82,9 +83,9 @@ function TestimonialSlider() {
       style={{
         objectFit: "cover",
         width: "100%",
-
-        // backgroundImage:
-        //   "url('https://images.pexels.com/photos/9881353/pexels-photo-9881353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+        backgroundImage: `url(${bgImage})`,
+        backgroundPosition: "left",
+        backgroundSize: "cover",
       }}
     >
       <div className="flex justify-center items-center flex-col gap-2">
@@ -92,7 +93,7 @@ function TestimonialSlider() {
           Testimonials
         </h1>
         <p
-          className="text-xl text-gray-500"
+          className="text-xl text-gray-900 tracking-wide"
           style={{
             fontFamily: "Poppins",
             width: "120vh",
@@ -100,7 +101,10 @@ function TestimonialSlider() {
           }}
         >
           Our experience with CPC Diagnostics has been exceptional. Their
-          products are reliable, and their support is outstanding.
+          products are reliable, and their{" "}
+          <span className="font-semibold font-mont">
+            support is outstanding.
+          </span>
         </p>
       </div>
 

@@ -9,7 +9,7 @@ import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tilt from "react-parallax-tilt";
 // import bgImg from "../../images/featured/Designer.png";
-import bgImg from "../../images/featured/bgOrg.png";
+import bgImg from "../../images/BgImages/slider-bg.webp";
 const FeaturedProducts = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -50,13 +50,12 @@ const FeaturedProducts = () => {
   return (
     <div
       className="pt-10 "
-      // style={{
-      //   backgroundImage: `url(${bgImg})`,
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      //   width: "100%", // Adjust width and height as needed
-      //   height: "100%",
-      // }}
+      style={{
+        backgroundImage: `url(${bgImg})`,
+        backgroundSize: "contain",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
       // style={{
       // background:
       //   "linear-gradient(180deg, #ffffff 0%, #7de4c2 50%, #ffffff 100%)",

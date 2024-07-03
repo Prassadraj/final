@@ -12,7 +12,7 @@ import care from "../ProductCategaries/GIF/Point of care.gif";
 import Immunology from "../ProductCategaries/GIF/Immunology.gif";
 import PreAnalytical from "../ProductCategaries/GIF/Pre-analytical-automation.gif";
 import BioChemistry from "../ProductCategaries/GIF/Bio Chemistry.gif";
-
+import bgImage from "../../images/BgImages/bg-5.jpg";
 const categoryItems = [
   { name: "Biochemistry", image: chemistry },
   { name: "Haematology", image: pieChart },
@@ -39,7 +39,16 @@ const categoryItems2 = [
 
 function ProductCategaries() {
   return (
-    <div className="bg-[#0082c7] h-[100vh] flex justify-center items-center">
+    <div
+      className=" h-[100vh] flex justify-center items-center"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* bg-[#0082c7] */}
       {/* Container */}
       <div className="flex w-full">
         {/* Left Section */}
@@ -48,25 +57,25 @@ function ProductCategaries() {
           <div className="text-white" style={{ lineHeight: "3px" }}>
             <p
               className="text-6xl max-w-lg text-start font-poppins font-semibold"
-              // style={{
-              //   background: "linear-gradient(to right, white, black)",
-              //   WebkitBackgroundClip: "text",
-              //   WebkitTextFillColor: "transparent",
-              // }}
+              style={{
+                background: "linear-gradient(to right, green, lightgreen)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
             >
               Product
             </p>
-            <p className="text-6xl max-w-lg text-start font-poppins font-semibold">
+            <p className="text-6xl max-w-lg text-start font-poppins font-semibold text-green-700">
               Categories
             </p>
           </div>
-          <h2 className="text-xl max-w-lg text-start font-poppins">
+          <h2 className="text-xl max-w-lg text-start font-poppins text-gray-500">
             Explore our diverse range of laboratory equipment for all your
             medical and diagnostic needs.
           </h2>
           <button
-            className="text-left text-[#0082c7] text-xl bg-white font-poppins w-fit pl-3 pr-3 pt-2 pb-2 rounded-md
-          font-medium hover:scale-90 transition-all"
+            className="text-left text-white text-xl bg-sky-400 font-poppins w-fit pl-3 pr-3 pt-2 pb-2 rounded-md
+          font-medium hover:scale-90 transition-all shadow-md"
           >
             Explore Products
           </button>
@@ -85,7 +94,7 @@ function ProductCategaries() {
                   <div
                     style={{ margin: "10px 10px" }}
                     key={item.name}
-                    className="flex flex-col-reverse items-center justify-center pt-4 pb-4 pr-8 pl-8 text-center bg-white rounded-xl gap-2 w-[11vw]"
+                    className="flex flex-col-reverse items-center justify-center pt-4 pb-4 pr-8 pl-8 text-center bg-white rounded-xl gap-2 w-[11vw] border-1 border-custom-green shadow-md shadow-custom-green"
                   >
                     <img width="70px" src={item.image} alt={item.name} />
                     <p className="text-sm font-semibold font-poppins truncate max-w-[9vw]">
@@ -109,7 +118,7 @@ function ProductCategaries() {
                   <div
                     style={{ margin: "10px 10px" }}
                     key={item.name}
-                    className="flex flex-col items-center justify-center pt-4 pb-4 pr-8 pl-8 text-center bg-white rounded-xl gap-2 w-[11vw]"
+                    className="flex flex-col items-center justify-center pt-4 pb-4 pr-8 pl-8 text-center bg-white border-1 border-custom-green shadow-md shadow-custom-green rounded-xl gap-2 w-[11vw]"
                   >
                     <img width="70px" src={item.image} alt={item.name} />
                     <p className="text-sm font-semibold font-poppins truncate max-w-[9vw]">

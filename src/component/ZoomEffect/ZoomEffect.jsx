@@ -8,7 +8,7 @@ import itrackImg2 from "../../images/itrack/itrack2.png";
 import itrackImg3 from "../../images/itrack/itrack3.jpg";
 import itrackImg4 from "../../images/itrack/itrack4.jpg";
 import itrackImg5 from "../../images/itrack/itrack5.png";
-import itrackBG from "../../images/itrack/Designer.png";
+// import itrackBG from "../../images/itrack/Designer.png";
 
 import AOS from "aos";
 function ZoomEffect() {
@@ -42,12 +42,12 @@ function ZoomEffect() {
   const scale9 = useTransform(smoothScrollYProgress, [0, 1], [1, 9]);
 
   const pictures = [
-    { src: itrackImg1, scale: scale4, zIndex: 1 },
-    { src: itrackImg2, scale: scale5 },
+    { src: itrackImg2, scale: scale4, zIndex: 1 },
+    { src: itrackImg5, scale: scale5 },
     { src: itrackImg3, scale: scale6 },
     { src: itrackImg4, scale: scale5 },
     { src: itrackImg5, scale: scale6 },
-    { src: itrackImg5, scale: scale8 },
+    { src: itrackImg1, scale: scale8 },
   ];
 
   return (

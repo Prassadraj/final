@@ -6,6 +6,7 @@ import whoWeAre from "../../images/section2&3/who we are 1.png";
 
 function Section3() {
   gsap.registerPlugin(ScrollTrigger);
+
   useEffect(() => {
     // Background animation
     gsap
@@ -17,12 +18,8 @@ function Section3() {
           scrub: 3,
         },
       })
-      .from("#bg1", {
-        x: "20px",
-      })
-      .to("#bg1", {
-        x: "0px",
-      });
+      .from("#bg1", { x: "20px" })
+      .to("#bg1", { x: "0px" });
 
     // Text animations
     const texts = document.querySelectorAll(".text1");
@@ -44,14 +41,11 @@ function Section3() {
         }
       );
     });
+
     gsap.utils.toArray(".header1").forEach((header) => {
       gsap.fromTo(
         header,
-        {
-          opacity: 0,
-          skewX: 45,
-          x: -100,
-        },
+        { opacity: 0, skewX: 45, x: -100 },
         {
           opacity: 1,
           skewX: 0,
@@ -69,11 +63,7 @@ function Section3() {
     gsap.utils.toArray(".imagebox").forEach((imgBox) => {
       gsap.fromTo(
         imgBox,
-        {
-          opacity: 0,
-          scale: 0.2,
-          skewY: 30,
-        },
+        { opacity: 0, scale: 0.2, skewY: 30 },
         {
           opacity: 1,
           scale: 1,
@@ -82,21 +72,18 @@ function Section3() {
           delay: 0.5,
           scrollTrigger: {
             trigger: imgBox,
-
             toggleActions: "play none none none",
           },
         }
       );
     });
-
-    // Cleanup function
   }, []);
 
   return (
     <div>
+      {/* Section 3 */}
       <div
-        className="section3 flex justify-around h-[80vh] pt-28 pl-20 pr-20  "
-        // style={{ clipPath: "polygon(0 20%, 100% 0, 100% 73%, 0% 100%)" }}
+        className="section3 flex justify-around h-[80vh] pt-28 pl-20 pr-20"
         style={{
           background: "linear-gradient(180deg, #ffffff 0%, #7de4c2 150%)",
         }}
@@ -134,29 +121,21 @@ function Section3() {
           </div>
           <div className="mt-10">
             {/* <button
-              className="btn1 pt-3 pb-3 pl-7 pr-7  max-w-md text-[#00A786] hover:bg-[#00a986] hover:text-white
-              font-poppins text-md"
+              className="btn1 pt-3 pb-3 pl-7 pr-7 max-w-md text-[#00A786] hover:bg-[#00a986] hover:text-white font-poppins text-md"
               style={{ border: "2px solid #00A786" }}
             >
               View Our Products
             </button> */}
           </div>
         </div>
-        <div
-          className="right imagebox"
-          // style={{
-          //   clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          //   WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          // }}
-        >
+        <div className="right imagebox">
           <div
             id="image1"
             className="relative w-[30vw] h-[50vh] top-0 right-10 rounded-2xl z-10"
           >
             <img
-              // src={image1}
               src={whoWeAre}
-              alt="Description of image1"
+              alt="Who We Are"
               className="animate-leftRight rounded-lg"
             />
           </div>
@@ -167,9 +146,9 @@ function Section3() {
           ></div>
         </div>
       </div>
-      {/* section4 */}
+      {/* Section 4 */}
       <div
-        className="section4 flex justify-around h-[100vh] pt-20 pl-20 pr-10"
+        className="section4 flex justify-around h-[90vh] pt-20 pl-20 pr-10"
         style={{
           background: "linear-gradient(0deg, #ffffff 0%, #7de4c2 150%)",
         }}
@@ -180,9 +159,8 @@ function Section3() {
             className="relative w-[30vw] h-[50vh] top-10 left-10 rounded-2xl z-10"
           >
             <img
-              // src={image2}
               src={whatWeDo}
-              alt="Description of image1"
+              alt="What We Do"
               className="animate-rightDown rounded-lg"
             />
           </div>
@@ -192,7 +170,7 @@ function Section3() {
             className="animate-leftUp relative w-[30vw] h-[60vh] rounded-2xl bg-gradient-to-t from-custom-green to-gray-200"
           ></div>
         </div>
-        <div className="flex flex-col pt-20 ml-10 -mt-20">
+        <div className="flex flex-col pt-20 ml-10 -mt-10">
           <div className="mb-5">
             <p
               className="font-bold text-gray-900 text-3xl header1"
@@ -222,14 +200,6 @@ function Section3() {
                 performance and accuracy.
               </p>
             </div>
-          </div>
-          <div className="mt-10">
-            {/* <button
-              className="font-poppins btn1 pt-3 pb-3 pl-7 pr-7 max-w-md text-[#00A786] hover:bg-[#00a986] hover:text-white text-md"
-              style={{ border: "2px solid #00A786" }}
-            >
-              View Our Products
-            </button> */}
           </div>
         </div>
       </div>
