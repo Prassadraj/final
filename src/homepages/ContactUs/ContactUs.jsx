@@ -65,11 +65,18 @@ function ContactUs() {
               className="placeholder:text-white h-[20vh] w-[30vw] pt-2 text-xl box-border outline-none p-3 rounded-lg text-white"
             ></textarea>
           </div>
-          <div className="flex items-center justify-center bg-custom-green rounded-lg ">
-            <button className="text-white py-2 px-4 rounded text-xl ">
-              Send
+          <div className="flex items-center justify-center rounded-lg   ">
+            <button class="btn-53">
+              <div class="original text-lg">Send</div>
+              <div class="letters text-lg">
+                <span>S</span>
+                <span>e</span>
+                <span>n</span>
+                <span>d</span>
+              </div>
             </button>
-            <FontAwesomeIcon
+
+            {/* <FontAwesomeIcon
               icon={faArrowRight}
               className="text-2xl text-light-green"
             />
@@ -81,7 +88,7 @@ function ContactUs() {
             </span>
             <span className="text-2xl relative bottom-2 right-14 animate-bouncing opacity-45 text-light-green">
               -
-            </span>
+            </span> */}
           </div>
         </div>
       </div>

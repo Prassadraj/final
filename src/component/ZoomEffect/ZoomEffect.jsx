@@ -13,33 +13,21 @@ import itrackImg5 from "../../images/itrack/itrack5.png";
 import AOS from "aos";
 function ZoomEffect() {
   const container = useRef(null);
-  const [scrollY, setScrollY] = useState(0);
-
-  const handleScroll = debounce(() => {
-    setScrollY(window.scrollY);
-  }, 10); // Adjust the debounce delay as needed
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-    AOS.init();
-  }, []);
 
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
   });
 
-  const springConfig = { damping: 20, stiffness: 100 };
-  const smoothScrollYProgress = useSpring(scrollYProgress, springConfig);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
-  const scale4 = useTransform(smoothScrollYProgress, [0, 1], [1, 4]);
-  const scale5 = useTransform(smoothScrollYProgress, [0, 1], [1, 5]);
-  const scale6 = useTransform(smoothScrollYProgress, [0, 1], [1, 6]);
-  const scale8 = useTransform(smoothScrollYProgress, [0, 1], [1, 8]);
-  const scale9 = useTransform(smoothScrollYProgress, [0, 1], [1, 9]);
+  const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
+  const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
+  const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
+  const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
+  const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
 
   const pictures = [
     { src: itrackImg2, scale: scale4, zIndex: 1 },
@@ -83,7 +71,7 @@ function ZoomEffect() {
       <div
         ref={container}
         id={styles.container}
-        className="md:h-[200vh] w-100vh"
+        className="md:h-[200vh]"
         // style={{
         //   backgroundImage: `url(${itrackBG})`,
         //   backgroundPosition: "center",
