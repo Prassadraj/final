@@ -11,10 +11,6 @@ import itrackImg5 from "../../images/itrack/itrack5.webp";
 // import itrackBG from "../../images/itrack/Designer.png";
 
 import AOS from "aos";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 function ZoomEffect() {
   const container = useRef(null);
 
@@ -25,40 +21,6 @@ function ZoomEffect() {
 
   useEffect(() => {
     AOS.init();
-    gsap.fromTo(
-      ".one",
-      { scale: 1, width: "25vw" },
-      {
-        scale: 1.3,
-        width: "100vw",
-        duration: 1.5, // Adjust the duration for smoothness
-        scrollTrigger: {
-          trigger: ".one",
-          start: "top 20%",
-          end: "bottom end",
-          scrub: 1, // You can adjust this value for smoothness
-          // markers: true,
-        },
-      }
-    );
-    gsap.fromTo(
-      ".two,.three,.four,.five,.six",
-      { scale: 1, y: "0px", x: "0px", opacity: 1 },
-      {
-        scale: 1.2,
-        y: "-20px",
-        x: "20px",
-        opacity: 0.2,
-        duration: 1.5,
-        scrollTrigger: {
-          trigger: ".one",
-          start: "top 20%",
-          end: "bottom top",
-          scrub: 1,
-          markers: true,
-        },
-      }
-    );
   }, []);
 
   const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
@@ -68,12 +30,12 @@ function ZoomEffect() {
   const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
 
   const pictures = [
-    { src: itrackImg2, scale: scale4, zIndex: 1, cls: "one" },
-    { src: itrackImg5, scale: scale5, cls: "two" },
-    { src: itrackImg3, scale: scale6, cls: "three" },
-    { src: itrackImg4, scale: scale5, cls: "four" },
-    { src: itrackImg5, scale: scale6, cls: "five" },
-    { src: itrackImg1, scale: scale8, cls: "six" },
+    { src: itrackImg2, scale: scale4, zIndex: 1 },
+    { src: itrackImg5, scale: scale5 },
+    { src: itrackImg3, scale: scale6 },
+    { src: itrackImg4, scale: scale5 },
+    { src: itrackImg5, scale: scale6 },
+    { src: itrackImg1, scale: scale8 },
   ];
 
   return (
@@ -109,24 +71,23 @@ function ZoomEffect() {
       <div
         ref={container}
         id={styles.container}
-        className="md:h-[170vh]"
+        className="md:h-[200vh]"
         // style={{
-        //   backgroundImage: url(${itrackBG}),
+        //   backgroundImage: `url(${itrackBG})`,
         //   backgroundPosition: "center",
         //   backgroundSize: "cover",
         //   backgroundRepeat: "no-repeat",
         // }}
       >
         <div className={styles.sticky}>
-          {pictures.map(({ src, zIndex, cls }, index) => (
-            <motion.div key={index} style={{ zIndex }} className={styles.el}>
+          {pictures.map(({ src, scale, zIndex }, index) => (
+            <motion.div
+              key={index}
+              style={{ scale, zIndex }}
+              className={styles.el}
+            >
               <div className={styles.imageContainer}>
-                <img
-                  src={src}
-                  alt="image"
-                  placeholder="blur"
-                  className={`${cls}`}
-                />
+                <img src={src} alt="image" placeholder="blur" />
               </div>
             </motion.div>
           ))}
