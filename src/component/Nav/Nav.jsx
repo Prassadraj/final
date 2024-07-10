@@ -50,7 +50,7 @@ function Nav() {
   }, [location.pathname]);
   return (
     <div
-      className="flex items-center"
+      className="flex items-center mb-2"
       style={{ marginTop: "25px", gap: "110px", marginLeft: "70px" }}
     >
       <div className="left">
@@ -72,7 +72,6 @@ function Nav() {
             className={`cursor-pointer  ${
               selected === "home" ? "selected" : ""
             }`}
-
             to="/"
           >
             Home
@@ -80,7 +79,6 @@ function Nav() {
         </div>
         <div className="nav-item">
           <Link
-          
             className={`cursor-pointer  ${
               selected === "about" ? "selected" : ""
             }`}
