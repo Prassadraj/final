@@ -55,7 +55,7 @@ function ZoomEffect() {
           start: "top 20%",
           end: "bottom top",
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       }
     );

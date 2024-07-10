@@ -29,7 +29,7 @@ const Organisation = () => {
     },
     { img: image3 },
   ];
-  console.log(scrollY);
+  // console.log(scrollY);
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler);
     return () => {

@@ -20,12 +20,12 @@ function ContactUs() {
         <div className="absolute inset-0 w-full h-full object-cover z-0 bg-black opacity-0 rounded-xl"></div>
         <div className="flex flex-col z-10">
           <div className="mt-40 ml-24">
-            <h1
+            <p
               className="relative  font-bold text-start text-white text-3xl z-10"
               style={{ fontFamily: "Poppins" }}
             >
               Let's Get in Touch
-            </h1>
+            </p>
           </div>
           <div className="mt-2 ml-24 max-w-md z-10">
             <p className="text-xl text-white font-poppins">

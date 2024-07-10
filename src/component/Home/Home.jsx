@@ -29,6 +29,7 @@ import ServiceType from "../Career/Career";
 import Organization2 from "../../homepages/Organisation/Organization2";
 import Section1 from "../../homepages/Section1/Section1";
 import itrackBG from "../../images/itrack/itrackBG.png";
+import Magnetic from "../magneticButton/Magnetic";
 
 function Home() {
   useEffect(() => {

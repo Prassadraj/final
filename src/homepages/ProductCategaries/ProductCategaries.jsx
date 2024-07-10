@@ -13,6 +13,7 @@ import Immunology from "../ProductCategaries/GIF/Immunology.gif";
 import PreAnalytical from "../ProductCategaries/GIF/Pre-analytical-automation.gif";
 import BioChemistry from "../ProductCategaries/GIF/Bio Chemistry.gif";
 import bgImage from "../../images/BgImages/bg-5.jpg";
+import Magnetic from "../../component/magneticButton/Magnetic";
 const categoryItems = [
   { name: "Biochemistry", image: chemistry },
   { name: "Haematology", image: pieChart },
@@ -87,20 +88,22 @@ function ProductCategaries() {
               <Marquee
                 direction="up"
                 pauseOnHover
-                className="flex gap-3"
+                className="flex gap-3 overflow-hidden"
                 speed={30}
               >
                 {categoryItems2.map((item) => (
-                  <div
-                    style={{ margin: "10px 10px" }}
-                    key={item.name}
-                    className="flex flex-col-reverse items-center justify-center pt-4 pb-4 pr-8 pl-8 text-center bg-white rounded-xl gap-2 w-[11vw] border-1 border-custom-green shadow-md shadow-custom-green"
-                  >
-                    <img width="70px" src={item.image} alt={item.name} />
-                    <p className="text-sm font-semibold font-poppins truncate max-w-[9vw]">
-                      {item.name}
-                    </p>
-                  </div>
+                  <Magnetic>
+                    <div
+                      style={{ margin: "10px 10px" }}
+                      key={item.name}
+                      className=" flex flex-col-reverse items-center justify-center pt-4 pb-4 pr-8 pl-8 text-center bg-white rounded-xl gap-2 w-[11vw] border-1 border-custom-green shadow-md shadow-custom-green"
+                    >
+                      <img width="70px" src={item.image} alt={item.name} />
+                      <p className="text-sm font-semibold font-poppins truncate max-w-[9vw]">
+                        {item.name}
+                      </p>
+                    </div>
+                  </Magnetic>
                 ))}
               </Marquee>
             </div>

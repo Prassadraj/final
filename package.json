@@ -23,6 +23,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@toon.rombaut/magnetic-elements": "^1.1.0",
     "@tsparticles/all": "^3.2.1",
     "@tsparticles/react": "^3.0.0",
     "aos": "^2.3.4",
