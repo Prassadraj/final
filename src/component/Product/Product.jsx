@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import SimpleImageSlider from "react-simple-image-slider";
 import { Link } from "react-router-dom";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
@@ -6,8 +6,12 @@ import frame1 from "../../images/products/frame1.png";
 import Footer from "../../homepages/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMessage } from "@fortawesome/free-solid-svg-icons";
+import Transition from "../Transition/Transition";
+import { ProductDataContext } from "../Context/ProductData";
 
 function Product() {
+  const { data } = useContext(ProductDataContext);
+  console.log(data[0].category);
   const images = [
     { url: frame1 },
     { url: frame1 },
@@ -18,38 +22,59 @@ function Product() {
     {
       title: "Biochemistry Analyzer",
       items: ["Product1", "Product2", "Product3"],
+      description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
     },
     {
       title: "Covid 19",
       items: ["Product1", "Product2", "Product3"],
+      description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
     },
     {
       title: "Hematology Analyzer",
       items: ["Product1", "Product2", "Product3"],
+      description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
     },
     {
       title: "Point of Care",
       items: ["Product1", "Product2", "Product3"],
+      description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
     },
     {
       title: "Immunoassay Analyzer",
       items: ["Product1", "Product2", "Product3"],
+      description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
     },
     {
       title: "Electrolyte Analyzer",
       items: ["Product1", "Product2", "Product3"],
+      description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
     },
     {
       title: "Clinical Microbiology",
       items: ["Product1", "Product2", "Product3"],
+      description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
+    },
+
+    {
+      title: "PreAnalticalAutomation",
+      items: ["Product1", "Product2", "Product3"],
+      description:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
     },
   ];
-  const [title, setTitle] = useState(dropdownData[0].title);
+  const [title, setTitle] = useState(data[0].category);
   const [openDropdown, setOpenDropdown] = useState(0);
 
   const toggleDropdown = (index) => {
     setOpenDropdown(openDropdown === index ? null : index);
-    setTitle(dropdownData[index].title);
+    setTitle(data[index].category);
   };
 
   const products = [
@@ -103,19 +128,21 @@ function Product() {
           <p>
             <Link to="/">Home</Link>
             <span> / </span>
-            <Link className="font-semibold">Bio Chemistry</Link>
+            <span className="font-semibold">{title}</span>
           </p>
         </div>
         <div className="flex">
-          <div className="flex-[25%] bg-white p-4 sticky top-0 h-[80vh] overflow-y-auto">
+          <div className="flex-[25%] bg-white py-2 px-4 sticky top-0 h-[90vh] overflow-y-auto">
             <div className="w-full mx-auto">
-              {dropdownData.map((dropdown, index) => (
+              {data.map((dropdown, index) => (
                 <div key={index} className="rounded mb-2">
                   <div
                     className="flex justify-between items-center py-3 cursor-pointer"
                     onClick={() => toggleDropdown(index)}
                   >
-                    <p className="text-base font-semibold">{dropdown.title}</p>
+                    <p className="text-base font-semibold">
+                      {dropdown.category}
+                    </p>
                     {openDropdown === index ? (
                       <FaChevronDown />
                     ) : (
@@ -125,8 +152,8 @@ function Product() {
                   {openDropdown === index && (
                     <div className="border-t border-gray-300">
                       {dropdown.items.map((item, itemIndex) => (
-                        <p className="px-4 py-2" key={itemIndex}>
-                          {item}
+                        <p className="px-4 py-2 text-sm w-fit" key={itemIndex}>
+                          {item.title}
                         </p>
                       ))}
                     </div>
@@ -217,4 +244,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default Transition(Product);
