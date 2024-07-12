@@ -5,70 +5,21 @@ import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 import frame1 from "../../images/products/frame1.png";
 import Footer from "../../homepages/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMessage } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelopesBulk, faMessage } from "@fortawesome/free-solid-svg-icons";
 import Transition from "../Transition/Transition";
 import { ProductDataContext } from "../Context/ProductData";
+import { faBloggerB } from "@fortawesome/free-brands-svg-icons";
 
 function Product() {
   const { data } = useContext(ProductDataContext);
-  console.log(data[0].category);
+  console.log(data[0].items[0].image);
   const images = [
     { url: frame1 },
     { url: frame1 },
     { url: frame1 },
     { url: frame1 },
   ];
-  const dropdownData = [
-    {
-      title: "Biochemistry Analyzer",
-      items: ["Product1", "Product2", "Product3"],
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
-    },
-    {
-      title: "Covid 19",
-      items: ["Product1", "Product2", "Product3"],
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
-    },
-    {
-      title: "Hematology Analyzer",
-      items: ["Product1", "Product2", "Product3"],
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
-    },
-    {
-      title: "Point of Care",
-      items: ["Product1", "Product2", "Product3"],
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
-    },
-    {
-      title: "Immunoassay Analyzer",
-      items: ["Product1", "Product2", "Product3"],
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
-    },
-    {
-      title: "Electrolyte Analyzer",
-      items: ["Product1", "Product2", "Product3"],
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
-    },
-    {
-      title: "Clinical Microbiology",
-      items: ["Product1", "Product2", "Product3"],
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
-    },
 
-    {
-      title: "PreAnalticalAutomation",
-      items: ["Product1", "Product2", "Product3"],
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque consequuntur non explicabo odit necessitatibus ipsum eos omnis totam esse repudiandae atque laborum officiis blanditiis rem, architecto eaque sequi eum tenetur",
-    },
-  ];
   const [title, setTitle] = useState(data[0].category);
   const [openDropdown, setOpenDropdown] = useState(0);
 
@@ -76,39 +27,8 @@ function Product() {
     setOpenDropdown(openDropdown === index ? null : index);
     setTitle(data[index].category);
   };
-
-  const products = [
-    {
-      image: frame1,
-      title: "Product 1",
-      description: "Description of Product 1",
-    },
-    {
-      image: frame1,
-      title: "Product 2",
-      description: "Description of Product 2",
-    },
-    {
-      image: frame1,
-      title: "Product 3",
-      description: "Description of Product 3",
-    },
-    {
-      image: frame1,
-      title: "Product 4",
-      description: "Description of Product 4",
-    },
-    {
-      image: frame1,
-      title: "Product 5",
-      description: "Description of Product 5",
-    },
-    {
-      image: frame1,
-      title: "Product 6",
-      description: "Description of Product 6",
-    },
-  ];
+  const selectedCategoryItems =
+    data.find((category) => category.category === title)?.items || [];
 
   return (
     <div className="font-poppins bg-gray-100">
@@ -152,7 +72,10 @@ function Product() {
                   {openDropdown === index && (
                     <div className="border-t border-gray-300">
                       {dropdown.items.map((item, itemIndex) => (
-                        <p className="px-4 py-2 text-sm w-fit" key={itemIndex}>
+                        <p
+                          className="px-4 py-2 text-sm w-full uppercase hover:bg-custom-green hover:text-light-green cursor-pointer"
+                          key={itemIndex}
+                        >
                           {item.title}
                         </p>
                       ))}
@@ -167,22 +90,22 @@ function Product() {
               {title}
             </h1>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
-              {products.map((product, index) => (
+              {selectedCategoryItems.map((item, index) => (
                 <div
                   key={index}
                   className="bg-white border rounded-lg overflow-hidden relative group"
                 >
                   <img
-                    src={product.image}
-                    alt={product.title}
+                    src={item.image}
+                    alt={item.title}
                     className="w-full h-32 object-cover"
                   />
                   <div className="p-4 text-gray-600">
-                    <h2 className="text-lg font-semibold text-gray-600">
-                      {product.title}
+                    <h2 className="text-lg font-semibold text-gray-600 text-left">
+                      {item.title}
                     </h2>
-                    <p className="text-sm text-gray-600">
-                      {product.description}
+                    <p className="text-sm text-gray-600 text-left">
+                      {item.description}
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -191,7 +114,7 @@ function Product() {
                 </div>
               ))}
             </div>
-            <div className=" p-4 bg-gray-200 rounded-md">
+            <div className="p-4 bg-gray-200 rounded-md">
               <p className="text-left text-2xl mb-2">Short note of {title}</p>
               <p className="text-left mb-2">
                 Introducing our state-of-the-art biochemistry analyzer!.
@@ -210,35 +133,43 @@ function Product() {
         </div>
       </section>
       <div className="flex justify-center items-center gap-5 p-5 ">
-        <div className="p-4 bg-gray-500 text-white rounded-md flex flex-col gap-1">
+        <div className="p-4 bg-[#D9D7F1] text-gray-500 rounded-md flex flex-col gap-1">
           <div className="flex gap-2">
             <div className="flex items-center">
-              <FontAwesomeIcon icon={faMessage} className="text-2xl" />
+              <FontAwesomeIcon
+                icon={faMessage}
+                className="text-2xl text-[#533E85]"
+              />
             </div>
             <div className="text-lg">Need Help?</div>
           </div>
           <div>Get concise assistance here</div>
         </div>
-        <div className="p-4 bg-gray-500 text-white rounded-md flex flex-col gap-1">
+        <div className="p-4 bg-[#D9D7F1] text-gray-500 rounded-md flex flex-col gap-1">
           <div className="flex gap-2">
             <div className="flex items-center">
-              <FontAwesomeIcon icon={faMessage} className="text-2xl" />
+              <FontAwesomeIcon
+                icon={faEnvelopesBulk}
+                className="text-2xl text-[#533E85]"
+              />
             </div>
             <div className="text-lg">Enquiry mail us?</div>
           </div>
           <div>Mail us today for Enquires</div>
         </div>
-        <div className="p-4 bg-gray-500 text-white rounded-md flex flex-col gap-1">
+        <div className="p-4 bg-[#D9D7F1] text-gray-500 rounded-md flex flex-col gap-1">
           <div className="flex gap-2">
             <div className="flex items-center">
-              <FontAwesomeIcon icon={faMessage} className="text-2xl" />
+              <FontAwesomeIcon
+                icon={faBloggerB}
+                className="text-2xl text-[#533E85]"
+              />
             </div>
             <div className="text-lg">Our blogs</div>
           </div>
           <div>Get our latest blogs</div>
         </div>
       </div>
-
       <Footer />
     </div>
   );

@@ -13,6 +13,7 @@ function TestimonialSlider() {
   const settings = {
     dots: true,
     infinite: true,
+    arrows: false,
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
@@ -109,14 +110,14 @@ function TestimonialSlider() {
       </div>
 
       <div
-        className="mt-10
+        className="mt-10 mr-10
       "
       >
-        <Slider {...settings} className="">
+        <Slider {...settings} className="bg-transparent shadow-none">
           {data.map((datas, i) => (
             <div
               key={i}
-              className="relative w-[40vw] h-[40vh] bg-white p-5 rounded-md gap-7 flex flex-col border border-gray-500 border-solid shadow-2xl container"
+              className="relative w-[40vw] h-[40vh] bg-white p-5 rounded-md gap-7 flex flex-col border  border-solid shadow-2xl container"
             >
               <div className="flex justify-start items-center gap-3 ">
                 <img
@@ -127,12 +128,7 @@ function TestimonialSlider() {
                 <p className="text-2xl font-poppins">{datas.name}</p>
               </div>
               <div>
-                <p
-                  className="text-md text-start"
-                  style={{ fontFamily: "Poppins" }}
-                >
-                  {datas.desc}
-                </p>
+                <p className="text-md text-start font-poppins">{datas.desc}</p>
               </div>
               <div
                 className="text-2xl text-black absolute z-10"

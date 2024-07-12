@@ -50,7 +50,7 @@ function Nav() {
   }, [location.pathname]);
   return (
     <div
-      className="flex items-center mb-2"
+      className=" items-center mb-2 hidden md:flex"
       style={{ marginTop: "25px", gap: "110px", marginLeft: "70px" }}
     >
       <div className="left">

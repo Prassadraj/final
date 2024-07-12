@@ -25,40 +25,40 @@ function ZoomEffect() {
 
   useEffect(() => {
     AOS.init();
-    gsap.fromTo(
-      ".one",
-      { scale: 1, width: "25vw" },
-      {
-        scale: 1.3,
-        width: "100vw",
-        duration: 1.5, // Adjust the duration for smoothness
-        scrollTrigger: {
-          trigger: ".one",
-          start: "top 20%",
-          end: "bottom end",
-          scrub: 1, // You can adjust this value for smoothness
-          // markers: true,
-        },
-      }
-    );
-    gsap.fromTo(
-      ".two,.three,.four,.five,.six",
-      { scale: 1, y: "0px", x: "0px", opacity: 1 },
-      {
-        scale: 1.2,
-        y: "-20px",
-        x: "20px",
-        opacity: 0.2,
-        duration: 1.5,
-        scrollTrigger: {
-          trigger: ".one",
-          start: "top 20%",
-          end: "bottom top",
-          scrub: 1,
-          // markers: true,
-        },
-      }
-    );
+    // gsap.fromTo(
+    //   ".one",
+    //   { scale: 1, width: "25vw" },
+    //   {
+    //     scale: 1.3,
+    //     width: "100vw",
+    //     duration: 1.5, // Adjust the duration for smoothness
+    //     scrollTrigger: {
+    //       trigger: ".one",
+    //       start: "top 20%",
+    //       end: "bottom end",
+    //       scrub: 1, // You can adjust this value for smoothness
+    //       // markers: true,
+    //     },
+    //   }
+    // );
+    // gsap.fromTo(
+    //   ".two,.three,.four,.five,.six",
+    //   { scale: 1, y: "0px", x: "0px", opacity: 1 },
+    //   {
+    //     scale: 1.2,
+    //     y: "-20px",
+    //     x: "20px",
+    //     opacity: 0.2,
+    //     duration: 1.5,
+    //     scrollTrigger: {
+    //       trigger: ".one",
+    //       start: "top 20%",
+    //       end: "bottom top",
+    //       scrub: 1,
+    //       // markers: true,
+    //     },
+    //   }
+    // );
   }, []);
 
   const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
@@ -109,7 +109,7 @@ function ZoomEffect() {
       <div
         ref={container}
         id={styles.container}
-        className="md:h-[170vh]"
+        className="md:h-[100vh]"
         // style={{
         //   backgroundImage: url(${itrackBG}),
         //   backgroundPosition: "center",
@@ -119,8 +119,8 @@ function ZoomEffect() {
       >
         <div className={styles.sticky}>
           {pictures.map(({ src, zIndex, cls }, index) => (
-            <motion.div key={index} style={{ zIndex }} className={styles.el}>
-              <div className={styles.imageContainer}>
+            <div key={index} style={{ zIndex }} className={styles.el}>
+              <div className={styles.imageContainer} data-aos="zoom-in-up">
                 <img
                   src={src}
                   alt="image"
@@ -128,7 +128,7 @@ function ZoomEffect() {
                   className={`${cls}`}
                 />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

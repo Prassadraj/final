@@ -4,9 +4,10 @@ const products = [
     category: "Biochemistry",
     items: [
       {
+        category: "Biochemistry",
         allover: "This is for fully automatic",
         id: "1",
-        image: { image1 },
+        image: image1,
         title: "TURBOCHEM MAGNA",
         shortdescription:
           "TURBOCHEM MAGNA FULLY AUTOMATIC BIOCHEMISTRY ANALYZER",
@@ -16,7 +17,7 @@ const products = [
       {
         allover: "This is for fully automatic",
         id: "2",
-        image: { image1 },
+        image: image1,
         title: "TURBOCHEM PRIME",
         shortdescription:
           "TURBOCHEM PRIME FULLY AUTOMATIC BIOCHEMISTRY ANALYZER",
@@ -26,7 +27,7 @@ const products = [
       {
         allover: "This is for fully automatic",
         id: "3",
-        image: { image1 },
+        image: image1,
         title: "TURBOCHEM NEO",
         shortdescription: "TURBOCHEM NEO FULLY AUTOMATIC BIOCHEMISTRY ANALYZER",
         description:
@@ -35,7 +36,7 @@ const products = [
       {
         allover: "This is for Semi automatic",
         id: "4",
-        image: { image1 },
+        image: image1,
         title: "TURBOSTAT PLUS",
         shortdescription: "TURBOSTAT PLUS SEMI AUTOMATIC BIOCHEMISTRY ANALYZER",
         description:
@@ -44,7 +45,7 @@ const products = [
       {
         allover: "Reagents",
         id: "5",
-        image: { image1 },
+        image: image1,
         title: "ichem PRIME",
         description:
           "System pack reagents specifically designed for use with the TURBOCHEM PRIME analyzer, ensuring consistent and accurate results.",
@@ -52,7 +53,7 @@ const products = [
       {
         allover: "Reagents",
         id: "6",
-        image: { image1 },
+        image: image1,
         title: "ichem MAGNA",
         description:
           "Guaranteed number of tests ensuring zero wastage and consistent quality for the TURBOCHEM MAGNA analyzer.",
@@ -60,7 +61,7 @@ const products = [
       {
         allover: "Reagents",
         id: "7",
-        image: { image1 },
+        image: image1,
         title: "identi Immuno Turbidimetry Reagents",
         description:
           "Homogenized mixture makes antisera ideal for automation, providing accurate and reliable immuno-turbidimetric results.",
@@ -68,7 +69,7 @@ const products = [
       {
         allover: "Reagents",
         id: "8",
-        image: { image1 },
+        image: image1,
         title: "identi Reagents",
         description:
           "High quality reagents manufactured to international standards, suitable for a wide range of biochemical tests.",
@@ -76,7 +77,7 @@ const products = [
       {
         allover: "Reagents",
         id: "9",
-        image: { image1 },
+        image: image1,
         title: "CHEMISTRY CALIBRATOR AND CHEMISTRY CONTROLS",
         description:
           "Reconstituted stability of up to 7 days at 2°C – 8°C or 4 weeks at -20°C, ensuring precise calibration and control in biochemical testing.",
@@ -89,6 +90,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "1",
+        image: image1,
         title: "Sensititre™ Standard AST Plates",
         shortdescription: "Sensititre™ Standard AST Plates",
         description:
@@ -97,6 +99,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "2",
+        image: image1,
         title: "Sensititre™ Nephelometer",
         shortdescription: "Thermo Scientific™ Sensititre™ Nephelometer",
         description:
@@ -105,6 +108,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "3",
+        image: image1,
         title: "Sensititre™ AIM™ Automated Inoculation Delivery System",
         shortdescription:
           "Sensititre™ AIM™ Automated Inoculation Delivery System",
@@ -114,6 +118,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "4",
+        image: image1,
         title: "Sensititre™ Manual Viewbox",
         shortdescription: "Thermo Scientific Sensititre™ Manual Viewbox",
         description:
@@ -122,6 +127,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "5",
+        image: image1,
         title: "Sensititre™ Vizion™ Digital MIC Viewing System",
         shortdescription: "Sensititre™ Vizion™ Digital MIC Viewing System",
         description:
@@ -130,6 +136,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "6",
+        image: image1,
         title:
           "Sensititre™ OptiRead™ Automated Fluorometric Plate Reading System",
         shortdescription:
@@ -140,6 +147,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "7",
+        image: image1,
         title: "Sensititre™ ARIS HiQ™ System for AST",
         shortdescription: "Sensititre™ ARIS HiQ™ System for AST",
         description:
@@ -152,7 +160,7 @@ const products = [
     items: [
       {
         id: "1",
-        image: { image1 },
+        image: image1,
         title: "identi VTM",
         shortdescription: "identi VTM",
         description:
@@ -160,7 +168,7 @@ const products = [
       },
       {
         id: "2",
-        image: { image1 },
+        image: image1,
         title: "identi Affinity RNA extraction",
         shortdescription: "identi Affinity RNA extraction",
         description:
@@ -168,7 +176,7 @@ const products = [
       },
       {
         id: "3",
-        image: { image1 },
+        image: image1,
         title: "ANTIBODY TESTING",
         shortdescription: "ANTIBODY TESTING",
         description:
@@ -176,7 +184,7 @@ const products = [
       },
       {
         id: "4",
-        image: { image1 },
+        image: image1,
         title: "PROCALCITONIN",
         shortdescription: "PROCALCITONIN",
         description:
@@ -184,7 +192,7 @@ const products = [
       },
       {
         id: "5",
-        image: { image1 },
+        image: image1,
         title: "FERRITIN",
         shortdescription: "FERRITIN",
         description:
@@ -192,7 +200,7 @@ const products = [
       },
       {
         id: "6",
-        image: { image1 },
+        image: image1,
         title: "LACTATE DEHYDROGENASE (LDH-L)",
         shortdescription: "LACTATE DEHYDROGENASE (LDH-L)",
         description:
@@ -200,7 +208,7 @@ const products = [
       },
       {
         id: "7",
-        image: { image1 },
+        image: image1,
         title: "C-REACTIVE PROTEIN (CRP)",
         shortdescription: "C-REACTIVE PROTEIN (CRP)",
         description:
@@ -214,6 +222,7 @@ const products = [
       {
         topic: "Electrolyte Analyzer",
         id: "1",
+        image: image1,
         title: "Jokoh EX-D Electrolyte Analyzer",
         shortdescription: "Jokoh EX-D Electrolyte Analyzer",
         description:
@@ -227,7 +236,7 @@ const products = [
       {
         allover: "3 Part Differential Hematology Analyzer",
         id: "1",
-        image: { image1 },
+        image: image1,
         title: "DYNACOUNT 3D Haematology Analyzer",
         shortdescription: "DYNACOUNT 3D Fully Automatic Hematology Analyzer",
         description:
@@ -236,7 +245,7 @@ const products = [
       {
         allover: "3 Part Differential Hematology Analyzer",
         id: "2",
-        image: { image1 },
+        image: image1,
         title: "DYNACOUNT 3D PLUS",
         shortdescription:
           "DYNACOUNT 3D PLUS Fully Automatic Hematology Analyzer",
@@ -246,7 +255,7 @@ const products = [
       {
         allover: "5 Part Differential Hematology Analyzer",
         id: "3",
-        image: { image1 },
+        image: image1,
         title: "DYNACOUNT 5D",
         shortdescription: "DYNACOUNT 5D Fully Automatic Hematology Analyzer",
         description:
@@ -258,145 +267,180 @@ const products = [
     category: "Immunology",
     items: [
       {
-        allover: "5 Part Differential Hematology Analyzer",
-        id: "3",
-        image: { image1 },
-        title: "DYNACOUNT 5D",
-        shortdescription: "DYNACOUNT 5D Fully Automatic Hematology Analyzer",
-        description:
-          "5-part differential analyzer delivering comprehensive blood cell counts, crucial for detailed hematological diagnostics.",
-      },
-      {
-        allover: "Immunoblot",
         id: "1",
+        image: image1,
         title: "PLEXMAT 4",
         shortdescription: "PLEXMAT 4",
+        description:
+          "The PLEXMAT 4 is an advanced immunoblot analyzer designed for high throughput and reliable results in various immunological assays.",
       },
       {
-        allover: "Immunoblot",
         id: "2",
+        image: image1,
         title: "PLEXMAT 8",
         shortdescription: "PLEXMAT 8",
+        description:
+          "The PLEXMAT 8 offers enhanced performance and efficiency for immunoblot analysis, suitable for diverse laboratory needs.",
       },
       {
-        allover: "Chemiluminescence Immunoassay Analyzer",
         id: "4",
+        image: image1,
         title: "iFlash 1200",
         shortdescription: "YHLO IFlash 1200",
+        description:
+          "The iFlash 1200 Chemiluminescence Immunoassay Analyzer delivers precise and rapid results, making it ideal for various diagnostic applications.",
       },
       {
-        allover: "Chemiluminescence Immunoassay Analyzer",
         id: "5",
+        image: image1,
         title: "iFlash 1800",
         shortdescription: "iFlash 1800",
+        description:
+          "The iFlash 1800 is a robust Chemiluminescence Immunoassay Analyzer known for its high sensitivity and throughput, perfect for large laboratories.",
       },
       {
-        allover: "Chemiluminescence Immunoassay Analyzer",
         id: "6",
+        image: image1,
         title: "iFlash 1800",
         shortdescription: "iFlash 1800",
+        description:
+          "Another entry for the iFlash 1800, highlighting its continued popularity and reliability in immunoassay diagnostics.",
       },
       {
-        allover: "Fully Automated Immunoassay Analyzer",
         id: "7",
+        image: image1,
         title: "iFLASH 3000",
         shortdescription: "iFLASH 3000",
+        description:
+          "The iFLASH 3000 is a Fully Automated Immunoassay Analyzer that offers extensive testing capabilities and user-friendly operation.",
       },
       {
-        allover: "Fully Automated Immunoassay Analyzer",
         id: "8",
+        image: image1,
         title: "KRYPTOR compact PLUS",
         shortdescription: "Everlife Kryptor Compact Plus",
+        description:
+          "The KRYPTOR compact PLUS is an advanced analyzer for immunoassays, known for its precision and reliability in diagnostic testing.",
       },
       {
-        allover: "Fully Automated Immunoassay Analyzer",
         id: "9",
+        image: image1,
         title: "EUROIMMUN Analyzer I-2P",
         shortdescription: "Everlife Euroimmun Analyzer I-2P",
+        description:
+          "The EUROIMMUN Analyzer I-2P offers comprehensive immunoassay automation, enhancing laboratory efficiency and accuracy.",
       },
       {
-        allover: "Fully Automated Immunoassay Analyzer",
         id: "10",
+        image: image1,
         title: "EUROBlotOne",
         shortdescription: "EUROBlotOne",
+        description:
+          "EUROBlotOne is a fully automated system for immunoblot processing, providing high-quality results with minimal manual intervention.",
       },
       {
-        allover: "Fully Automated Immunoassay Analyzer",
         id: "11",
+        image: image1,
         title: "IF Sprinter",
         shortdescription: "IF Sprinter",
+        description:
+          "The IF Sprinter is designed for fully automated immunofluorescence assays, ensuring consistent and accurate diagnostic outcomes.",
       },
       {
-        allover: "Fluorescence Immunoassay Analyzer",
         id: "12",
+        image: image1,
         title: "EUROStar III Plus",
         shortdescription: "EUROStar III Plus",
+        description:
+          "The EUROStar III Plus is a state-of-the-art Fluorescence Immunoassay Analyzer, known for its precision and advanced diagnostic capabilities.",
       },
       {
-        allover: "Fluorescence Immunoassay Analyzer",
         id: "13",
+        image: image1,
         title: "EUROPattern Microscope",
         shortdescription: "EUROPattern Microscope",
+        description:
+          "The EUROPattern Microscope combines high-resolution imaging with automated analysis, ideal for fluorescence immunoassays.",
       },
       {
-        allover: "Fluorescence Immunoassay Analyzer",
         id: "14",
+        image: image1,
         title: "FluoroMAT 50",
         shortdescription: "FluoroMAT 50",
+        description:
+          "The FluoroMAT 50 is a versatile Fluorescence Immunoassay Analyzer, offering reliable and rapid diagnostic testing.",
       },
       {
-        allover: "Reagents",
         id: "15",
+        image: image1,
         title: "iFlash 1800 REAGENTS",
         shortdescription: "iFlash 1800 REAGENTS",
+        description:
+          "Reagents specifically designed for use with the iFlash 1800, ensuring optimal performance and accuracy in immunoassays.",
       },
       {
-        allover: "Reagents",
         id: "16",
+        image: image1,
         title: "AUTOIMMUNE & INFECTIOUS DISEASES – IIFT",
         shortdescription: "AUTOIMMUNE & INFECTIOUS DISEASES – IIFT",
+        description:
+          "A range of reagents for indirect immunofluorescence tests (IIFT), essential for diagnosing autoimmune and infectious diseases.",
       },
       {
-        allover: "Reagents",
         id: "17",
+        image: image1,
         title: "AUTOIMMUNE & INFECTIOUS DISEASES – ELISA",
         shortdescription: "AUTOIMMUNE & INFECTIOUS DISEASES – ELISA",
+        description:
+          "ELISA reagents for the detection and diagnosis of autoimmune and infectious diseases, ensuring high sensitivity and specificity.",
       },
       {
-        allover: "Reagents",
         id: "18",
+        image: image1,
         title: "AUTOIMMUNE & INFECTIOUS LIA – EUROLINE",
         shortdescription: "AUTOIMMUNE & INFECTIOUS LIA – EUROLINE",
+        description:
+          "EUROLINE reagents for line immunoassays, providing accurate and reliable results for autoimmune and infectious disease diagnostics.",
       },
       {
-        allover: "Reagents",
         id: "19",
+        image: image1,
         title: "ALLERGY PROFILE",
         shortdescription: "ALLERGY PROFILE",
+        description:
+          "Comprehensive reagents for allergy profiling, aiding in the accurate diagnosis of various allergic conditions.",
       },
       {
-        allover: "Reagents",
         id: "20",
+        image: image1,
         title: "BRAHMS BIOMARKERS",
         shortdescription: "BRAHMS BIOMARKERS",
+        description:
+          "BRAHMS biomarkers for various diagnostic applications, known for their reliability and accuracy in clinical settings.",
       },
       {
-        allover: "Reagents",
         id: "21",
+        image: image1,
         title: "BÜHLMANN LABORATORIES",
         shortdescription: "BÜHLMANN LABORATORIES",
+        description:
+          "A range of diagnostic reagents from BÜHLMANN Laboratories, catering to various immunological and biochemical assays.",
       },
       {
-        allover: "Reagents",
         id: "22",
+        image: image1,
         title: "SARS – COV 2",
         shortdescription: "SARS – COV 2",
+        description:
+          "Reagents for the detection of SARS-CoV-2, essential for COVID-19 diagnostic testing and monitoring.",
       },
       {
-        allover: "Reagents",
         id: "23",
+        image: image1,
         title: "iFlash 1200 REAGENTS",
         shortdescription: "iFlash 1200 REAGENTS",
+        description:
+          "Reagents tailored for the iFlash 1200, ensuring optimal performance in chemiluminescence immunoassays.",
       },
     ],
   },
@@ -407,7 +451,7 @@ const products = [
       {
         topic: "POCT Hormone Analyzer",
         id: "1",
-        image: { image1 },
+        image: image1,
         title: "ichroma™ III",
         shortdescription: "iChroma 3 POCT Hormone Analyzer",
         description:
@@ -416,7 +460,7 @@ const products = [
       {
         topic: "POCT Hormone Analyzer",
         id: "2",
-        image: { image1 },
+        image: image1,
         title: "ichroma™ II",
         shortdescription: "iChroma 2 POCT Hormone Analyzer",
         description:
@@ -430,6 +474,7 @@ const products = [
       {
         topic: "Sample Sorter",
         id: "1",
+        image: image1,
         title: "SortPro Sample Sorter",
         shortdescription: "Fully Automatic 3-Part SortPro Sample Sorter",
         description:
