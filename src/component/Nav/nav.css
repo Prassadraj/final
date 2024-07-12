@@ -4,3 +4,6 @@
 .nav-item:hover {
   color: #00a986;
 }
+.hidden {
+  display: none;
+}

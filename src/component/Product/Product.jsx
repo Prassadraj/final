@@ -5,45 +5,48 @@ import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 import frame1 from "../../images/products/frame1.png";
 import Footer from "../../homepages/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelopesBulk, faMessage } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faEnvelopesBulk,
+  faMessage,
+} from "@fortawesome/free-solid-svg-icons";
 import Transition from "../Transition/Transition";
 import { ProductDataContext } from "../Context/ProductData";
 import { faBloggerB } from "@fortawesome/free-brands-svg-icons";
 
 function Product() {
   const { data } = useContext(ProductDataContext);
-  console.log(data[0].items[0].image);
-  const images = [
-    { url: frame1 },
-    { url: frame1 },
-    { url: frame1 },
-    { url: frame1 },
-  ];
-
+  const [open, setOpen] = useState(false);
   const [title, setTitle] = useState(data[0].category);
-  const [openDropdown, setOpenDropdown] = useState(0);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleDropdown = (index) => {
     setOpenDropdown(openDropdown === index ? null : index);
     setTitle(data[index].category);
   };
+
   const selectedCategoryItems =
     data.find((category) => category.category === title)?.items || [];
 
   return (
     <div className="font-poppins bg-gray-100">
-      <header>
+      <header className="hidden sm:block">
         <SimpleImageSlider
           width="100%"
           height={200}
-          images={images}
+          images={[
+            { url: frame1 },
+            { url: frame1 },
+            { url: frame1 },
+            { url: frame1 },
+          ]}
           showBullets={false}
           showNavs={true}
           autoPlay={true}
           autoPlayDelay={2.0}
         />
       </header>
-      <section className="px-16 py-2 text-base text-black">
+      <section className="px-4 py-2 text-base text-black">
         <div className="mb-2">
           <p>
             <Link to="/">Home</Link>
@@ -51,13 +54,24 @@ function Product() {
             <span className="font-semibold">{title}</span>
           </p>
         </div>
-        <div className="flex">
-          <div className="flex-[25%] bg-white py-2 px-4 sticky top-0 h-[90vh] overflow-y-auto">
+        <div
+          className="flex items-center gap-2 text-xl justify-end sm:hidden"
+          onClick={() => setOpen((open) => !open)}
+        >
+          <p>Select Equipment</p>
+          <FontAwesomeIcon icon={faBars} />
+        </div>
+        <div className="flex flex-col sm:flex-row">
+          <div
+            className={`sm:w-[25%] bg-white py-2 px-4 sticky top-0 h-[90vh] overflow-y-auto ${
+              open ? "fixed w-full h-screen" : ""
+            }`}
+          >
             <div className="w-full mx-auto">
               {data.map((dropdown, index) => (
                 <div key={index} className="rounded mb-2">
-                  <div
-                    className="flex justify-between items-center py-3 cursor-pointer"
+                  <button
+                    className="flex justify-between items-center py-3 w-full cursor-pointer"
                     onClick={() => toggleDropdown(index)}
                   >
                     <p className="text-base font-semibold">
@@ -68,12 +82,12 @@ function Product() {
                     ) : (
                       <FaChevronRight />
                     )}
-                  </div>
+                  </button>
                   {openDropdown === index && (
                     <div className="border-t border-gray-300">
                       {dropdown.items.map((item, itemIndex) => (
                         <p
-                          className="px-4 py-2 text-sm w-full uppercase hover:bg-custom-green hover:text-light-green cursor-pointer"
+                          className="px-4 py-2 text-sm uppercase hover:bg-custom-green hover:text-light-green cursor-pointer"
                           key={itemIndex}
                         >
                           {item.title}
@@ -85,11 +99,11 @@ function Product() {
               ))}
             </div>
           </div>
-          <div className="flex-[75%] bg-white p-4 text-center h-fit overflow-y-auto">
+          <div className="sm:w-[75%] bg-white p-4 text-center overflow-y-auto">
             <h1 className="text-2xl font-bold mb-4 text-left text-black">
               {title}
             </h1>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
               {selectedCategoryItems.map((item, index) => (
                 <div
                   key={index}
@@ -105,7 +119,8 @@ function Product() {
                       {item.title}
                     </h2>
                     <p className="text-sm text-gray-600 text-left">
-                      {item.description}
+                      {item.description.substring(0, 100)}
+                      {item.description.length > 100 && "..."}
                     </p>
                   </div>
                   <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -132,7 +147,33 @@ function Product() {
           </div>
         </div>
       </section>
-      <div className="flex justify-center items-center gap-5 p-5 ">
+      <div className="sm:hidden">
+        {/* Mobile submenu button */}
+        {data.map((dropdown, index) => (
+          <div key={index} className="mb-2">
+            <button
+              className="flex justify-between items-center py-3 px-4 bg-white rounded-md shadow-md w-full mb-1"
+              onClick={() => toggleDropdown(index)}
+            >
+              <p className="text-base font-semibold">{dropdown.category}</p>
+              {openDropdown === index ? <FaChevronDown /> : <FaChevronRight />}
+            </button>
+            {openDropdown === index && (
+              <div className="border-t border-gray-300">
+                {dropdown.items.map((item, itemIndex) => (
+                  <p
+                    className="px-4 py-2 text-sm uppercase hover:bg-custom-green hover:text-light-green cursor-pointer"
+                    key={itemIndex}
+                  >
+                    {item.title}
+                  </p>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center items-center gap-5 p-5">
         <div className="p-4 bg-[#D9D7F1] text-gray-500 rounded-md flex flex-col gap-1">
           <div className="flex gap-2">
             <div className="flex items-center">

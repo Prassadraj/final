@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../images/logo.png";
 import "./nav.css";
+
 function Nav() {
   const location = useLocation();
   const [selected, setSelected] = useState("");
-  console.log(selected);
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+
   useEffect(() => {
     switch (location.pathname) {
       case "/":
@@ -36,30 +39,36 @@ function Nav() {
         setSelected("");
         break;
     }
-    // loading section
 
-    // // Show loading indicator for 0.5 seconds whenever location changes
-    // setIsLoading(true);
-    // const loadingTimeout = setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 300);
+    const handleScroll = () => {
+      const currentScrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
 
-    // return () => {
-    //   clearTimeout(loadingTimeout);
-    // };
-  }, [location.pathname]);
+      if (currentScrollTop > lastScrollTop) {
+        setIsHidden(true); // scrolling down
+      } else {
+        setIsHidden(false); // scrolling up
+      }
+
+      setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollTop, location.pathname]);
+
   return (
     <div
-      className=" items-center mb-2 hidden md:flex"
+      className={`items-center mb-2 md:flex ${isHidden ? "hidden" : ""}`}
       style={{ marginTop: "25px", gap: "110px", marginLeft: "70px" }}
     >
       <div className="left">
         <Link to="/">
-          <img width="140px" height="70px" src={logo} alt="" />
+          <img width="140px" height="70px" src={logo} alt="Logo" />
         </Link>
       </div>
       <div
-        className=" flex"
+        className="flex"
         style={{
           gap: "51px",
           fontFamily: "Poppins, sans-serif",
@@ -69,7 +78,7 @@ function Nav() {
       >
         <div className="nav-item">
           <Link
-            className={`cursor-pointer  ${
+            className={`cursor-pointer ${
               selected === "home" ? "selected" : ""
             }`}
             to="/"
@@ -79,7 +88,7 @@ function Nav() {
         </div>
         <div className="nav-item">
           <Link
-            className={`cursor-pointer  ${
+            className={`cursor-pointer ${
               selected === "about" ? "selected" : ""
             }`}
             to="/about"
@@ -89,7 +98,7 @@ function Nav() {
         </div>
         <div className="nav-item">
           <Link
-            className={`cursor-pointer  ${
+            className={`cursor-pointer ${
               selected === "brand" ? "selected" : ""
             }`}
             to="/brand"
@@ -99,7 +108,7 @@ function Nav() {
         </div>
         <div className="nav-item">
           <Link
-            className={`cursor-pointer  ${
+            className={`cursor-pointer ${
               selected === "product" ? "selected" : ""
             }`}
             to="/product"
@@ -109,7 +118,7 @@ function Nav() {
         </div>
         <div className="nav-item">
           <Link
-            className={`cursor-pointer  ${
+            className={`cursor-pointer ${
               selected === "career" ? "selected" : ""
             }`}
             to="/career"
@@ -119,7 +128,7 @@ function Nav() {
         </div>
         <div className="nav-item">
           <Link
-            className={`cursor-pointer  ${
+            className={`cursor-pointer ${
               selected === "success" ? "selected" : ""
             }`}
             to="/success"
@@ -129,7 +138,7 @@ function Nav() {
         </div>
         <div className="nav-item">
           <Link
-            className={`cursor-pointer  ${
+            className={`cursor-pointer ${
               selected === "blog" ? "selected" : ""
             }`}
             to="/blog"
@@ -139,7 +148,7 @@ function Nav() {
         </div>
         <div className="nav-item">
           <Link
-            className={`cursor-pointer  ${
+            className={`cursor-pointer ${
               selected === "contact" ? "selected" : ""
             }`}
             to="/contact"
