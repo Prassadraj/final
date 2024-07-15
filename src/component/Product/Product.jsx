@@ -13,6 +13,7 @@ import {
 import Transition from "../Transition/Transition";
 import { ProductDataContext } from "../Context/ProductData";
 import { faBloggerB } from "@fortawesome/free-brands-svg-icons";
+import "./product.css";
 
 function Product() {
   const { data } = useContext(ProductDataContext);
@@ -49,7 +50,9 @@ function Product() {
       <section className="px-4 py-2 text-base text-black">
         <div className="mb-2">
           <p>
-            <Link to="/">Home</Link>
+            <Link to="/" className="no-underline">
+              Home
+            </Link>
             <span> / </span>
             <span className="font-semibold">{title}</span>
           </p>
@@ -86,12 +89,18 @@ function Product() {
                   {openDropdown === index && (
                     <div className="border-t border-gray-300">
                       {dropdown.items.map((item, itemIndex) => (
-                        <p
-                          className="px-4 py-2 text-sm uppercase hover:bg-custom-green hover:text-light-green cursor-pointer"
-                          key={itemIndex}
+                        <Link
+                          to={`productinfo/${title}/${item.id}`}
+                          key={item.id}
+                          className="no-underline"
                         >
-                          {item.title}
-                        </p>
+                          <p
+                            className="px-4 py-2 text-sm uppercase hover:bg-custom-green hover:text-light-green cursor-pointer"
+                            key={itemIndex}
+                          >
+                            {item.title}
+                          </p>
+                        </Link>
                       ))}
                     </div>
                   )}
@@ -105,28 +114,31 @@ function Product() {
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
               {selectedCategoryItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white border rounded-lg overflow-hidden relative group"
+                <Link
+                  to={`productinfo/${title}/${item.id}`}
+                  key={item.id}
+                  className="no-underline"
                 >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-32 object-cover"
-                  />
-                  <div className="p-4 text-gray-600">
-                    <h2 className="text-lg font-semibold text-gray-600 text-left">
-                      {item.title}
-                    </h2>
-                    <p className="text-sm text-gray-600 text-left">
-                      {item.description.substring(0, 100)}
-                      {item.description.length > 100 && "..."}
-                    </p>
+                  <div className="bg-white border rounded-lg overflow-hidden relative group">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-32 object-cover"
+                    />
+                    <div className="p-4 text-gray-600">
+                      <h2 className="text-lg font-semibold text-gray-600 text-left">
+                        {item.title}
+                      </h2>
+                      <p className="text-sm text-gray-600 text-left">
+                        {item.description.substring(0, 100)}
+                        {item.description.length > 100 && "..."}
+                      </p>
+                    </div>
+                    <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      View Product
+                    </div>
                   </div>
-                  <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    View Product
-                  </div>
-                </div>
+                </Link>
               ))}
             </div>
             <div className="p-4 bg-gray-200 rounded-md">
@@ -147,32 +159,7 @@ function Product() {
           </div>
         </div>
       </section>
-      <div className="sm:hidden">
-        {/* Mobile submenu button */}
-        {data.map((dropdown, index) => (
-          <div key={index} className="mb-2">
-            <button
-              className="flex justify-between items-center py-3 px-4 bg-white rounded-md shadow-md w-full mb-1"
-              onClick={() => toggleDropdown(index)}
-            >
-              <p className="text-base font-semibold">{dropdown.category}</p>
-              {openDropdown === index ? <FaChevronDown /> : <FaChevronRight />}
-            </button>
-            {openDropdown === index && (
-              <div className="border-t border-gray-300">
-                {dropdown.items.map((item, itemIndex) => (
-                  <p
-                    className="px-4 py-2 text-sm uppercase hover:bg-custom-green hover:text-light-green cursor-pointer"
-                    key={itemIndex}
-                  >
-                    {item.title}
-                  </p>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+
       <div className="flex justify-center items-center gap-5 p-5">
         <div className="p-4 bg-[#D9D7F1] text-gray-500 rounded-md flex flex-col gap-1">
           <div className="flex gap-2">
