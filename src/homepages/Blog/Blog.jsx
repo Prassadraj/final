@@ -14,8 +14,8 @@ function Blog() {
       {
         opacity: 1,
         scale: 1,
-        duration: 1,
-        delay: 0.5,
+        duration: 0.5,
+        delay: 0.2,
         stagger: { amount: 1 },
 
         scrollTrigger: ".blogBox",

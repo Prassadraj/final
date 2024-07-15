@@ -59,8 +59,10 @@ function Nav() {
 
   return (
     <div
-      className={`items-center mb-2 md:flex ${isHidden ? "hidden" : ""}`}
-      style={{ marginTop: "25px", gap: "110px", marginLeft: "70px" }}
+      className={`items-center mb-2 md:flex ${
+        isHidden ? "hidden" : ""
+      } justify-around`}
+      style={{ marginTop: "25px" }}
     >
       <div className="left">
         <Link to="/">
