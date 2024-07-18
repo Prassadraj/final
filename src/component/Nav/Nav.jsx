@@ -59,7 +59,7 @@ function Nav() {
 
   return (
     <div
-      className={`items-center mb-2 md:flex ${
+      className={`items-center mb-2 md:flex  hidden${
         isHidden ? "hidden" : ""
       } justify-around`}
       style={{ marginTop: "25px" }}

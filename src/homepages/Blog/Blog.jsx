@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 function Blog() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo(
+    gsap.fromTo( 
       ".blogBox",
       {
         opacity: "0",

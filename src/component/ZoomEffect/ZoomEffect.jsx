@@ -3,11 +3,11 @@ import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 import debounce from "lodash.debounce";
 import styles from "./styles.module.scss";
 import itrack from "../../images/itrack/itrack.png";
-import itrackImg1 from "../../images/itrack/itrack1.webp";
-import itrackImg2 from "../../images/itrack/itrack2.webp";
-import itrackImg3 from "../../images/itrack/itrack3.webp";
-import itrackImg4 from "../../images/itrack/itrack4.webp";
-import itrackImg5 from "../../images/itrack/itrack5.webp";
+import itrackImg1 from "../../images/itrack/itrack1.png";
+import itrackImg2 from "../../images/itrack/itrack2.png";
+import itrackImg3 from "../../images/itrack/itrack3.png";
+import itrackImg4 from "../../images/itrack/itrack4.png";
+import itrackImg5 from "../../images/itrack/itrack5.png";
 // import itrackBG from "../../images/itrack/Designer.png";
 
 import AOS from "aos";
