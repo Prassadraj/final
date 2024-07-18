@@ -59,7 +59,7 @@ function Section1() {
   }, []);
 
   return (
-    <div className="section1 md:flex md:flex-row grid grid-cols-1 justify-center items-center h-full w-full overflow-hidden">
+    <div className="section1 md:flex md:flex-row grid grid-cols-1 justify-center items-center h-full w-full overflow-hidden font-mont">
       <div className="flex-1 md:w-1/2 w-full mt-0 sm:mt-24 sm:ml-4 lg:ml-14 px-4 sm:px-0">
         {/* <TsParticle /> */}
         <p
@@ -69,7 +69,7 @@ function Section1() {
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
             WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
           }}
-          className="font-poppins text-2xl md:text-3xl"
+          className=" text-2xl md:text-3xl"
           data-splitting="chars"
         >
           Medical Laboratory
@@ -81,12 +81,12 @@ function Section1() {
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
             WebkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
           }}
-          className="font-poppins text-2xl md:text-3xl w-full md:w-[50vw]"
+          className=" text-2xl md:text-3xl w-full md:w-[50vw]"
           data-splitting="chars"
         >
           Equipment Supplier in India
         </p>
-        <div className="description" style={{ fontFamily: "Poppins" }}>
+        <div className="description">
           <p
             className="subTitle text-sm md:text-xl w-full md:w-[40vw]"
             style={{

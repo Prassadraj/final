@@ -106,7 +106,7 @@ const Organisation = () => {
           <div
             className="rightside"
             style={
-              scrollY > 2520 && scrollY < 4150
+              scrollY > 2590 && scrollY < 4250
                 ? {
                     top: "10vh",
                     left: "50vw",
@@ -198,7 +198,7 @@ const Organisation = () => {
           <div
             className="rightside"
             style={
-              scrollY > 2398 && scrollY < 4000
+              scrollY > 2398 && scrollY < 4100
                 ? {
                     top: "43vh",
                     left: "50vw",

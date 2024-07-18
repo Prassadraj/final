@@ -22,9 +22,11 @@ function ProductInfo() {
   }
 
   const [expanded, setExpanded] = useState(null);
+  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedMenuItem, setSelectedMenuItem] = useState(0);
 
   const toggleExpand = (section) => {
-    setExpanded(expanded === section ? null : section);
+    setExpanded((prevExpanded) => (prevExpanded === section ? null : section));
   };
 
   const sectionData = {
@@ -32,7 +34,6 @@ function ProductInfo() {
       "TURBOCHEM MAGNA",
       "Feature 1: High precision in chemical analysis.",
       "Feature 2: User-friendly interface for easy operation.",
-      // "Feature 3: Fast and reliable results.",
     ],
     Technology: [
       "Advanced sensor technology for accurate readings.",
@@ -52,33 +53,72 @@ function ProductInfo() {
       "For more information, contact our sales team at sales@example.com.",
       "For technical support, email support@example.com or call 123-456-7890.",
     ],
+    Resource: [
+      { name: "Warranty services", content: "Content for Warranty services" },
+      {
+        name: "Product Brochure PDF",
+        content: "Content for Product Brochure PDF",
+      },
+      {
+        name: "Detailed specifications (blog link)",
+        content: "Content for Detailed specifications",
+      },
+      {
+        name: "Offers or discounts",
+        content: "Content for Offers or discounts",
+      },
+    ],
   };
 
+  const tabs = [
+    { name: "Product overview", content: product.description },
+    {
+      name: "Technical specification",
+      content: "Technical specification content",
+    },
+    { name: "Resource", content: sectionData.Resource },
+    { name: "Product Video", content: "Product Video content" },
+    { name: "Product Testimonials", content: "Product Testimonials content" },
+  ];
+
+  const sideMenuItems = tabs.map((tab) => ({ name: tab.name }));
+
   return (
-    <div className="product-info text-black overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4 px-2 mb-2">
+    <div className="product-info text-black overflow-hidden px-5">
+      <div className="flex flex-col md:flex-row items-center justify-start gap-2 px-2 mb-2">
+        <div className="hidden md:block w-1/4">
+          <img
+            src={image1}
+            alt="Descriptive text"
+            className="border-1 border-black"
+          />
+          <img src={image1} alt="Descriptive text" />
+          <img src={image1} alt="Descriptive text" />
+        </div>
         <div className="w-full flex justify-center">
           <img src={image1} alt="Descriptive text" />
         </div>
         <div className="w-full flex flex-col text-xl text-justify">
-          <p>TURBOCHEM MAGNA</p>
+          <p>{product.title}</p>
           <p className="font-semibold">Overview:</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque
-            assumenda iste ex explicabo totam dolor id doloremque! Omnis
-            perferendis consequatur temporibus ullam in facilis asperiores
-            perspiciatis dolorum voluptatem ipsum.
-          </p>
+          <p className="sm:max-w-xl">{product.description}</p>
+          <div className="items-center gap-2 text-xl hidden md:flex mt-4">
+            <p>Share:</p>
+            <FontAwesomeIcon icon={faFacebook} />
+            <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={faWhatsapp} />
+          </div>
         </div>
       </div>
       <div>
-        <div className="flex items-center gap-2 text-xl px-2">
+        {/* for mobile */}
+        <div className="flex items-center gap-2 text-xl px-2 sm:hidden">
           <p>Share:</p>
           <FontAwesomeIcon icon={faFacebook} />
           <FontAwesomeIcon icon={faTwitter} />
           <FontAwesomeIcon icon={faWhatsapp} />
         </div>
-        <div className="">
+        <div className="sm:hidden">
           <div className="w-full">
             {Object.keys(sectionData).map((section, index) => (
               <div key={index} className="border-b border-gray-300">
@@ -96,6 +136,7 @@ function ProductInfo() {
                         {sectionData[section].map((item, idx) => (
                           <tr key={idx}>
                             <td className="p-2 text-lg">{item}</td>
+                            {/* Render the extra item here */}
                             {section === "Features" && idx === 2 ? (
                               <td className="p-2">{sectionData[section][3]}</td>
                             ) : null}
@@ -107,6 +148,77 @@ function ProductInfo() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+        {/* for laptop */}
+        <div className="px-2 md:px-5">
+          <div className="flex flex-col w-full h-[500px] text-lg">
+            <div className="flex w-full border-b">
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className={`flex-1 py-2 px-4 text-center ${
+                    selectedTab === index
+                      ? "border-b-2 border-green-600 text-green-600"
+                      : "text-gray-600"
+                  }`}
+                  onClick={() => {
+                    setSelectedTab(index);
+                    // Reset selectedMenuItem when changing tabs
+                    setSelectedMenuItem(0);
+                  }}
+                >
+                  {tab.name}
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-1">
+              <div className="w-1/4 p-4 ">
+                {/* Render side menu items based on selected tab */}
+                {tabs[selectedTab].name === "Resource"
+                  ? tabs[selectedTab].content.map((item, index) => (
+                      <button
+                        key={index}
+                        className={`w-full p-2 mb-2 text-left ${
+                          selectedMenuItem === index
+                            ? "bg-green-600 text-white"
+                            : "bg-white text-gray-600"
+                        }`}
+                        onClick={() => setSelectedMenuItem(index)}
+                      >
+                        {item.name}
+                      </button>
+                    ))
+                  : sideMenuItems.map((item, index) => (
+                      <button
+                        key={index}
+                        className={`w-full p-2 mb-2 text-left ${
+                          selectedMenuItem === index
+                            ? "bg-green-600 text-white"
+                            : "bg-white text-gray-600"
+                        }`}
+                        onClick={() => setSelectedMenuItem(index)}
+                      >
+                        {item.name}
+                      </button>
+                    ))}
+              </div>
+              <div className="w-3/4 p-4">
+                {/* Render content based on selected tab and menu item */}
+                {selectedTab === 0 && <p>{tabs[selectedTab].content}</p>}
+                {selectedTab === 1 && <p>{tabs[selectedTab].content}</p>}
+                {selectedTab === 2 && (
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">
+                      {tabs[selectedTab].content[selectedMenuItem].name}
+                    </h3>
+                    <p>{tabs[selectedTab].content[selectedMenuItem].content}</p>
+                  </div>
+                )}
+                {selectedTab === 3 && <p>{tabs[selectedTab].content}</p>}
+                {selectedTab === 4 && <p>{tabs[selectedTab].content}</p>}
+              </div>
+            </div>
           </div>
         </div>
       </div>

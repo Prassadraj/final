@@ -90,7 +90,7 @@ function Section2() {
   return (
     <div
       ref={containerRef}
-      className="h-[264px] bg-white sm:flex grid grid-cols-2 items-center justify-around pl-1 pr-1 sm:pl-14 sm:pr-14 counter-container"
+      className="md:h-[250px] bg-white sm:flex grid grid-cols-2 items-center justify-around pl-1 pr-1 sm:pl-14 sm:pr-14 counter-container"
     >
       {stats.map((stat, index) => (
         <div key={index} className="flex flex-col items-center counterBox">
