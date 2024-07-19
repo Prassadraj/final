@@ -41,7 +41,7 @@ const categoryItems2 = [
 function ProductCategaries() {
   return (
     <div
-      className=" h-[100vh] flex justify-center items-center"
+      className=" h-[100vh] flex justify-center items-center mb-20"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",

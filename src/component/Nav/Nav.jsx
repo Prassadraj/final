@@ -7,7 +7,6 @@ function Nav() {
   const location = useLocation();
   const [selected, setSelected] = useState("");
   const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
 
   useEffect(() => {
     switch (location.pathname) {
@@ -39,32 +38,13 @@ function Nav() {
         setSelected("");
         break;
     }
-
-    const handleScroll = () => {
-      const currentScrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      if (currentScrollTop > lastScrollTop) {
-        setIsHidden(true); // scrolling down
-      } else {
-        setIsHidden(false); // scrolling up
-      }
-
-      setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollTop, location.pathname]);
+  }, [location.pathname]);
 
   return (
     <div
-      className={`items-center mb-2 md:flex  hidden${
-        isHidden ? "hidden" : ""
-      } justify-around`}
-      style={{ marginTop: "25px" }}
+      className={` md:flex sticky top-0 bg-white h-fit w-full z-50 items-center justify-around`}
     >
-      <div className="left">
+      <div className="left py-3">
         <Link to="/">
           <img width="140px" height="70px" src={logo} alt="Logo" />
         </Link>

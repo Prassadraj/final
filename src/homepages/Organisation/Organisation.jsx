@@ -88,7 +88,11 @@ const Organisation = () => {
               key={i}
               className="h-[100vh] flex flex-col justify-center items-center p-10"
             >
-              <img src={image.img} alt="" className="image w-fit rounded-2xl" />
+              <img
+                src={image.img}
+                alt=""
+                className="image w-fit rounded-2xl h-[500px]"
+              />
             </div>
           ))}
         </div>
@@ -106,9 +110,9 @@ const Organisation = () => {
           <div
             className="rightside"
             style={
-              scrollY > 2590 && scrollY < 4250
+              scrollY > 2650 && scrollY < 4350
                 ? {
-                    top: "10vh",
+                    top: "15vh",
                     left: "50vw",
                     position: "fixed",
                     transition:
@@ -191,16 +195,16 @@ const Organisation = () => {
                       transition: "opacity 1s ease-in-out",
                     }
               }
-              className="w-[2px] h-[25vh] bg-custom-green relative -top-[20vh] left-[3vh]"
+              className="w-[2px] h-[22vh] bg-custom-green relative -top-[20vh] left-[3vh]"
             ></div>
           </div>
           {/* Content 2 */}
           <div
             className="rightside"
             style={
-              scrollY > 2398 && scrollY < 4100
+              scrollY > 2450 && scrollY < 4200
                 ? {
-                    top: "43vh",
+                    top: "45vh",
                     left: "50vw",
                     position: "fixed",
                     transition: "top 2s ease-in-out",
@@ -281,14 +285,14 @@ const Organisation = () => {
                       transition: "opacity 0.5s ease-in-out",
                     }
               }
-              className="w-[2px] h-[19vh] bg-custom-green relative -top-[15vh] left-[3vh]"
+              className="w-[2px] h-[18vh] bg-custom-green relative -top-[15vh] left-[3vh]"
             ></div>
           </div>
           {/* Content 3 */}
           <div
             className="rightside"
             style={
-              scrollY > 2200 && scrollY < 3900
+              scrollY > 2300 && scrollY < 4000
                 ? {
                     top: "70vh",
                     left: "50vw",

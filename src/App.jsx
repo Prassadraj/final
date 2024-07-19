@@ -37,9 +37,6 @@ function App() {
 
   return (
     <>
-      <div className="hidden sm:block w-4 h-4 fixed top-0 left-0 pointer-events-none flair bg-custom-green border-custom-green border-2 rounded-full z-20">
-        <img src="" alt="" />
-      </div>
       <Nav />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>

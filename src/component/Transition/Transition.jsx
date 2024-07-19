@@ -1,11 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./transition.css";
+
 const calc = (rowIndex, totalIndex) => {
   const blockDelay = Math.random() * 0.4;
   const rowDelay = (totalIndex - rowIndex - 1) * 0.02;
   return blockDelay + rowDelay;
 };
+
 const Transition = (Page) => {
   return () => (
     <>
