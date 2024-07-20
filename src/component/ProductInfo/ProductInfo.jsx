@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ProductDataContext } from "../Context/ProductData";
 import Transition from "../Transition/Transition";
 import image1 from "../../images/image1.jpg";
@@ -9,6 +9,8 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ContactUs from "../../homepages/ContactUs/ContactUs";
+import Footer from "../../homepages/Footer/Footer";
 
 function ProductInfo() {
   const { data } = useContext(ProductDataContext);
@@ -16,6 +18,9 @@ function ProductInfo() {
 
   const productCategory = data.find((cat) => cat.category === category);
   const product = productCategory?.items.find((item) => item.id === id);
+  const relatedProduct = productCategory.items.filter(
+    (related) => related.id !== id
+  );
 
   if (!product) {
     return <div>Product not found</div>;
@@ -53,39 +58,110 @@ function ProductInfo() {
       "For more information, contact our sales team at sales@example.com.",
       "For technical support, email support@example.com or call 123-456-7890.",
     ],
-    Resource: [
-      { name: "Warranty services", content: "Content for Warranty services" },
-      {
-        name: "Product Brochure PDF",
-        content: "Content for Product Brochure PDF",
-      },
-      {
-        name: "Detailed specifications (blog link)",
-        content: "Content for Detailed specifications",
-      },
-      {
-        name: "Offers or discounts",
-        content: "Content for Offers or discounts",
-      },
-    ],
   };
 
   const tabs = [
-    { name: "Product overview", content: product.description },
+    {
+      name: "Product overview",
+      submenu: [
+        {
+          menuName: "Description",
+          content:
+            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+        },
+        {
+          menuName: "Work Principle",
+          content:
+            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+        },
+        {
+          menuName: "Advantages",
+          content:
+            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+        },
+        {
+          menuName: "Benefits",
+          content:
+            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+        },
+        {
+          menuName: "Main And Care",
+          content:
+            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+        },
+      ],
+    },
     {
       name: "Technical specification",
       content: "Technical specification content",
     },
-    { name: "Resource", content: sectionData.Resource },
+    {
+      name: "Resource",
+      submenu: [
+        {
+          menuName: "Work Services",
+          content:
+            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+        },
+        {
+          menuName: "Product Brochure df",
+          content:
+            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+        },
+        {
+          menuName: "Detailed Specification",
+          content:
+            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+        },
+        {
+          menuName: "Offer or Discounts",
+          content:
+            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+        },
+      ],
+    },
     { name: "Product Video", content: "Product Video content" },
     { name: "Product Testimonials", content: "Product Testimonials content" },
   ];
+  const [showInfo, setShowInfo] = useState(null);
 
-  const sideMenuItems = tabs.map((tab) => ({ name: tab.name }));
+  const toggleInfo = (index) => {
+    setShowInfo((prev) => (prev === index ? null : index));
+  };
 
+  const faqs = [
+    {
+      question: "What is a Payment Gateway?",
+      answers: [
+        "A payment gateway is a technology used by merchants to accept debit or credit card purchases from customers.",
+        "It securely processes payment information and ensures funds are transferred to the merchant's account.",
+      ],
+    },
+    {
+      question:
+        "Do I need to pay to Instapay even when there is no transaction going on in my business?",
+      answers: [
+        "No, you do not need to pay if there are no transactions.",
+        "You only pay for the transactions that occur.",
+      ],
+    },
+    {
+      question: "What platforms does ACME payment gateway support?",
+      answers: [
+        "ACME payment gateway supports multiple platforms including e-commerce websites, mobile apps, and in-store point of sale systems.",
+      ],
+    },
+    {
+      question: "Does ACME provide international payments support?",
+      answers: [
+        "Yes, ACME provides international payment support.",
+        "You can accept payments from customers worldwide.",
+      ],
+    },
+  ];
   return (
-    <div className="product-info text-black overflow-hidden px-5">
-      <div className="flex flex-col md:flex-row items-center justify-start gap-2 px-2 mb-2">
+    <div className="product-info text-black overflow-hidden">
+      <div className="flex flex-col md:flex-row items-center justify-start gap-2 px-5 mb-2 !md:px-5">
         <div className="hidden md:block w-1/4">
           <img
             src={image1}
@@ -110,7 +186,7 @@ function ProductInfo() {
           </div>
         </div>
       </div>
-      <div>
+      <div className="">
         {/* for mobile */}
         <div className="flex items-center gap-2 text-xl px-2 sm:hidden">
           <p>Share:</p>
@@ -151,103 +227,133 @@ function ProductInfo() {
           </div>
         </div>
         {/* for laptop */}
-        <div className="px-2 md:px-5">
-          <div className="flex flex-col w-full h-[500px] text-lg">
-            <div className="flex w-full border-b">
-              {tabs.map((tab, index) => (
-                <button
-                  key={index}
-                  className={`flex-1 py-2 px-4 text-center ${
-                    selectedTab === index
-                      ? "border-b-2 border-green-600 text-green-600"
-                      : "text-gray-600"
-                  }`}
-                  onClick={() => {
-                    setSelectedTab(index);
-                    // Reset selectedMenuItem when changing tabs
-                    setSelectedMenuItem(0);
-                  }}
-                >
-                  {tab.name}
-                </button>
-              ))}
-            </div>
-            <div className="flex flex-1">
-              <div className="w-1/4 p-4 ">
-                {/* Render side menu items based on selected tab */}
-                {tabs[selectedTab].name === "Resource"
-                  ? tabs[selectedTab].content.map((item, index) => (
-                      <button
-                        key={index}
-                        className={`w-full p-2 mb-2 text-left ${
-                          selectedMenuItem === index
-                            ? "bg-green-600 text-white"
-                            : "bg-white text-gray-600"
-                        }`}
-                        onClick={() => setSelectedMenuItem(index)}
-                      >
-                        {item.name}
-                      </button>
-                    ))
-                  : sideMenuItems.map((item, index) => (
-                      <button
-                        key={index}
-                        className={`w-full p-2 mb-2 text-left ${
-                          selectedMenuItem === index
-                            ? "bg-green-600 text-white"
-                            : "bg-white text-gray-600"
-                        }`}
-                        onClick={() => setSelectedMenuItem(index)}
-                      >
-                        {item.name}
-                      </button>
-                    ))}
-              </div>
-              <div className="w-3/4 p-4">
-                {/* Render content based on selected tab and menu item */}
-                {selectedTab === 0 && <p>{tabs[selectedTab].content}</p>}
-                {selectedTab === 1 && <p>{tabs[selectedTab].content}</p>}
-                {selectedTab === 2 && (
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">
-                      {tabs[selectedTab].content[selectedMenuItem].name}
-                    </h3>
-                    <p>{tabs[selectedTab].content[selectedMenuItem].content}</p>
+        <div className="p-5 md:block hidden mb-4">
+          <div className="flex justify-around text-xl border py-4">
+            {tabs.map((header, index) => (
+              <p
+                key={index}
+                onClick={() => {
+                  setSelectedTab(index);
+                  setSelectedMenuItem(0); // Reset submenu item on tab change
+                }}
+                className={`cursor-pointer ${
+                  selectedTab === index
+                    ? " font-bold text-custom-green"
+                    : "text-gray-600"
+                }`}
+              >
+                {header.name}
+              </p>
+            ))}
+          </div>
+
+          <div className="flex border-2">
+            {tabs[selectedTab].submenu && (
+              <div className="w-1/4 text-xl flex flex-col items-center border-r pr-4">
+                {tabs[selectedTab].submenu.map((submenuItem, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSelectedMenuItem(index)}
+                    className={`cursor-pointer py-2 ${
+                      selectedMenuItem === index
+                        ? "font-bold text-custom-green"
+                        : "text-gray-600"
+                    }`}
+                  >
+                    {submenuItem.menuName}
                   </div>
-                )}
-                {selectedTab === 3 && <p>{tabs[selectedTab].content}</p>}
-                {selectedTab === 4 && <p>{tabs[selectedTab].content}</p>}
+                ))}
               </div>
+            )}
+            <div
+              className={`p-4 ${
+                tabs[selectedTab].submenu
+                  ? "w-3/4 text-start"
+                  : "w-full text-center"
+              } text-xl`}
+            >
+              {tabs[selectedTab].submenu ? (
+                <p className="rounded p-4">
+                  {tabs[selectedTab].submenu[selectedMenuItem].content}
+                </p>
+              ) : (
+                <p className="rounded p-4">{tabs[selectedTab].content}</p>
+              )}
             </div>
           </div>
         </div>
       </div>
-      <div className="px-2 mt-4">
-        <p className="text-left text-xl mb-2">Related Products</p>
+      {/* related products */}
+      <div className="px-5 mt-4 mb-4">
+        <div className="flex justify-between items-center mb-4">
+          <p className="text-left text-2xl mb-2 font-semibold">
+            Related Products
+          </p>
+          <p className="text-left text-xl mb-2 bg-custom-green text-white px-2 py-1 rounded-lg">
+            View Products
+          </p>
+        </div>
         <div className="w-full overflow-x-auto">
           <div className="flex gap-4">
-            {Array(4)
-              .fill(null)
-              .map((_, idx) => (
+            {relatedProduct.map((related, idx) => (
+              <Link
+                to={`/productinfo/${category}/${related.id}`}
+                key={idx}
+                className="no-underline"
+              >
                 <div
                   key={idx}
                   className="min-w-[200px] p-4 flex flex-col items-center border border-gray-300 rounded-md"
                 >
-                  <img src={image1} alt="" className="w-full rounded-md" />
-                  <p className="text-center mt-2">
-                    Seamless integration with laboratory information systems
-                    (LIS).
+                  <img
+                    src={related.image[0]}
+                    alt=""
+                    className=" rounded-md h-40 object-cover w-full"
+                  />
+                  <p className="text-center mt-2 line-clamp-3">
+                    {related.description}
                   </p>
                 </div>
-              ))}
+              </Link>
+            ))}
           </div>
         </div>
-        <div className="w-full flex justify-center mt-4">
+        <div className="w-full flex justify-center mt-4 sm:hidden">
           <button className="text-xl py-2 px-4 bg-custom-green text-white rounded-lg">
             View All Products
           </button>
         </div>
       </div>
+      {/* Frequently Asked Questions */}
+      <div className="py-4 border-1 bg-[#EEEEEE] mb-4">
+        <p className="text-center text-2xl mb-4">Frequently Asked Questions</p>
+        <div className="flex justify-center">
+          <div className="w-[50vw]">
+            {faqs.map((faq, index) => (
+              <div key={index} className="p-2 mb-2 rounded bg-white shadow-md">
+                <div
+                  className="flex justify-between items-center text-xl bg-[#F5F7FA] p-2 rounded cursor-pointer"
+                  onClick={() => toggleInfo(index)}
+                >
+                  <p>{faq.question}</p>
+                  <button className="text-black font-bold text-2xl">
+                    {showInfo === index ? "-" : "+"}
+                  </button>
+                </div>
+                {showInfo === index && (
+                  <ul className="list-disc list-inside ml-4 mt-2 text-lg">
+                    {faq.answers.map((answer, i) => (
+                      <li key={i}>{answer}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <ContactUs />
+      <Footer />
     </div>
   );
 }

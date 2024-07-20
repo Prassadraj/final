@@ -48,10 +48,7 @@ function App() {
           <Route path="/career" element={<Career />} />
           <Route path="/success" element={<Success />} />
           <Route path="/blog" element={<Blog />} />
-          <Route
-            path="product/productinfo/:category/:id"
-            element={<ProductInfo />}
-          />
+          <Route path="/productinfo/:category/:id" element={<ProductInfo />} />
         </Routes>
       </AnimatePresence>
     </>

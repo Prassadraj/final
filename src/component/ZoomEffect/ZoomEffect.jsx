@@ -28,7 +28,7 @@ function ZoomEffect() {
 
   return (
     <div
-      className="flex flex-col gap-2"
+      className="flex flex-col gap-2 mb-4"
       style={{
         width: "100%",
         height: "100%",

@@ -1,4 +1,46 @@
 import image1 from "../../images/products/frame1.png";
+// Biochemistry
+import magna1 from "../AllDatas/ProductImages/Biochemistry/MAGNA/product1.jpg";
+import magna2 from "../AllDatas/ProductImages/Biochemistry/MAGNA/product2.jpg";
+import magna3 from "../AllDatas/ProductImages/Biochemistry/MAGNA/product3.jpg";
+import magna4 from "../AllDatas/ProductImages/Biochemistry/MAGNA/product4.jpg";
+import neo1 from "../AllDatas/ProductImages/Biochemistry/NEO/product1.jpg";
+import neo2 from "../AllDatas/ProductImages/Biochemistry/NEO/product2.jpg";
+import neo3 from "../AllDatas/ProductImages/Biochemistry/NEO/product3.jpg";
+import neo4 from "../AllDatas/ProductImages/Biochemistry/NEO/product4.jpg";
+import plus1 from "../AllDatas/ProductImages/Biochemistry/PLUS/product1.png";
+import plus2 from "../AllDatas/ProductImages/Biochemistry/PLUS/product2.png";
+import prim1 from "../AllDatas/ProductImages/Biochemistry/PRIME/product1.jpg";
+import prim2 from "../AllDatas/ProductImages/Biochemistry/PRIME/product2.jpg";
+// Clinical Microbiology
+import ast1 from "../AllDatas/ProductImages/Clinical Microbiology/AST plates/product1.jpg";
+import Nephelometer1 from "../AllDatas/ProductImages/Clinical Microbiology/Nephelometer/product1.jpg";
+import Automated1 from "../AllDatas/ProductImages/Clinical Microbiology/Automated Inoculation/product1.jpg";
+import manual1 from "../AllDatas/ProductImages/Clinical Microbiology/Manual Viewbox/product1.jpg";
+import Digital1 from "../AllDatas/ProductImages/Clinical Microbiology/Digital MIC/product1.jpg";
+import Fluorometric1 from "../AllDatas/ProductImages/Clinical Microbiology/Fluorometric Plate/product1.png";
+import System1 from "../AllDatas/ProductImages/Clinical Microbiology/System for AST/product1.jpeg";
+//covid
+import ANTIBODY1 from "../AllDatas/ProductImages/Covid/ANTIBODY TESTING/product1.jpg";
+import Affinity1 from "../AllDatas/ProductImages/Covid/Affinity RNA/product1.jpg";
+import REACTIVE1 from "../AllDatas/ProductImages/Covid/C-REACTIVE/product1.jpg";
+import FERRITI1 from "../AllDatas/ProductImages/Covid/FERRITIN/product1.jpg";
+import LACTAT1 from "../AllDatas/ProductImages/Covid/LACTATE/product1.jpg";
+import PROCALCITONIN1 from "../AllDatas/ProductImages/Covid/PROCALCITONIN/product1.jpg";
+import identi1 from "../AllDatas/ProductImages/Covid/identi VTM/product1.jpg";
+// Electrolyte Analyzer
+import Jokoh1 from "../AllDatas/ProductImages/Electrolyte Analyzer/Jokoh/product1.jpg";
+import Jokoh2 from "../AllDatas/ProductImages/Electrolyte Analyzer/Jokoh/product2.jpg";
+import Jokoh3 from "../AllDatas/ProductImages/Electrolyte Analyzer/Jokoh/product3.jpg";
+// Hematology
+import PLUS1 from "../AllDatas/ProductImages/Hematology/3D PLUS/product1.png";
+import Analyzer1 from "../AllDatas/ProductImages/Hematology/Analyzer/product1.png";
+import Analyzer2 from "../AllDatas/ProductImages/Hematology/Analyzer/product2.png";
+import DYNACOUNT1 from "../AllDatas/ProductImages/Hematology/DYNACOUNT 5D/product1.png";
+// Point of Care
+import ichromaII from "../AllDatas/ProductImages/Point of Care/ichroma™ II/product1.jpg";
+import ichromaIII from "../AllDatas/ProductImages/Point of Care/ichroma™ III/product1.jpg";
+
 const products = [
   {
     category: "Biochemistry",
@@ -7,7 +49,7 @@ const products = [
         category: "Biochemistry",
         allover: "This is for fully automatic",
         id: "1",
-        image: image1,
+        image: [magna1, magna2, magna3, magna4],
         title: "TURBOCHEM MAGNA",
         shortdescription:
           "TURBOCHEM MAGNA FULLY AUTOMATIC BIOCHEMISTRY ANALYZER",
@@ -17,7 +59,7 @@ const products = [
       {
         allover: "This is for fully automatic",
         id: "2",
-        image: image1,
+        image: [neo1, neo2, neo3, neo4],
         title: "TURBOCHEM PRIME",
         shortdescription:
           "TURBOCHEM PRIME FULLY AUTOMATIC BIOCHEMISTRY ANALYZER",
@@ -27,7 +69,7 @@ const products = [
       {
         allover: "This is for fully automatic",
         id: "3",
-        image: image1,
+        image: [plus1, plus2],
         title: "TURBOCHEM NEO",
         shortdescription: "TURBOCHEM NEO FULLY AUTOMATIC BIOCHEMISTRY ANALYZER",
         description:
@@ -36,7 +78,7 @@ const products = [
       {
         allover: "This is for Semi automatic",
         id: "4",
-        image: image1,
+        image: [prim1, prim2],
         title: "TURBOSTAT PLUS",
         shortdescription: "TURBOSTAT PLUS SEMI AUTOMATIC BIOCHEMISTRY ANALYZER",
         description:
@@ -90,7 +132,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "1",
-        image: image1,
+        image: [ast1],
         title: "Sensititre™ Standard AST Plates",
         shortdescription: "Sensititre™ Standard AST Plates",
         description:
@@ -99,7 +141,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "2",
-        image: image1,
+        image: [Nephelometer1],
         title: "Sensititre™ Nephelometer",
         shortdescription: "Thermo Scientific™ Sensititre™ Nephelometer",
         description:
@@ -108,7 +150,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "3",
-        image: image1,
+        image: [Automated1],
         title: "Sensititre™ AIM™ Automated Inoculation Delivery System",
         shortdescription:
           "Sensititre™ AIM™ Automated Inoculation Delivery System",
@@ -118,7 +160,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "4",
-        image: image1,
+        image: [manual1],
         title: "Sensititre™ Manual Viewbox",
         shortdescription: "Thermo Scientific Sensititre™ Manual Viewbox",
         description:
@@ -127,7 +169,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "5",
-        image: image1,
+        image: [Digital1],
         title: "Sensititre™ Vizion™ Digital MIC Viewing System",
         shortdescription: "Sensititre™ Vizion™ Digital MIC Viewing System",
         description:
@@ -136,7 +178,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "6",
-        image: image1,
+        image: [Fluorometric1],
         title:
           "Sensititre™ OptiRead™ Automated Fluorometric Plate Reading System",
         shortdescription:
@@ -147,7 +189,7 @@ const products = [
       {
         topic: "CLINICAL MICROBIOLOGY LABORATORY EQUIPMENTS",
         id: "7",
-        image: image1,
+        image: [System1],
         title: "Sensititre™ ARIS HiQ™ System for AST",
         shortdescription: "Sensititre™ ARIS HiQ™ System for AST",
         description:
@@ -160,7 +202,7 @@ const products = [
     items: [
       {
         id: "1",
-        image: image1,
+        image: [ANTIBODY1],
         title: "identi VTM",
         shortdescription: "identi VTM",
         description:
@@ -168,7 +210,7 @@ const products = [
       },
       {
         id: "2",
-        image: image1,
+        image: [Affinity1],
         title: "identi Affinity RNA extraction",
         shortdescription: "identi Affinity RNA extraction",
         description:
@@ -176,7 +218,7 @@ const products = [
       },
       {
         id: "3",
-        image: image1,
+        image: [REACTIVE1],
         title: "ANTIBODY TESTING",
         shortdescription: "ANTIBODY TESTING",
         description:
@@ -184,7 +226,7 @@ const products = [
       },
       {
         id: "4",
-        image: image1,
+        image: [FERRITI1],
         title: "PROCALCITONIN",
         shortdescription: "PROCALCITONIN",
         description:
@@ -192,7 +234,7 @@ const products = [
       },
       {
         id: "5",
-        image: image1,
+        image: [LACTAT1],
         title: "FERRITIN",
         shortdescription: "FERRITIN",
         description:
@@ -200,7 +242,7 @@ const products = [
       },
       {
         id: "6",
-        image: image1,
+        image: [PROCALCITONIN1],
         title: "LACTATE DEHYDROGENASE (LDH-L)",
         shortdescription: "LACTATE DEHYDROGENASE (LDH-L)",
         description:
@@ -208,7 +250,7 @@ const products = [
       },
       {
         id: "7",
-        image: image1,
+        image: [identi1],
         title: "C-REACTIVE PROTEIN (CRP)",
         shortdescription: "C-REACTIVE PROTEIN (CRP)",
         description:
@@ -222,7 +264,7 @@ const products = [
       {
         topic: "Electrolyte Analyzer",
         id: "1",
-        image: image1,
+        image: [Jokoh1, Jokoh2, Jokoh3],
         title: "Jokoh EX-D Electrolyte Analyzer",
         shortdescription: "Jokoh EX-D Electrolyte Analyzer",
         description:
@@ -236,7 +278,7 @@ const products = [
       {
         allover: "3 Part Differential Hematology Analyzer",
         id: "1",
-        image: image1,
+        image: [PLUS1],
         title: "DYNACOUNT 3D Haematology Analyzer",
         shortdescription: "DYNACOUNT 3D Fully Automatic Hematology Analyzer",
         description:
@@ -245,7 +287,7 @@ const products = [
       {
         allover: "3 Part Differential Hematology Analyzer",
         id: "2",
-        image: image1,
+        image: [Analyzer1, Analyzer2],
         title: "DYNACOUNT 3D PLUS",
         shortdescription:
           "DYNACOUNT 3D PLUS Fully Automatic Hematology Analyzer",
@@ -255,7 +297,7 @@ const products = [
       {
         allover: "5 Part Differential Hematology Analyzer",
         id: "3",
-        image: image1,
+        image: [DYNACOUNT1],
         title: "DYNACOUNT 5D",
         shortdescription: "DYNACOUNT 5D Fully Automatic Hematology Analyzer",
         description:
@@ -451,20 +493,20 @@ const products = [
       {
         topic: "POCT Hormone Analyzer",
         id: "1",
-        image: image1,
-        title: "ichroma™ III",
-        shortdescription: "iChroma 3 POCT Hormone Analyzer",
-        description:
-          "The ichroma™ III is a high-performance point-of-care testing (POCT) hormone analyzer, providing accurate and rapid results for various hormone assays, essential for timely diagnosis and treatment.",
-      },
-      {
-        topic: "POCT Hormone Analyzer",
-        id: "2",
-        image: image1,
+        image: [ichromaII],
         title: "ichroma™ II",
         shortdescription: "iChroma 2 POCT Hormone Analyzer",
         description:
           "The ichroma™ II is a versatile and reliable POCT hormone analyzer, designed to deliver fast and precise measurements of hormone levels, facilitating effective clinical decision-making.",
+      },
+      {
+        topic: "POCT Hormone Analyzer",
+        id: "2",
+        image: [ichromaIII],
+        title: "ichroma™ III",
+        shortdescription: "iChroma 3 POCT Hormone Analyzer",
+        description:
+          "The ichroma™ III is a high-performance point-of-care testing (POCT) hormone analyzer, providing accurate and rapid results for various hormone assays, essential for timely diagnosis and treatment.",
       },
     ],
   },

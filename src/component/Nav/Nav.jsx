@@ -42,9 +42,9 @@ function Nav() {
 
   return (
     <div
-      className={` md:flex sticky top-0 bg-white h-fit w-full z-50 items-center justify-around`}
+      className={` md:flex sticky top-0 bg-white h-fit w-full z-50 items-center justify-around shadow-md`}
     >
-      <div className="left py-3">
+      <div className="left py-2">
         <Link to="/">
           <img width="140px" height="70px" src={logo} alt="Logo" />
         </Link>

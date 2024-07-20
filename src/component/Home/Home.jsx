@@ -35,36 +35,16 @@ function Home() {
   return (
     <div className="font-poppins">
       <Section1 />
-
-      {/* section2 */}
       <Section2 />
-      {/* section3 */}
       <Section3 />
-
       <ProductCategaries />
-
-      {/* <Parallax
-        // blur={}
-        // bgImage={organisationBG}
-        bgImageAlt="the cat"
-        strength={200}
-      > */}
       <Organisation />
-      {/* </Parallax> */}
-      {/* <Organization2 /> */}
-
-      {/* section5 */}
-
       <TestimonialSlider />
-      {/* featured Products */}
       <FeaturedProducts />
       <Blog />
       <ContactUs />
-      <div style={{ marginBottom: "10vh" }}>
-        <ZoomEffect />
-      </div>
+      <ZoomEffect />
       <Footer />
-      {/* <ServiceType /> */}
     </div>
   );
 }

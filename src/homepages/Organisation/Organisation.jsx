@@ -112,7 +112,7 @@ const Organisation = () => {
             style={
               scrollY > 2650 && scrollY < 4350
                 ? {
-                    top: "15vh",
+                    top: "17vh",
                     left: "50vw",
                     position: "fixed",
                     transition:
@@ -195,7 +195,7 @@ const Organisation = () => {
                       transition: "opacity 1s ease-in-out",
                     }
               }
-              className="w-[2px] h-[22vh] bg-custom-green relative -top-[20vh] left-[3vh]"
+              className="w-[2px] h-[20vh] bg-custom-green relative -top-[20vh] left-[3vh]"
             ></div>
           </div>
           {/* Content 2 */}

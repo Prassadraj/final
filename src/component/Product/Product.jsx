@@ -31,7 +31,7 @@ function Product() {
 
   return (
     <div className="font-poppins bg-gray-100">
-      <header className="hidden sm:block">
+      <header className="hidden sm:block mb-4">
         <SimpleImageSlider
           width="100%"
           height={200}
@@ -66,7 +66,7 @@ function Product() {
         </div>
         <div className="flex flex-col sm:flex-row">
           <div
-            className={`sm:w-[25%] bg-white py-2 px-4 sticky top-0 h-[90vh] overflow-y-auto ${
+            className={`sm:w-[25%] bg-white py-2 px-4 sticky top-20 h-[90vh] overflow-y-auto ${
               open ? "fixed w-full h-screen" : ""
             }`}
           >
@@ -115,26 +115,25 @@ function Product() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
               {selectedCategoryItems.map((item, index) => (
                 <Link
-                  to={`productinfo/${title}/${item.id}`}
+                  to={`/productinfo/${title}/${item.id}`}
                   key={item.id}
                   className="no-underline"
                 >
-                  <div className="bg-white border rounded-lg overflow-hidden relative group">
+                  <div className="bg-white border rounded-lg overflow-hidden relative group h-[300px]">
                     <img
-                      src={item.image}
+                      src={item.image[0]}
                       alt={item.title}
-                      className="w-full h-32 object-cover"
+                      className="w-full h-44 object-cover"
                     />
-                    <div className="p-4 text-gray-600">
-                      <h2 className="text-lg font-semibold text-gray-600 text-left">
+                    <div className="px-2 py-2 text-gray-600">
+                      <h2 className="text-base font-semibold text-gray-600 text-left">
                         {item.title}
                       </h2>
-                      <p className="text-sm text-gray-600 text-left">
-                        {item.description.substring(0, 100)}
-                        {item.description.length > 100 && "..."}
+                      <p className="text-sm text-gray-600 text-left line-clamp-4">
+                        {item.description}
                       </p>
                     </div>
-                    <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="hidden absolute inset-0 bg-custom-green/80 justify-center items-center text-white text-xl group-hover:flex">
                       View Product
                     </div>
                   </div>

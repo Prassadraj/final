@@ -6,7 +6,7 @@ import video from "../../Video/contact.mp4";
 
 function ContactUs() {
   return (
-    <div className="p-10 h-[100vh] bg-black">
+    <div className="p-10 h-[100vh] bg-black mb-10">
       <div className="h-[85vh] bg-light-green rounded-xl relative flex">
         <video
           autoPlay
