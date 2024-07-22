@@ -70,7 +70,7 @@ const FeaturedProducts = () => {
         </span>
         <p className="text-xl heading font-poppins text-gray-500">
           We use only the{" "}
-          <span className="text-custom-green font-mont">
+          <span className="text-custom-green font-poppins">
             best quality materials
           </span>{" "}
           on the market in order to provide the{" "}

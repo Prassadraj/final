@@ -42,7 +42,7 @@ function Nav() {
 
   return (
     <div
-      className={` md:flex sticky top-0 bg-white h-fit w-full z-50 items-center justify-around shadow-md`}
+      className={`hidden md:flex sticky top-0 bg-white h-fit w-full z-50 items-center justify-around shadow-md`}
     >
       <div className="left py-2">
         <Link to="/">

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ProductDataContext } from "../Context/ProductData";
 import Transition from "../Transition/Transition";
@@ -66,28 +66,23 @@ function ProductInfo() {
       submenu: [
         {
           menuName: "Description",
-          content:
-            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+          content: product.shortdescription,
         },
         {
           menuName: "Work Principle",
-          content:
-            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+          content: product.workPrinciple,
         },
         {
           menuName: "Advantages",
-          content:
-            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+          content: product.advantages,
         },
         {
           menuName: "Benefits",
-          content:
-            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+          content: product.benefits,
         },
         {
           menuName: "Main And Care",
-          content:
-            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+          content: product.mainAndCare,
         },
       ],
     },
@@ -100,23 +95,19 @@ function ProductInfo() {
       submenu: [
         {
           menuName: "Work Services",
-          content:
-            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+          content: product.workServices,
         },
         {
           menuName: "Product Brochure df",
-          content:
-            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+          content: product.productBrochure,
         },
         {
           menuName: "Detailed Specification",
-          content:
-            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+          content: product.detailedSpecification,
         },
         {
           menuName: "Offer or Discounts",
-          content:
-            "        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ipsa magni debitis doloremque, aliquid odit delectus ",
+          content: product.offerOrDiscounts,
         },
       ],
     },
@@ -159,20 +150,41 @@ function ProductInfo() {
       ],
     },
   ];
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  const [imgUrl, setImgUrl] = useState(product.image[0]);
+
   return (
-    <div className="product-info text-black overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center justify-start gap-2 px-5 mb-2 !md:px-5">
+    <div className="product-info text-black overflow-hidden mt-2 font-poppins">
+      <div className="px-5 mb-3 text-xl cursor-pointer">
+        <span>
+          <Link to="/product">Product</Link>
+        </span>
+        <span>/ {category}</span>
+        <span>/ {product.title}</span>
+      </div>
+      <div className="flex flex-col md:flex-row items-center justify-start gap-5 px-5 mb-2 !md:px-5">
         <div className="hidden md:block w-1/4">
-          <img
-            src={image1}
-            alt="Descriptive text"
-            className="border-1 border-black"
-          />
-          <img src={image1} alt="Descriptive text" />
-          <img src={image1} alt="Descriptive text" />
+          {product.image.map((img, idx) => (
+            <img
+              key={idx}
+              className="mb-2"
+              src={img}
+              onClick={() => setImgUrl(img)}
+              alt={`Image ${idx + 1}`}
+              style={{
+                cursor: "pointer",
+                border: imgUrl === img ? "4px solid lightgreen" : "none",
+                borderRadius: "10px",
+              }}
+            />
+          ))}
         </div>
         <div className="w-full flex justify-center">
-          <img src={image1} alt="Descriptive text" />
+          <img src={imgUrl} alt="Descriptive text" className="" />
         </div>
         <div className="w-full flex flex-col text-xl text-justify">
           <p>{product.title}</p>
@@ -228,7 +240,7 @@ function ProductInfo() {
         </div>
         {/* for laptop */}
         <div className="p-5 md:block hidden mb-4">
-          <div className="flex justify-around text-xl border py-4">
+          <div className="flex justify-around text-lg border p-4">
             {tabs.map((header, index) => (
               <p
                 key={index}
@@ -249,7 +261,7 @@ function ProductInfo() {
 
           <div className="flex border-2">
             {tabs[selectedTab].submenu && (
-              <div className="w-1/4 text-xl flex flex-col items-center border-r pr-4">
+              <div className="w-1/4 text-lg flex flex-col items-center border-r pr-4">
                 {tabs[selectedTab].submenu.map((submenuItem, index) => (
                   <div
                     key={index}
@@ -284,46 +296,50 @@ function ProductInfo() {
         </div>
       </div>
       {/* related products */}
-      <div className="px-5 mt-4 mb-4">
-        <div className="flex justify-between items-center mb-4">
-          <p className="text-left text-2xl mb-2 font-semibold">
-            Related Products
-          </p>
-          <p className="text-left text-xl mb-2 bg-custom-green text-white px-2 py-1 rounded-lg">
-            View Products
-          </p>
-        </div>
-        <div className="w-full overflow-x-auto">
-          <div className="flex gap-4">
-            {relatedProduct.map((related, idx) => (
-              <Link
-                to={`/productinfo/${category}/${related.id}`}
-                key={idx}
-                className="no-underline"
-              >
-                <div
+      {relatedProduct.length > 0 ? (
+        <div className="px-5 mt-4 mb-4">
+          <div className="flex justify-between items-center mb-4">
+            <p className="text-left text-2xl mb-2 font-semibold">
+              Related Products
+            </p>
+            <p className="text-left text-xl mb-2 bg-custom-green text-white px-2 py-1 rounded-lg">
+              View Products
+            </p>
+          </div>
+          <div className="w-full overflow-x-auto">
+            <div className="flex gap-4">
+              {relatedProduct.map((related, idx) => (
+                <Link
+                  to={`/productinfo/${category}/${related.id}`}
                   key={idx}
-                  className="min-w-[200px] p-4 flex flex-col items-center border border-gray-300 rounded-md"
+                  className="no-underline"
                 >
-                  <img
-                    src={related.image[0]}
-                    alt=""
-                    className=" rounded-md h-40 object-cover w-full"
-                  />
-                  <p className="text-center mt-2 line-clamp-3">
-                    {related.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
+                  <div
+                    key={idx}
+                    className="min-w-[200px] p-4 flex flex-col items-center border border-gray-300 rounded-md"
+                  >
+                    <img
+                      src={related.image[0]}
+                      alt=""
+                      className=" rounded-md h-40 object-cover w-full"
+                    />
+                    <p className="text-center mt-2 line-clamp-3 text-lg">
+                      {related.description}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="w-full flex justify-center mt-4 sm:hidden">
+            <button className="text-xl py-2 px-4 bg-custom-green text-white rounded-lg">
+              View All Products
+            </button>
           </div>
         </div>
-        <div className="w-full flex justify-center mt-4 sm:hidden">
-          <button className="text-xl py-2 px-4 bg-custom-green text-white rounded-lg">
-            View All Products
-          </button>
-        </div>
-      </div>
+      ) : (
+        ""
+      )}
       {/* Frequently Asked Questions */}
       <div className="py-4 border-1 bg-[#EEEEEE] mb-4">
         <p className="text-center text-2xl mb-4">Frequently Asked Questions</p>
@@ -358,4 +374,4 @@ function ProductInfo() {
   );
 }
 
-export default Transition(ProductInfo);
+export default ProductInfo;

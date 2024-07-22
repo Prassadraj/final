@@ -80,6 +80,7 @@ function ZoomEffect() {
           <iframe
             // width="510"
             // height="287"
+            data-aos="zoom-in-up"
             className="w-[100px] h-[100px] md:w-[500px] md:h-[250px]"
             src="https://www.youtube.com/embed/mNYxQo9i7gc"
             title="i-track - Constant Remote Support"

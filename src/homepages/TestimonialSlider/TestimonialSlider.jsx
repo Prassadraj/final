@@ -103,7 +103,7 @@ function TestimonialSlider() {
         >
           Our experience with CPC Diagnostics has been exceptional. Their
           products are reliable, and their{" "}
-          <span className="font-semibold font-mont">
+          <span className="font-semibold font-poppins">
             support is outstanding.
           </span>
         </p>

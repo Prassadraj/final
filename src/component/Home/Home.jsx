@@ -32,6 +32,9 @@ import itrackBG from "../../images/itrack/itrackBG.png";
 import Magnetic from "../magneticButton/Magnetic";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="font-poppins">
       <Section1 />

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import SimpleImageSlider from "react-simple-image-slider";
 import { Link } from "react-router-dom";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
@@ -20,8 +20,13 @@ function Product() {
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState(data[0].category);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const topRef = useRef(null);
 
   const toggleDropdown = (index) => {
+    // Scroll to top of container
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: "smooth" });
+    }
     setOpenDropdown(openDropdown === index ? null : index);
     setTitle(data[index].category);
   };
@@ -29,8 +34,18 @@ function Product() {
   const selectedCategoryItems =
     data.find((category) => category.category === title)?.items || [];
 
+  useEffect(() => {
+    // Ensure that when selectedCategoryItems change, we scroll to the top
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectedCategoryItems]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="font-poppins bg-gray-100">
+    <div className="font-poppins bg-gray-100" ref={topRef}>
       <header className="hidden sm:block mb-4">
         <SimpleImageSlider
           width="100%"
@@ -90,7 +105,7 @@ function Product() {
                     <div className="border-t border-gray-300">
                       {dropdown.items.map((item, itemIndex) => (
                         <Link
-                          to={`productinfo/${title}/${item.id}`}
+                          to={`/productinfo/${title}/${item.id}`}
                           key={item.id}
                           className="no-underline"
                         >
@@ -202,4 +217,4 @@ function Product() {
   );
 }
 
-export default Transition(Product);
+export default Product;

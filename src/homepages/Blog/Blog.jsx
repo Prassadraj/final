@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 function Blog() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo( 
+    gsap.fromTo(
       ".blogBox",
       {
         opacity: "0",
@@ -57,7 +57,7 @@ function Blog() {
     <div className="h-[100vh] bg-white p-10 pl-20 pr-20">
       <div className=" flex justify-between gap-3">
         <div>
-          <h1 className="text-left text-black text-3xl font-mont font-bold uppercase">
+          <h1 className="text-left text-black text-3xl font-poppins font-bold uppercase">
             Blog Snippets
           </h1>
           <p className="max-w-xl text-lg font-poppins mt-3">

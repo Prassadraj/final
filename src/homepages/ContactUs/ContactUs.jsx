@@ -1,13 +1,11 @@
 import React from "react";
 import "./contactUs.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import video from "../../Video/contact.mp4";
 
 function ContactUs() {
   return (
-    <div className="p-10 h-[100vh] bg-black mb-10">
-      <div className="h-[85vh] bg-light-green rounded-xl relative flex">
+    <div className="p-4 lg:p-10 lg:h-[100vh] bg-black mb-10 flex justify-center items-center">
+      <div className="lg:h-[85vh] h-auto w-full lg:w-[85vw] bg-light-green rounded-xl relative flex flex-col lg:flex-row overflow-hidden">
         <video
           autoPlay
           loop
@@ -17,78 +15,46 @@ function ContactUs() {
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 w-full h-full object-cover z-0 bg-black opacity-0 rounded-xl"></div>
-        <div className="flex flex-col z-10">
-          <div className="mt-40 ml-24">
-            <p
-              className="relative  font-bold text-start text-white text-3xl z-10"
-              style={{ fontFamily: "Poppins" }}
-            >
-              Let's Get in Touch
-            </p>
-          </div>
-          <div className="mt-2 ml-24 max-w-md z-10">
-            <p className="text-xl text-white font-poppins">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum eum
-            </p>
-          </div>
-          {/* <div className="absolute bg-[#b9fcee] w-52 h-52 rounded-full top-16 left-10 animate-bumble"></div>
-          <div className="absolute bg-[#b9fcee] w-16 h-16 rounded-full top-60 left-56 animate-smallbumble"></div> */}
+        <div className="absolute inset-0 w-full h-full bg-black opacity-50 z-0 rounded-xl"></div>
+        <div className="relative z-10 p-5 lg:w-1/2 flex flex-col justify-center items-center text-center">
+          <p className="font-bold text-white text-lg md:text-3xl z-10 font-poppins">
+            Let's Get in Touch
+          </p>
+          <p className="text-xl max-w-md text-white mt-2">
+            We're here to assist you with any questions or concerns. Reach out
+            to us and we'll respond as soon as we can.
+          </p>
         </div>
-        {/* right */}
-        <div className="flex flex-col gap-4 relative top-16  h-fit left-36 font-poppins ">
-          <div>
-            <input
-              type="text"
-              className="w-[30vw] h-[7vh] outline-none text-xl p-3 rounded-lg text-white"
-              placeholder="Name"
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              className="w-[30vw] h-[7vh] outline-none text-xl p-3 rounded-lg text-white "
-              placeholder="Email Address"
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              className="w-[30vw] h-[7vh] outline-none text-xl p-3 rounded-lg text-white"
-              placeholder="Phone Number"
-            />
-          </div>
-          <div>
-            <textarea
-              placeholder="Have anything to say"
-              className="placeholder:text-white h-[20vh] w-[30vw] pt-2 text-xl box-border outline-none p-3 rounded-lg text-white"
-            ></textarea>
-          </div>
-          <div className="flex items-center justify-center rounded-lg   ">
-            <button class="btn-53">
-              <div class="original text-lg">Send</div>
-              <div class="letters text-lg">
+        <div className="relative z-10 p-5 lg:w-1/2 flex flex-col gap-4 items-center mt-10 lg:mt-0">
+          <input
+            type="text"
+            className="w-full lg:w-[30vw] h-[7vh] outline-none text-xl p-3 rounded-lg text-white bg-gray-800"
+            placeholder="Name"
+          />
+          <input
+            type="text"
+            className="w-full lg:w-[30vw] h-[7vh] outline-none text-xl p-3 rounded-lg text-white bg-gray-800"
+            placeholder="Email Address"
+          />
+          <input
+            type="text"
+            className="w-full lg:w-[30vw] h-[7vh] outline-none text-xl p-3 rounded-lg text-white bg-gray-800"
+            placeholder="Phone Number"
+          />
+          <textarea
+            placeholder="Have anything to say"
+            className="placeholder:text-white h-[20vh] w-full lg:w-[30vw] pt-2 text-xl box-border outline-none p-3 rounded-lg text-white bg-transparent"
+          ></textarea>
+          <div className="flex items-center justify-center">
+            <button className="btn-53">
+              <div className="original text-lg">Send</div>
+              <div className="letters text-lg">
                 <span>S</span>
                 <span>e</span>
                 <span>n</span>
                 <span>d</span>
               </div>
             </button>
-
-            {/* <FontAwesomeIcon
-              icon={faArrowRight}
-              className="text-2xl text-light-green"
-            />
-            <span className="text-2xl relative top-2 right-7 animate-bouncing opacity-45 text-light-green">
-              -
-            </span>
-            <span className="text-2xl relative top-0 right-12 animate-bouncing opacity-45 text-light-green">
-              -
-            </span>
-            <span className="text-2xl relative bottom-2 right-14 animate-bouncing opacity-45 text-light-green">
-              -
-            </span> */}
           </div>
         </div>
       </div>
