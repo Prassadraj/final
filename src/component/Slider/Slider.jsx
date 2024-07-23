@@ -48,7 +48,7 @@ const Slider = () => {
       >
         <div className="absolute w-full h-full">
           <Link
-            to={`/product/productinfo/${slides[currentIndex].category}/${slides[currentIndex].id}`}
+            to={`/productinfo/${slides[currentIndex].category}/${slides[currentIndex].id}`}
           >
             {" "}
             <img

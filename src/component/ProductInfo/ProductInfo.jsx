@@ -11,10 +11,12 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ContactUs from "../../homepages/ContactUs/ContactUs";
 import Footer from "../../homepages/Footer/Footer";
+import { CategoryContext } from "../Context/CategoryContext";
 
 function ProductInfo() {
   const { data } = useContext(ProductDataContext);
   const { category, id } = useParams();
+  const { setSelectedCategory } = useContext(CategoryContext);
 
   const productCategory = data.find((cat) => cat.category === category);
   const product = productCategory?.items.find((item) => item.id === id);
@@ -163,7 +165,9 @@ function ProductInfo() {
         <span>
           <Link to="/product">Product</Link>
         </span>
-        <span>/ {category}</span>
+        <Link to="/product" onClick={() => setSelectedCategory(category)}>
+          <span>/ {category}</span>
+        </Link>
         <span>/ {product.title}</span>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-start gap-5 px-5 mb-2 !md:px-5">
@@ -171,12 +175,13 @@ function ProductInfo() {
           {product.image.map((img, idx) => (
             <img
               key={idx}
-              className="mb-2"
+              className="mb-2 "
               src={img}
               onClick={() => setImgUrl(img)}
               alt={`Image ${idx + 1}`}
               style={{
                 cursor: "pointer",
+                borderStyle: "double",
                 border: imgUrl === img ? "4px solid lightgreen" : "none",
                 borderRadius: "10px",
               }}
@@ -184,7 +189,7 @@ function ProductInfo() {
           ))}
         </div>
         <div className="w-full flex justify-center">
-          <img src={imgUrl} alt="Descriptive text" className="" />
+          <img src={imgUrl} alt="Descriptive text" className="rounded-md" />
         </div>
         <div className="w-full flex flex-col text-xl text-justify">
           <p>{product.title}</p>
@@ -302,9 +307,15 @@ function ProductInfo() {
             <p className="text-left text-2xl mb-2 font-semibold">
               Related Products
             </p>
-            <p className="text-left text-xl mb-2 bg-custom-green text-white px-2 py-1 rounded-lg">
-              View Products
-            </p>
+            <Link
+              to="/product"
+              onClick={() => setSelectedCategory("Biochemistry")}
+              className="no-underline"
+            >
+              <p className="text-left text-xl mb-2 bg-custom-green text-white px-2 py-1 rounded-lg">
+                View Products
+              </p>
+            </Link>
           </div>
           <div className="w-full overflow-x-auto">
             <div className="flex gap-4">
@@ -344,7 +355,7 @@ function ProductInfo() {
       <div className="py-4 border-1 bg-[#EEEEEE] mb-4">
         <p className="text-center text-2xl mb-4">Frequently Asked Questions</p>
         <div className="flex justify-center">
-          <div className="w-[50vw]">
+          <div className="w-full md:w-[50vw]">
             {faqs.map((faq, index) => (
               <div key={index} className="p-2 mb-2 rounded bg-white shadow-md">
                 <div

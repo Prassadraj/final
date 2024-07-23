@@ -14,6 +14,7 @@ import Transition from "../Transition/Transition";
 import { ProductDataContext } from "../Context/ProductData";
 import { faBloggerB } from "@fortawesome/free-brands-svg-icons";
 import "./product.css";
+import { CategoryContext } from "../Context/CategoryContext";
 
 function Product() {
   const { data } = useContext(ProductDataContext);
@@ -21,6 +22,7 @@ function Product() {
   const [title, setTitle] = useState(data[0].category);
   const [openDropdown, setOpenDropdown] = useState(null);
   const topRef = useRef(null);
+  const { selectedCategory, setSelectedCategory } = useContext(CategoryContext);
 
   const toggleDropdown = (index) => {
     // Scroll to top of container
@@ -28,11 +30,12 @@ function Product() {
       topRef.current.scrollIntoView({ behavior: "smooth" });
     }
     setOpenDropdown(openDropdown === index ? null : index);
-    setTitle(data[index].category);
+    setSelectedCategory(data[index].category);
   };
 
   const selectedCategoryItems =
-    data.find((category) => category.category === title)?.items || [];
+    data.find((category) => category.category === selectedCategory)?.items ||
+    [];
 
   useEffect(() => {
     // Ensure that when selectedCategoryItems change, we scroll to the top
@@ -69,7 +72,7 @@ function Product() {
               Home
             </Link>
             <span> / </span>
-            <span className="font-semibold">{title}</span>
+            <span className="font-semibold">{selectedCategory}</span>
           </p>
         </div>
         <div
@@ -105,7 +108,7 @@ function Product() {
                     <div className="border-t border-gray-300">
                       {dropdown.items.map((item, itemIndex) => (
                         <Link
-                          to={`/productinfo/${title}/${item.id}`}
+                          to={`/productinfo/${selectedCategory}/${item.id}`}
                           key={item.id}
                           className="no-underline"
                         >
@@ -125,16 +128,19 @@ function Product() {
           </div>
           <div className="sm:w-[75%] bg-white p-4 text-center overflow-y-auto">
             <h1 className="text-2xl font-bold mb-4 text-left text-black">
-              {title}
+              {selectedCategory}
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
               {selectedCategoryItems.map((item, index) => (
                 <Link
-                  to={`/productinfo/${title}/${item.id}`}
+                  to={`/productinfo/${selectedCategory}/${item.id}`}
                   key={item.id}
                   className="no-underline"
                 >
-                  <div className="bg-white border rounded-lg overflow-hidden relative group h-[300px]">
+                  <div
+                    key={index}
+                    className="bg-white border rounded-lg overflow-hidden relative group h-[300px]"
+                  >
                     <img
                       src={item.image[0]}
                       alt={item.title}

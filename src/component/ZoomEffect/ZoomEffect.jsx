@@ -57,7 +57,7 @@ function ZoomEffect() {
       <div id="container" className="md:h-[100vh] flex flex-col gap-3 mt-5">
         <div className=" flex justify-evenly ">
           <img
-            className="w-[100px] object-cover h-[100px] md:w-[300px] md:h-[150px]"
+            className="w-[100px] object-cover h-[100px] md:w-[200px] md:h-[150px]"
             src={pictures[0].src}
             data-aos="zoom-in-up"
             alt=""
@@ -67,12 +67,12 @@ function ZoomEffect() {
             src={pictures[2].src}
             alt=""
             data-aos="zoom-in-up"
-            className="w-[100px] object-cover h-[100px] md:w-[300px] md:h-[150px]"
+            className="w-[100px] object-cover h-[100px] md:w-[200px] md:h-[150px]"
           />
         </div>
         <div className=" flex justify-evenly items-center ">
           <img
-            className="w-[50px] object-cover h-[50px] md:w-[300px] md:h-[200px]"
+            className="w-[50px] object-cover h-[50px] md:w-[200px] md:h-[200px]"
             src={pictures[4].src}
             data-aos="zoom-in-up"
             alt=""
@@ -81,7 +81,7 @@ function ZoomEffect() {
             // width="510"
             // height="287"
             data-aos="zoom-in-up"
-            className="w-[100px] h-[100px] md:w-[500px] md:h-[250px]"
+            className="w-[100px] h-[100px] md:w-[700px] md:h-[270px]"
             src="https://www.youtube.com/embed/mNYxQo9i7gc"
             title="i-track - Constant Remote Support"
             frameBorder="0"
@@ -90,7 +90,7 @@ function ZoomEffect() {
             allowFullScreen
           ></iframe>{" "}
           <img
-            className="w-[50px] object-cover h-[50px] md:w-[300px] md:h-[200px] "
+            className="w-[50px] object-cover h-[50px] md:w-[200px] md:h-[200px] "
             src={pictures[3].src}
             data-aos="zoom-in-up"
             alt=""
@@ -98,14 +98,14 @@ function ZoomEffect() {
         </div>
         <div className=" flex justify-evenly items-center ">
           <img
-            className="w-[100px] object-cover h-[100px] md:w-[300px] md:h-[150px]"
+            className="w-[100px] object-cover h-[100px] md:w-[200px] md:h-[150px]"
             src={pictures[1].src}
             data-aos="zoom-in-up"
             alt=""
           />
 
           <img
-            className="w-[100px] object-cover h-[100px] md:w-[300px] md:h-[150px] "
+            className="w-[100px] object-cover h-[100px] md:w-[200px] md:h-[150px] "
             src={pictures[2].src}
             data-aos="zoom-in-up"
             alt=""

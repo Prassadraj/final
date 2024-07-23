@@ -48,7 +48,7 @@ function Section3() {
     <div className="">
       {/* Section 3 */}
       <div
-        className="section3 flex flex-col md:flex-row justify-evenly items-center md:h-[500px]
+        className="p-2 md:p-0 section3 flex flex-col md:flex-row justify-evenly items-center md:h-[500px]
         "
         style={{
           background: "linear-gradient(180deg, #ffffff 0%, #7de4c2 150%)",
@@ -72,7 +72,7 @@ function Section3() {
           </div>
           {/* Add button here if needed */}
         </div>
-        <div className="relative flex justify-center items-center ">
+        <div className="relative  justify-center items-center hidden md:flex">
           <div className="relative  bottom-0 w-[80vw] md:w-[30vw] h-[50vh] rounded-2xl z-10">
             <img
               src={whoWeAre}
@@ -86,12 +86,12 @@ function Section3() {
 
       {/* Section 4 */}
       <div
-        className="section4 flex flex-col md:flex-row justify-evenly items-center md:h-[500px] md:mb-20"
+        className="p-2 md:p-0 section4 flex flex-col md:flex-row justify-evenly items-center md:h-[500px] md:mb-20"
         style={{
           background: "linear-gradient(0deg, #ffffff 0%, #7de4c2 150%)",
         }}
       >
-        <div className="relative flex justify-center items-center ">
+        <div className="relative hidden md:flex justify-center items-center ">
           <div className="relative -bottom-10 w-[80vw] md:w-[30vw] h-[50vh] rounded-2xl z-10">
             <img
               src={whatWeDo}

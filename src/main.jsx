@@ -5,13 +5,16 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "aos/dist/aos.css";
 import ProductDataProvider from "./component/Context/ProductData.jsx";
+import CategoryProvider from "./component/Context/CategoryContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ProductDataProvider>
-    <Router>
-      <Routes>
-        <Route path="/*" element={<App />} />
-      </Routes>
-    </Router>
+    <CategoryProvider>
+      <Router>
+        <Routes>
+          <Route path="/*" element={<App />} />
+        </Routes>
+      </Router>
+    </CategoryProvider>
   </ProductDataProvider>
 );

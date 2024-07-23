@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../images/logo.png";
 import "./nav.css";
+import { CategoryContext } from "../Context/CategoryContext";
 
 function Nav() {
   const location = useLocation();
   const [selected, setSelected] = useState("");
   const [isHidden, setIsHidden] = useState(false);
+  const { setSelectedCategory } = useContext(CategoryContext);
 
   useEffect(() => {
     switch (location.pathname) {
@@ -42,7 +44,7 @@ function Nav() {
 
   return (
     <div
-      className={`hidden md:flex sticky top-0 bg-white h-fit w-full z-50 items-center justify-around shadow-md`}
+      className={`hidden md:flex sticky top-0 bg-white h-fit w-full z-50 items-center justify-between px-10 shadow-md`}
     >
       <div className="left py-2">
         <Link to="/">
@@ -94,6 +96,7 @@ function Nav() {
               selected === "product" ? "selected" : ""
             }`}
             to="/product"
+            onClick={() => setSelectedCategory("Biochemistry")}
           >
             Products
           </Link>

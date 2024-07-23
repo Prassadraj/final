@@ -31,14 +31,15 @@ function Section2() {
         },
       }
     );
+
     countUpRefs.current.forEach((el) => {
-      const endNumber = parseInt(el.dataset.end); // Retrieve the end number from dataset
+      const endNumber = parseInt(el.dataset.end);
       gsap.fromTo(
         el,
         { innerText: 0 },
         {
           duration: 1,
-          innerText: endNumber, // Animate to the end number
+          innerText: endNumber,
           ease: "power3.out",
           scrollTrigger: {
             trigger: el,
@@ -53,12 +54,12 @@ function Section2() {
 
       el.addEventListener("mouseenter", () => {
         gsap.to(el, {
-          innerText: 0, // Animate to 0 on hover
+          innerText: 0,
           duration: 0.4,
           ease: "power3.out",
           onComplete: () => {
             gsap.to(el, {
-              innerText: endNumber, // Animate back to the end number
+              innerText: endNumber,
               duration: 0.4,
               ease: "power3.out",
               scrollTrigger: {
@@ -90,7 +91,7 @@ function Section2() {
   return (
     <div
       ref={containerRef}
-      className="md:h-[250px] bg-white sm:flex grid grid-cols-2 items-center justify-around pl-1 pr-1 sm:pl-14 sm:pr-14 counter-container"
+      className="bg-white grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 p-4 sm:p-14 counter-container"
     >
       {stats.map((stat, index) => (
         <div key={index} className="flex flex-col items-center counterBox">
@@ -113,7 +114,7 @@ function Section2() {
           </div>
           <div className="flex items-center">
             <p
-              className="text-xs sm:text-lg sm:font-bold font-semibold "
+              className="text-xs sm:text-lg sm:font-bold font-semibold"
               style={{ fontFamily: "Poppins" }}
             >
               {stat.label}

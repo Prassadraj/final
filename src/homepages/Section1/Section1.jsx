@@ -4,6 +4,7 @@ import TsParticle from "../../component/Tsparticle/TsParticle";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Splitting from "splitting";
+import { Link } from "react-router-dom";
 
 function Section1() {
   useEffect(() => {
@@ -99,12 +100,14 @@ function Section1() {
           </p>
         </div>
         <div className="buttons flex gap-1 justify-start">
-          <button
-            className="btn1 w-auto h-auto px-4 py-2 text-sm lg:text-lg whitespace-nowrap"
-            style={{ background: "#00A786", color: "white" }}
-          >
-            Explore product
-          </button>
+          <Link to="/product">
+            <button
+              className="btn1 w-auto h-auto px-4 py-2 text-sm lg:text-lg whitespace-nowrap"
+              style={{ background: "#00A786", color: "white" }}
+            >
+              Explore product
+            </button>
+          </Link>
           <button
             className="btn1 w-auto h-auto px-4 py-2 text-sm whitespace-nowrap text-[#00A786] hover:bg-[#00a986] hover:text-white lg:text-lg"
             style={{
