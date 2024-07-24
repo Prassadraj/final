@@ -159,7 +159,7 @@ function Product() {
               <p className="text-left text-sm font-semibold md:text-2xl mb-2">
                 Short note of {selectedCategory}
               </p>
-              <p className="text-sm md:text-lg mb-2">
+              <p className="text-sm md:text-lg mb-2 md:text-left">
                 Introducing our state-of-the-art biochemistry analyzer!.
                 Designed with the latest advancements in biochemistry
                 technology, our analyzer boasts a user-friendly interface,
@@ -186,7 +186,7 @@ function Product() {
           </div>
         </div>
       </section>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4 p-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4 md:px-10 py-5">
         <div className="p-4 bg-[#D9D7F1] text-gray-500 rounded-md flex flex-col gap-1">
           <div className="flex gap-2">
             <div className="flex items-center">
