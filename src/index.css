@@ -8,3 +8,7 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+a:hover {
+  color: #10b981;
+  text-decoration: none;
+}

@@ -10,13 +10,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useRef } from "react";
 
-function Footer() {
+function Footer({ open }) {
   const col2Ref = useRef(null);
   const col3Ref = useRef(null);
   const col4Ref = useRef(null);
 
   return (
-    <div className="h-[75vh] bg-light-green">
+    <div className={`h-[75vh] bg-light-green md:block ${open && "hidden"}`}>
       <div
         className="flex justify-around gap-2
      "

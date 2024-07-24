@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ContactUs from "../../homepages/ContactUs/ContactUs";
 import Footer from "../../homepages/Footer/Footer";
 import { CategoryContext } from "../Context/CategoryContext";
-
+import "./productInfo.css";
 function ProductInfo() {
   const { data } = useContext(ProductDataContext);
   const { category, id } = useParams();
@@ -161,7 +161,7 @@ function ProductInfo() {
 
   return (
     <div className="product-info text-black overflow-hidden mt-2 font-poppins">
-      <div className="px-5 mb-3 text-xl cursor-pointer">
+      <div className="px-2 sm:px-5 mb-3 text-xl cursor-pointer">
         <span>
           <Link to="/product">Product</Link>
         </span>
@@ -170,12 +170,12 @@ function ProductInfo() {
         </Link>
         <span>/ {product.title}</span>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-start gap-5 px-5 mb-2 !md:px-5">
+      <div className="flex flex-col md:flex-row items-center justify-start gap-5 px-2 sm:px-5 mb-2">
         <div className="hidden md:block w-1/4">
           {product.image.map((img, idx) => (
             <img
               key={idx}
-              className="mb-2 "
+              className="mb-2"
               src={img}
               onClick={() => setImgUrl(img)}
               alt={`Image ${idx + 1}`}
@@ -203,7 +203,7 @@ function ProductInfo() {
           </div>
         </div>
       </div>
-      <div className="">
+      <div>
         {/* for mobile */}
         <div className="flex items-center gap-2 text-xl px-2 sm:hidden">
           <p>Share:</p>
@@ -220,7 +220,7 @@ function ProductInfo() {
                   onClick={() => toggleExpand(section)}
                 >
                   <p>{section}</p>
-                  <p className="">{expanded === section ? "-" : "+"}</p>
+                  <p>{expanded === section ? "-" : "+"}</p>
                 </div>
                 {expanded === section && (
                   <div className="py-1 px-4">
@@ -255,7 +255,7 @@ function ProductInfo() {
                 }}
                 className={`cursor-pointer ${
                   selectedTab === index
-                    ? " font-bold text-custom-green"
+                    ? "font-bold text-custom-green"
                     : "text-gray-600"
                 }`}
               >
@@ -302,9 +302,9 @@ function ProductInfo() {
       </div>
       {/* related products */}
       {relatedProduct.length > 0 ? (
-        <div className="px-5 mt-4 mb-4">
+        <div className="px-2 md:px-5 mt-4 mb-4 max-h-[500px] ">
           <div className="flex justify-between items-center mb-4">
-            <p className="text-left text-2xl mb-2 font-semibold">
+            <p className="text-left text-lg truncate md:text-2xl mb-2 font-semibold">
               Related Products
             </p>
             <Link
@@ -312,12 +312,12 @@ function ProductInfo() {
               onClick={() => setSelectedCategory("Biochemistry")}
               className="no-underline"
             >
-              <p className="text-left text-xl mb-2 bg-custom-green text-white px-2 py-1 rounded-lg">
+              <p className="text-left text-sm md:text-xl mb-2 bg-custom-green text-white p-1 md:px-2 md:py-1 rounded-lg">
                 View Products
               </p>
             </Link>
           </div>
-          <div className="w-full overflow-x-auto">
+          <div className="w-full overflow-x-auto custom-scrollbar">
             <div className="flex gap-4">
               {relatedProduct.map((related, idx) => (
                 <Link
@@ -332,9 +332,9 @@ function ProductInfo() {
                     <img
                       src={related.image[0]}
                       alt=""
-                      className=" rounded-md h-40 object-cover w-full"
+                      className="rounded-md h-40 object-cover w-full"
                     />
-                    <p className="text-center mt-2 line-clamp-3 text-lg">
+                    <p className="text-center mt-2 line-clamp-3 text-sm md:text-lg">
                       {related.description}
                     </p>
                   </div>
@@ -343,7 +343,7 @@ function ProductInfo() {
             </div>
           </div>
           <div className="w-full flex justify-center mt-4 sm:hidden">
-            <button className="text-xl py-2 px-4 bg-custom-green text-white rounded-lg">
+            <button className="text-sm md:text-xl py-2 px-4 bg-custom-green text-white rounded-lg">
               View All Products
             </button>
           </div>

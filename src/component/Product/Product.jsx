@@ -1,36 +1,32 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import SimpleImageSlider from "react-simple-image-slider";
 import { Link } from "react-router-dom";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
-import frame1 from "../../images/products/frame1.png";
-import Footer from "../../homepages/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faEnvelopesBulk,
   faMessage,
 } from "@fortawesome/free-solid-svg-icons";
-import Transition from "../Transition/Transition";
-import { ProductDataContext } from "../Context/ProductData";
-import { faBloggerB } from "@fortawesome/free-brands-svg-icons";
-import "./product.css";
 import { CategoryContext } from "../Context/CategoryContext";
+import { ProductDataContext } from "../Context/ProductData";
+import SideMenu from "./SideMenu";
+import Footer from "../../homepages/Footer/Footer";
+import frame1 from "../../images/products/frame1.png";
+import "./product.css";
+import { faBloggerB } from "@fortawesome/free-brands-svg-icons";
 
 function Product() {
   const { data } = useContext(ProductDataContext);
+  const { selectedCategory, setSelectedCategory } = useContext(CategoryContext);
   const [open, setOpen] = useState(false);
-  const [title, setTitle] = useState(data[0].category);
   const [openDropdown, setOpenDropdown] = useState(null);
   const topRef = useRef(null);
-  const { selectedCategory, setSelectedCategory } = useContext(CategoryContext);
 
   const toggleDropdown = (index) => {
-    // Scroll to top of container
     if (topRef.current) {
       topRef.current.scrollIntoView({ behavior: "smooth" });
     }
     setOpenDropdown(openDropdown === index ? null : index);
-    setSelectedCategory(data[index].category);
   };
 
   const selectedCategoryItems =
@@ -38,34 +34,72 @@ function Product() {
     [];
 
   useEffect(() => {
-    // Ensure that when selectedCategoryItems change, we scroll to the top
     if (topRef.current) {
       topRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [selectedCategoryItems]);
+  }, [selectedCategory]);
+
+  const images = [frame1, frame1, frame1, frame1];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [open]);
 
   return (
     <div className="font-poppins bg-gray-100" ref={topRef}>
-      <header className="hidden sm:block mb-4">
-        <SimpleImageSlider
-          width="100%"
-          height={200}
-          images={[
-            { url: frame1 },
-            { url: frame1 },
-            { url: frame1 },
-            { url: frame1 },
-          ]}
-          showBullets={false}
-          showNavs={true}
-          autoPlay={true}
-          autoPlayDelay={2.0}
-        />
+      <header className="sm:block mb-4">
+        <div className="relative w-full overflow-hidden">
+          <div
+            className="flex transition-transform duration-1000"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Slide ${index}`}
+                className="slider-slide"
+              />
+            ))}
+          </div>
+          <button
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white px-3 py-1"
+            onClick={() =>
+              setCurrentIndex(
+                (prevIndex) => (prevIndex - 1 + images.length) % images.length
+              )
+            }
+          >
+            &#10094;
+          </button>
+          <button
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 text-white px-3 py-1"
+            onClick={() =>
+              setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+            }
+          >
+            &#10095;
+          </button>
+        </div>
       </header>
-      <section className="px-4 py-2 text-base text-black">
+      <section className="px-2  md:px-4 py-2 text-base text-gray-700">
         <div className="mb-2">
           <p>
             <Link to="/" className="no-underline">
@@ -77,80 +111,40 @@ function Product() {
         </div>
         <div
           className="flex items-center gap-2 text-xl justify-end sm:hidden"
-          onClick={() => setOpen((open) => !open)}
+          onClick={() => setOpen((prev) => !prev)}
         >
           <p>Select Equipment</p>
           <FontAwesomeIcon icon={faBars} />
         </div>
         <div className="flex flex-col sm:flex-row">
-          <div
-            className={`sm:w-[25%] bg-white py-2 px-4 sticky top-20 h-[90vh] overflow-y-auto ${
-              open ? "fixed w-full h-screen" : ""
-            }`}
-          >
-            <div className="w-full mx-auto">
-              {data.map((dropdown, index) => (
-                <div key={index} className="rounded mb-2">
-                  <button
-                    className="flex justify-between items-center py-3 w-full cursor-pointer"
-                    onClick={() => toggleDropdown(index)}
-                  >
-                    <p className="text-base font-semibold">
-                      {dropdown.category}
-                    </p>
-                    {openDropdown === index ? (
-                      <FaChevronDown />
-                    ) : (
-                      <FaChevronRight />
-                    )}
-                  </button>
-                  {openDropdown === index && (
-                    <div className="border-t border-gray-300">
-                      {dropdown.items.map((item, itemIndex) => (
-                        <Link
-                          to={`/productinfo/${selectedCategory}/${item.id}`}
-                          key={item.id}
-                          className="no-underline"
-                        >
-                          <p
-                            className="px-4 py-2 text-sm uppercase hover:bg-custom-green hover:text-light-green cursor-pointer"
-                            key={itemIndex}
-                          >
-                            {item.title}
-                          </p>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          <SideMenu
+            open={open}
+            setOpen={setOpen}
+            toggleDropdown={toggleDropdown}
+            openDropdown={openDropdown}
+          />
           <div className="sm:w-[75%] bg-white p-4 text-center overflow-y-auto">
             <h1 className="text-2xl font-bold mb-4 text-left text-black">
               {selectedCategory}
             </h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
-              {selectedCategoryItems.map((item, index) => (
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+              {selectedCategoryItems.map((item) => (
                 <Link
                   to={`/productinfo/${selectedCategory}/${item.id}`}
                   key={item.id}
                   className="no-underline"
                 >
-                  <div
-                    key={index}
-                    className="bg-white border rounded-lg overflow-hidden relative group h-[300px]"
-                  >
+                  <div className="bg-white border rounded-lg overflow-hidden relative group h-[200px]  md:h-[300px]">
                     <img
                       src={item.image[0]}
                       alt={item.title}
-                      className="w-full h-44 object-cover"
+                      className="w-full md:h-44 object-cover"
                     />
                     <div className="px-2 py-2 text-gray-600">
-                      <h2 className="text-base font-semibold text-gray-600 text-left">
+                      <h2 className="text-xs md:text-base md:font-semibold text-gray-600 text-left">
                         {item.title}
                       </h2>
-                      <p className="text-sm text-gray-600 text-left line-clamp-4">
+                      <p className="text-xs text-gray-600 text-left  ellipsis">
                         {item.description}
                       </p>
                     </div>
@@ -161,9 +155,11 @@ function Product() {
                 </Link>
               ))}
             </div>
-            <div className="p-4 bg-gray-200 rounded-md">
-              <p className="text-left text-2xl mb-2">Short note of {title}</p>
-              <p className="text-left mb-2">
+            <div className="p-2 md:p-4 bg-gray-200 rounded-md">
+              <p className="text-left text-sm font-semibold md:text-2xl mb-2">
+                Short note of {selectedCategory}
+              </p>
+              <p className="text-sm md:text-lg mb-2">
                 Introducing our state-of-the-art biochemistry analyzer!.
                 Designed with the latest advancements in biochemistry
                 technology, our analyzer boasts a user-friendly interface,
@@ -176,11 +172,21 @@ function Product() {
                 Read More
               </p>
             </div>
+            <div className="p-2 md:p-4 bg-gray-200 mt-4 rounded-md">
+              <p className="text-left text-lg md:text-2xl mb-2">
+                Why choose us for {selectedCategory} products
+              </p>
+              <ul className="text-left list-disc list-inside md:text-lg text-sm">
+                <li>Cost effective prices</li>
+                <li>Durable construction</li>
+                <li>Highly performed products</li>
+                <li>Great after sale services</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
-
-      <div className="flex justify-center items-center gap-5 p-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4 p-2">
         <div className="p-4 bg-[#D9D7F1] text-gray-500 rounded-md flex flex-col gap-1">
           <div className="flex gap-2">
             <div className="flex items-center">
@@ -203,7 +209,7 @@ function Product() {
             </div>
             <div className="text-lg">Enquiry mail us?</div>
           </div>
-          <div>Mail us today for Enquires</div>
+          <div>Mail us today for Enquiries</div>
         </div>
         <div className="p-4 bg-[#D9D7F1] text-gray-500 rounded-md flex flex-col gap-1">
           <div className="flex gap-2">

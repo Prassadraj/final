@@ -6,10 +6,6 @@ function Heading() {
   useEffect(() => {
     // Initialize AOS
     AOS.init();
-
-    // GSAP animations
-    // gsap.from(".title1", { opacity: 0, y: -50, duration: 1 });
-    // gsap.from(".title2", { opacity: 0, y: 50, duration: 1, delay: 0.5 });
   }, []);
 
   return (
