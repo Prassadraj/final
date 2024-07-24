@@ -59,16 +59,16 @@ const Organisation = () => {
     gsap.utils.toArray(".image").forEach((image) => {
       gsap.from(image, {
         scale: 0,
-        duration: 1,
+        duration: 0.5,
         delay: 0.5,
-        opacity: 0,
+        opacity: 0.5,
         ease: "power3.out",
         stagger: {
           amount: 1,
         },
         scrollTrigger: {
           trigger: image,
-          start: "top 100%", // Start animation when top of image reaches 100% of viewport height
+          start: "top 120%", // Start animation when top of image reaches 100% of viewport height
           end: "center center", // End animation when image is at the center of viewport
           scrub: true,
         },
@@ -81,7 +81,7 @@ const Organisation = () => {
   return (
     <>
       <Heading />
-      <div className="h-[300vh] flex font-poppins mb-20" id="mm">
+      <div className="hidden h-[300vh] md:flex font-poppins mb-20" id="mm">
         <div className="md:w-[50vw] w-[25vw] bg-slate-50 flex justify-center items-center flex-col">
           {images.map((image, i) => (
             <div
@@ -97,20 +97,12 @@ const Organisation = () => {
           ))}
         </div>
 
-        <div
-          className="w-[50vw] flex justify-end items-center font-poppins pr-10"
-          // style={{
-          //   backgroundImage: `url(${organisationBG})`,
-          //   backgroundPosition: "center",
-          //   backgroundRepeat: "no-repeat",
-          //   backgroundSize: "cover",
-          // }}
-        >
+        <div className="w-[50vw] flex justify-end items-center font-poppins pr-10">
           {/* Content 1 */}
           <div
             className="rightside"
             style={
-              scrollY > 2650 && scrollY < 4350
+              scrollY > 2400 && scrollY < 4150
                 ? {
                     top: "17vh",
                     left: "50vw",
@@ -128,13 +120,13 @@ const Organisation = () => {
                   }
             }
           >
-            <div className="flex gap-2 text-2xl text-custom-green">
-              <p className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center">
+            <div className="flex gap-2 text-sm md:text-2xl text-custom-green">
+              <p className="bg-transparent border-2 border-solid border-custom-green h-6 w-6  md:h-10 md:w-10 text-center rounded-full flex items-center justify-center">
                 1
               </p>
               <img
                 style={
-                  scrollY > 2510 && scrollY < 3120
+                  scrollY > 2400 && scrollY < 3120
                     ? {
                         opacity: 1,
                         transform: "scale(1.1)",
@@ -151,15 +143,15 @@ const Organisation = () => {
                       }
                 }
                 src={organisation1}
-                width="70wv"
+                className="md:w-[70wv] w-[50px]"
                 alt=""
               />
             </div>
-            <div className="flex justify-end items-center mt-2 text-lg pr-10">
+            <div className="flex justify-end items-center mt-2 text-xs md:text-lg pr-10">
               <p
                 className="max-w-lg min-w-xs text-justify pl-12"
                 style={
-                  scrollY > 2510 && scrollY < 3120
+                  scrollY > 2400 && scrollY < 2900
                     ? {
                         opacity: 1,
                         transform: "scale(1.1)",
@@ -202,7 +194,7 @@ const Organisation = () => {
           <div
             className="rightside"
             style={
-              scrollY > 2450 && scrollY < 4200
+              scrollY > 2250 && scrollY < 4000
                 ? {
                     top: "45vh",
                     left: "50vw",
@@ -219,7 +211,7 @@ const Organisation = () => {
           >
             <div className="flex gap-2 text-2xl text-custom-green">
               <p
-                style={scrollY > 3120 ? { opacity: 1 } : { opacity: 0.2 }}
+                style={scrollY > 2900 ? { opacity: 1 } : { opacity: 0.2 }}
                 className="bg-transparent border-2 border-solid border-custom-green h-10 w-10 text-center rounded-full flex items-center justify-center"
               >
                 2
@@ -227,7 +219,7 @@ const Organisation = () => {
               <img
                 width="70vw"
                 style={
-                  scrollY > 3120 && scrollY < 3578
+                  scrollY > 2900 && scrollY < 3578
                     ? {
                         opacity: 1,
                         transform: "scale(1.1)",
@@ -251,7 +243,7 @@ const Organisation = () => {
               <p
                 className="max-w-lg min-w-xs text-justify pl-12"
                 style={
-                  scrollY > 3120 && scrollY < 3578
+                  scrollY > 2900 && scrollY < 3578
                     ? {
                         opacity: 1,
                         transform: "scale(1.1)",
@@ -292,7 +284,7 @@ const Organisation = () => {
           <div
             className="rightside"
             style={
-              scrollY > 2300 && scrollY < 4000
+              scrollY > 2100 && scrollY < 3850
                 ? {
                     top: "70vh",
                     left: "50vw",

@@ -42,41 +42,6 @@ function TestimonialSlider() {
       desc: "We use only the best quality materials on the market in order to provide the best products to our patients.We use only the best quality materials on the market in order to provide the best products to our patients.",
     },
   ];
-  useEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger);
-    // gsap.from(".headline", {
-    //   skewX: 30,
-    //   opacity: 0,
-    //   rotateZ: "-3deg",
-    //   rotateY: "90deg",
-    //   duration: 1,
-    //   delay: 0.5,
-    //   stagger: 1,
-    //   // rotateX: "30deg",
-    //   scrollTrigger: ".headline",
-    // });
-    // gsap.utils.toArray(".container").forEach((container, i) => {
-    //   gsap.fromTo(
-    //     container,
-    //     {
-    //       opacity: 0,
-    //       scaleX: 0.1,
-    //     },
-    //     {
-    //       opacity: 1,
-    //       duration: 0.5,
-    //       delay: 0.5,
-    //       scaleX: 1,
-    //       stagger: { amount: 1 },
-    //       scrollTrigger: {
-    //         trigger: container, // Set the trigger to the container
-    //         start: "top center", // Animation starts when the top of the container hits the center of the viewport
-    //         end: "bottom top", // Animation ends when the bottom of the container hits the top of the viewport
-    //       },
-    //     }
-    //   );
-    // });
-  }, []);
 
   return (
     <div
@@ -90,7 +55,7 @@ function TestimonialSlider() {
       }}
     >
       <div className="flex justify-center items-center flex-col gap-2">
-        <h1 className="text-4xl text-black font-bold headline font-lato uppercase">
+        <h1 className="text-lg md:text-4xl text-black font-bold headline font-lato uppercase">
           Testimonials
         </h1>
         <p

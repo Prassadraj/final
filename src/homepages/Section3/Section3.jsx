@@ -64,7 +64,7 @@ function Section3() {
             className="w-full md:max-w-xl text-sm md:text-xl"
             data-aos="zoom-in-left"
           >
-            <p className="leading-8 font-mont text-justify">
+            <p className="leading-8 font-mont text-justify md:tracking-wider">
               Everlife CPC Diagnostics is a premier medical laboratory equipment
               supplier in India, providing a comprehensive range of in vitro
               diagnostic (IVD) solutions.
@@ -86,7 +86,7 @@ function Section3() {
 
       {/* Section 4 */}
       <div
-        className="p-2 md:p-0 section4 flex flex-col md:flex-row justify-evenly items-center md:h-[500px] md:mb-20"
+        className="p-2 md:p-0 section4 flex flex-col md:flex-row justify-evenly items-center md:h-[500px] md:mb-10"
         style={{
           background: "linear-gradient(0deg, #ffffff 0%, #7de4c2 150%)",
         }}
@@ -111,7 +111,7 @@ function Section3() {
             className="w-full md:max-w-xl text-sm md:text-xl font-mont"
             data-aos="zoom-in-left"
           >
-            <p className="leading-8 text-justify">
+            <p className="leading-8 text-justify md:tracking-wider">
               {" "}
               We manufacture and supply a variety of laboratory instruments,
               including biochemistry analyzers and hospital medical equipment,

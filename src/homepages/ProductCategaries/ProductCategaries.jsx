@@ -43,7 +43,7 @@ function ProductCategaries() {
 
   return (
     <div
-      className="h-[100vh] flex justify-center items-center mb-20"
+      className="h-[100vh] flex justify-center items-center mb-10"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",

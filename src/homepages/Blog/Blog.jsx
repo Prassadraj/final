@@ -54,46 +54,42 @@ function Blog() {
     },
   ];
   return (
-    <div className="h-[100vh] bg-white p-10 pl-20 pr-20">
-      <div className=" flex justify-between gap-3">
+    <div className="h-[100vh] bg-white px-2 ">
+      <div className=" flex justify-between gap-3 md:px-10">
         <div>
-          <h1 className="text-left text-black text-3xl font-poppins font-bold uppercase">
+          <h1 className="text-left text-black md:text-3xl font-poppins font-bold uppercase">
             Blog Snippets
           </h1>
-          <p className="max-w-xl text-lg font-poppins mt-3">
+          <p className="w-[300px] md:w-fit md:text-lg font-poppins mt-3">
             We use only the best quality materials on the market in order to
             provide the best products to our patients.
           </p>
         </div>
         <div className="flex">
-          <p className="bg-custom-green pt-3 pb-3 pr-4 pl-4 w-[10vw] h-fit text-center text-white rounded-lg text-md font-semibold font-poppins">
+          <p className="bg-custom-green md:px-4 md:py-3 min-w-16 md:w-[10vw] h-fit text-center text-white rounded-lg text-xs md:text-md md:font-semibold font-poppins">
             View All
           </p>
         </div>
       </div>
-      <div className="p-4 flex gap-5">
+      <div className="p-2 md:mx-10 md:my-4 grid md:grid-cols-4 gap-4 grid-cols-2">
         {data.map((datas, index) => (
           <div
             key={index}
-            className="p-4 bg-light-green w-[20vw] rounded-lg h-[60vh] blogBox"
+            className="h-[200px] p-4 md:p-4 bg-light-green w-full max-w-[300px] rounded-lg md:h-[370px] blogBox"
           >
             <div>
-              <img
-                style={{
-                  objectFit: "cover",
-                  width: "20vw",
-                }}
-                className="rounded-lg"
-                src={datas.img}
-                alt=""
-              />
+              <img className="rounded-lg w-full" src={datas.img} alt="" />
             </div>
-            <div className="flex flex-col justify-start items-start gap-2 mt-3">
-              <p className="bg-black p-1 text-white rounded-md">{datas.care}</p>
-              <p className="text-black font-poppins font-semibold">
+            <div className="flex flex-col justify-start items-start md:gap-2 md:mt-3 mt-2 gap-1">
+              <p className="bg-black p-1 text-white rounded-md text-xs">
+                {datas.care}
+              </p>
+              <p className="text-black font-poppins font-semibold text-xs">
                 {datas.title}
               </p>
-              <p className="text-lg text-gray-600 max-w-md"> {datas.desc}</p>
+              <p className="md:text-lg text-gray-600 w-full text-xs">
+                {datas.desc}
+              </p>
             </div>
             <div className="flex justify-end mt-3">
               <p className="text-lg">~{datas.author}</p>
