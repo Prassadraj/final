@@ -99,7 +99,7 @@ function Product() {
           </button>
         </div>
       </header>
-      <section className="px-2  md:px-4 py-2 text-base text-gray-700">
+      <section className="px-3  md:px-4 py-2 text-base text-gray-700">
         <div className="mb-2">
           <p>
             <Link to="/" className="no-underline">
