@@ -20,7 +20,7 @@ function SideMenu({ setOpen, open, toggleDropdown, openDropdown }) {
     >
       <FontAwesomeIcon
         icon={faXmark}
-        className="text-xl mt-2"
+        className="text-xl mt-2 sm:hidden"
         onClick={() => setOpen(false)}
       />
       <div className="w-full mx-auto">
