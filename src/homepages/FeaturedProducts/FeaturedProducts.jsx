@@ -10,6 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tilt from "react-parallax-tilt";
 import bgImg from "../../images/BgImages/slider-bg.webp";
 import Magnetic from "../../component/magneticButton/Magnetic";
+import { Link } from "react-router-dom";
 
 const FeaturedProducts = () => {
   useEffect(() => {
@@ -145,7 +146,9 @@ const AllProductsCard = () => {
             className="text-xl font-black text-custom-green p-2 rounded-xl cursor-pointer"
             style={{ fontFamily: "Poppins" }}
           >
-            All Products <FontAwesomeIcon icon={faArrowRight} />
+            <Link to="/product">
+              All Products <FontAwesomeIcon icon={faArrowRight} />
+            </Link>
           </div>
         </Magnetic>
       </div>
