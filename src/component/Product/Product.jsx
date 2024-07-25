@@ -168,9 +168,9 @@ function Product() {
                 large hospital, our analyzer is adaptable to various settings,
                 catering to your specific needs.
               </p>
-              <p className="px-4 py-2 bg-custom-green text-left w-fit text-white rounded-md">
+              {/* <p className="px-4 py-2 bg-custom-green text-left w-fit text-white rounded-md">
                 Read More
-              </p>
+              </p> */}
             </div>
             <div className="p-2 md:p-4 bg-gray-200 mt-4 rounded-md">
               <p className="text-left text-lg md:text-2xl mb-2">

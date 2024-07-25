@@ -161,8 +161,8 @@ function ProductInfo() {
 
   return (
     <div className="product-info text-black overflow-hidden mt-2 font-poppins">
-      <div className="px-2 sm:px-5 mb-3 text-xl cursor-pointer">
-        <span>
+      <div className=" mb-3 text-xl cursor-pointer  px-5 w-full md:px-5">
+        <span className="">
           <Link to="/product">Product</Link>
         </span>
         <Link to="/product" onClick={() => setSelectedCategory(category)}>
@@ -170,8 +170,8 @@ function ProductInfo() {
         </Link>
         <span>/ {product.title}</span>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-start gap-5 px-2 sm:px-5 mb-2">
-        <div className="hidden md:block w-1/4">
+      <div className="flex flex-col md:flex-row items-center justify-start gap-5 px-5  mb-2">
+        <div className="hidden md:block w-1/4 md:px-5">
           {product.image.map((img, idx) => (
             <img
               key={idx}
@@ -302,8 +302,8 @@ function ProductInfo() {
       </div>
       {/* related products */}
       {relatedProduct.length > 0 ? (
-        <div className="px-2 md:px-5 mt-4 mb-4 max-h-[500px] ">
-          <div className="flex justify-between items-center mb-4">
+        <div className="px-2  mt-4 mb-4 max-h-[500px] ">
+          <div className="flex justify-between items-center mb-4 ">
             <p className="text-left text-lg truncate md:text-2xl mb-2 font-semibold">
               Related Products
             </p>

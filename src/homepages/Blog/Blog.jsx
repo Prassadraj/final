@@ -60,7 +60,7 @@ function Blog() {
           <h1 className="text-left text-black md:text-3xl font-poppins font-bold uppercase">
             Blog Snippets
           </h1>
-          <p className="w-[300px] md:w-fit md:text-lg font-poppins mt-3">
+          <p className="w-[300px] md:w-fit md:text-lg font-poppins mt-2">
             We use only the best quality materials on the market in order to
             provide the best products to our patients.
           </p>
@@ -71,17 +71,17 @@ function Blog() {
           </p>
         </div>
       </div>
-      <div className="p-2 md:mx-10 md:my-4 grid md:grid-cols-4 gap-4 grid-cols-2">
+      <div className="mt-0 p-1 md:mx-10 md:my-4 grid md:grid-cols-4 gap-2  md:gap-4 grid-cols-2">
         {data.map((datas, index) => (
           <div
             key={index}
-            className="h-[200px] p-4 md:p-4 bg-light-green w-full max-w-[300px] rounded-lg md:h-[370px] blogBox"
+            className="h-[200px] p-1  bg-light-green w-full max-w-[300px] rounded-lg md:h-[370px] blogBox"
           >
-            <div>
+            <div className="md:m-2">
               <img className="rounded-lg w-full" src={datas.img} alt="" />
             </div>
-            <div className="flex flex-col justify-start items-start md:gap-2 md:mt-3 mt-2 gap-1">
-              <p className="bg-black p-1 text-white rounded-md text-xs">
+            <div className="flex flex-col justify-start items-start md:gap-2 md:mt-3 mt-1 gap-1 md:m-2">
+              <p className="bg-black p-1 text-white rounded-md text-xs hidden md:block">
                 {datas.care}
               </p>
               <p className="text-black font-poppins font-semibold text-xs">
@@ -91,8 +91,8 @@ function Blog() {
                 {datas.desc}
               </p>
             </div>
-            <div className="flex justify-end mt-3">
-              <p className="text-lg">~{datas.author}</p>
+            <div className="flex justify-end md:mt-3">
+              <p className="md:text-lg">~{datas.author}</p>
             </div>
           </div>
         ))}

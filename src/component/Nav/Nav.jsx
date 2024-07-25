@@ -126,7 +126,7 @@ function Nav() {
           {showDropdown && (
             <div className="dropdown-menu w-fit">
               <Link
-                className="dropdown-item"
+                className="dropdown-item "
                 to="/product"
                 onClick={() => setSelectedCategory("Biochemistry")}
               >
