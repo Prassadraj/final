@@ -302,7 +302,7 @@ function ProductInfo() {
       </div>
       {/* related products */}
       {relatedProduct.length > 0 ? (
-        <div className="px-2  mt-4 mb-4 max-h-[500px] ">
+        <div className="px-2  md:mx-5 mt-4 mb-4 max-h-[500px] ">
           <div className="flex justify-between items-center mb-4 ">
             <p className="text-left text-lg truncate md:text-2xl mb-2 font-semibold">
               Related Products
