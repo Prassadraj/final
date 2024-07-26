@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../images/logo.png";
 import "./nav.css";
 import { CategoryContext } from "../Context/CategoryContext";
+import MenuBtn from "./MenuBtn/MenuBtn";
 
 function Nav() {
   const location = useLocation();
@@ -43,14 +44,21 @@ function Nav() {
   }, [location.pathname]);
 
   return (
-    <div className="hidden md:flex sticky top-0 bg-white h-fit w-full z-50 items-center justify-between px-10 shadow-md overflow-visible">
-      <div className="left py-2">
+    <div className=" md:flex sticky top-0 bg-white h-fit w-full z-50 items-center justify-between px-3  shadow-md overflow-visible">
+      <div className="left py-2 flex items-center md:px-10 ">
+        <div className="block md:hidden">
+          <MenuBtn />
+        </div>
         <Link to="/">
-          <img width="140px" height="70px" src={logo} alt="Logo" />
+          <img
+            className=" md:w-[140px] md:h-[70px] w-[100px]"
+            src={logo}
+            alt="Logo"
+          />
         </Link>
       </div>
       <div
-        className="flex"
+        className="md:flex hidden "
         style={{
           gap: "51px",
           fontFamily: "Poppins, sans-serif",

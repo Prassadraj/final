@@ -42,8 +42,8 @@ function ContactUs() {
             placeholder="Phone Number"
           />
           <textarea
-            placeholder="Have anything to say"
-            className="placeholder:text-white h-[20vh] w-full lg:w-[30vw] pt-2 text-xl box-border outline-none p-3 rounded-lg text-white bg-transparent"
+            placeholder="Have anything to say..."
+            className="placeholder:text-white h-[20vh] w-full lg:w-[30vw] pt-2 md:text-xl box-border outline-none p-3 rounded-lg text-white bg-transparent"
           ></textarea>
           <div className="flex items-center justify-center">
             <button className="btn-53">

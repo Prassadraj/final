@@ -81,6 +81,7 @@ const Organisation = () => {
   return (
     <>
       <Heading />
+      {/* for laptop */}
       <div className="hidden h-[300vh] md:flex font-poppins mb-20" id="mm">
         <div className="md:w-[50vw] w-[25vw] bg-slate-50 flex justify-center items-center flex-col">
           {images.map((image, i) => (

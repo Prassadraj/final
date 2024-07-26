@@ -64,7 +64,7 @@ function Product() {
 
   return (
     <div className="font-poppins bg-gray-100" ref={topRef}>
-      <header className="sm:block mb-4">
+      <header className="sm:block mb-2 md:mb-4">
         <div className="relative w-full overflow-hidden">
           <div
             className="flex transition-transform duration-1000"
@@ -144,7 +144,7 @@ function Product() {
                       <h2 className="text-xs md:text-base md:font-semibold text-gray-600 text-left">
                         {item.title}
                       </h2>
-                      <p className="text-xs text-gray-600 text-left  ellipsis">
+                      <p className="text-xs text-gray-600 text-left ellipsis">
                         {item.description}
                       </p>
                     </div>

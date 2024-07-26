@@ -58,9 +58,9 @@ const FeaturedProducts = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex h-10 items-center pl-24 flex-col gap-4 heading">
+      <div className="flex h-10 items-center md:pl-24 flex-col md:gap-4 heading p-2 text-center">
         <span
-          className="font-semibold text-4xl uppercase heading font-lato"
+          className="font-semibold text-xl md:text-4xl uppercase heading font-lato"
           style={{
             background: "linear-gradient(to right, #10b981, black)",
             WebkitBackgroundClip: "text",
@@ -69,7 +69,7 @@ const FeaturedProducts = () => {
         >
           Featured Products
         </span>
-        <p className="text-xl heading font-poppins text-gray-500">
+        <p className="md:text-xl heading font-poppins text-gray-500">
           We use only the{" "}
           <span className="text-custom-green font-poppins">
             best quality materials
@@ -95,7 +95,7 @@ const HorizontalScrollCarousel = ({ cards }) => {
   return (
     <section ref={targetRef} className="relative h-[300vh] products">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-8">
+        <motion.div style={{ x }} className="flex gap-4 md:gap-8">
           {cards.slice(0, 7).map((card) => (
             <Card card={card} key={card.id} />
           ))}
@@ -108,26 +108,28 @@ const HorizontalScrollCarousel = ({ cards }) => {
 
 const Card = ({ card }) => {
   return (
-    <div className="relative h-[400px] w-[350px] overflow-hidden bg-light-green rounded-2xl">
-      <div className="flex justify-center items-center w-full mt-10">
+    <div className="relative h-[300px] w-[200px] md:h-[400px] md:w-[350px] overflow-hidden bg-light-green rounded-2xl">
+      <div className="flex justify-center items-center w-full md:mt-10">
         {/* <Tilt scale={1.2} transitionSpeed={2500}> */}
         <img width="150px" src={card.url} alt="" />
         {/* </Tilt> */}
       </div>
       <div
-        className="absolute top-60 left-10 right-10"
+        className="absolute md:top-60 md:left-10 md:right-10 p-0"
         style={{ fontFamily: "Poppins" }}
       >
-        <div className="flex justify-start">
-          <p className="text-xl font-poppins font-bold">{card.title}</p>
+        <div className="flex justify-center md:justify-start">
+          <p className="md:text-xl font-poppins font-bold ">{card.title}</p>
         </div>
-        <p>{card.content}</p>
+        <p className="text-sm md:text-base line-clamp-2 md:line-clamp-none">
+          {card.content}
+        </p>
       </div>
-      <div className="absolute bottom-6 w-full">
+      <div className="absolute bottom-1 md:bottom-6 w-full">
         <div className="flex justify-center items-center">
           <Magnetic>
-            <button className="w-72 bg-custom-green pt-2 pb-2 pl-3 pr-3 rounded-lg text-white">
-              View Products
+            <button className="w-fit md:w-72 bg-custom-green p-1 md:px-3 md:py-2 rounded-lg text-white">
+              View Product
             </button>
           </Magnetic>
         </div>

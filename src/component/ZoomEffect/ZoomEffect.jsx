@@ -37,7 +37,7 @@ function ZoomEffect() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex justify-center items-center flex-col gap-1 mt-5 font-poppins">
+      <div className="flex justify-center items-center flex-col gap-1 md:mt-5 font-poppins">
         <img
           data-aos="flip-down"
           style={{ objectFit: "cover" }}
@@ -54,7 +54,7 @@ function ZoomEffect() {
           <span className="text-custom-green">1800 571 1101</span>
         </p>
       </div>
-      <div id="container" className="md:h-[100vh] flex flex-col gap-3 mt-5">
+      <div id="container" className="md:h-[100vh] flex flex-col gap-3 md:mt-5">
         <div className=" flex justify-evenly ">
           <img
             className="w-[100px] object-cover h-[100px] md:w-[200px] md:h-[150px]"
@@ -81,7 +81,7 @@ function ZoomEffect() {
             // width="510"
             // height="287"
             data-aos="zoom-in-up"
-            className="w-[100px] h-[100px] md:w-[700px] md:h-[270px]"
+            className="w-[180px] h-[100px] md:w-[700px] md:h-[270px]"
             src="https://www.youtube.com/embed/mNYxQo9i7gc"
             title="i-track - Constant Remote Support"
             frameBorder="0"

@@ -31,6 +31,7 @@ function TestimonialSlider() {
 
   const [scrollAmount, setScrollAmount] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -65,6 +66,8 @@ function TestimonialSlider() {
         left: scrollAmount,
         behavior: "smooth",
       });
+
+      setActiveSlide((prevSlide) => (prevSlide + 1) % data.length);
     }, 3000); // Scroll speed
 
     return () => clearInterval(scrollIntervalRef.current);
@@ -78,6 +81,7 @@ function TestimonialSlider() {
       left: cardWidth * index,
       behavior: "smooth",
     });
+    setActiveSlide(index);
   };
 
   return (
@@ -135,7 +139,9 @@ function TestimonialSlider() {
         {data.map((_, i) => (
           <p
             key={i}
-            className="w-5 h-5 bg-black/40 rounded-full cursor-pointer"
+            className={`w-1 h-1 md:w-5 md:h-5 rounded-full cursor-pointer ${
+              activeSlide === i ? "bg-black/50" : " border-2 border-black/50"
+            }`}
             onClick={() => handleDotClick(i)}
           ></p>
         ))}
