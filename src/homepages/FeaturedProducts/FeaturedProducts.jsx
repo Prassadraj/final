@@ -51,32 +51,29 @@ const FeaturedProducts = () => {
   return (
     <div
       className="pt-10"
-      style={{
-        backgroundImage: `url(${bgImg})`,
-        backgroundSize: "contain",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      // style={{
+      //   backgroundImage: `url(${bgImg})`,
+      //   backgroundSize: "contain",
+      //   backgroundPosition: "center",
+      //   backgroundRepeat: "no-repeat",
+      // }}
     >
       <div className="flex h-10 items-center md:pl-24 flex-col md:gap-4 heading p-2 text-center">
         <span
-          className="font-semibold text-xl md:text-4xl uppercase heading font-lato"
-          style={{
-            background: "linear-gradient(to right, #10b981, black)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
+          className="font-semibold text-xl md:text-4xl uppercase heading font-lato text-custom-green"
+          // style={{
+          //   background: "linear-gradient(to right, #10b981, black)",
+          //   WebkitBackgroundClip: "text",
+          //   WebkitTextFillColor: "transparent",
+          // }}
         >
           Featured Products
         </span>
         <p className="md:text-xl heading font-poppins text-gray-500">
           We use only the{" "}
-          <span className="text-custom-green font-poppins">
-            best quality materials
-          </span>{" "}
-          on the market in order to provide the{" "}
-          <span className="text-custom-green">best products </span> to our
-          patients.
+          <span className="font-poppins">best quality materials</span> on the
+          market in order to provide the{" "}
+          <span className="">best products </span> to our patients.
         </p>
       </div>
       <HorizontalScrollCarousel cards={featuredCards} />

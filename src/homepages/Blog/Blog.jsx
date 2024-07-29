@@ -55,22 +55,18 @@ function Blog() {
   ];
   return (
     <div className="h-[100vh] bg-white px-2 ">
-      <div className=" flex justify-between gap-3 md:px-10">
-        <div>
-          <h1 className="text-left text-black md:text-3xl font-poppins font-bold uppercase">
-            Blog Snippets
-          </h1>
-          <p className="w-[300px] md:w-fit md:text-lg font-poppins mt-2">
-            We use only the best quality materials on the market in order to
-            provide the best products to our patients.
-          </p>
-        </div>
-        <div className="flex">
-          <p className="bg-custom-green md:px-4 md:py-3 min-w-16 md:w-[10vw] h-fit text-center text-white rounded-lg text-xs md:text-md md:font-semibold font-poppins">
-            View All
-          </p>
-        </div>
+      <div className=" flex justify-between  md:px-10">
+        <p className="text-left text-custom-green md:text-3xl font-poppins font-bold uppercase">
+          Blog Snippets
+        </p>
+        <p className="  bg-custom-green w-fit md:px-4 md:py-3  md:w-[10vw] h-fit text-center text-white rounded-lg text-xs md:text-md md:font-semibold font-poppins p-1">
+          View All
+        </p>
       </div>
+      <p className="w-[300px] md:w-fit md:text-lg font-poppins mt-2 md:px-10">
+        We use only the best quality materials on the market in order to provide
+        the best products to our patients.
+      </p>
       <div className="mt-0 p-1 md:mx-10 md:my-4 grid md:grid-cols-4 gap-2  md:gap-4 grid-cols-2">
         {data.map((datas, index) => (
           <div
@@ -80,7 +76,7 @@ function Blog() {
             <div className="md:m-2">
               <img className="rounded-lg w-full" src={datas.img} alt="" />
             </div>
-            <div className="flex flex-col justify-start items-start md:gap-2 md:mt-3 mt-1 gap-1 md:m-2">
+            <div className="flex flex-col justify-start items-start md:gap-2 md:mt-3 mt-1 gap-0 md:m-2">
               <p className="bg-black p-1 text-white rounded-md text-xs hidden md:block">
                 {datas.care}
               </p>
@@ -91,8 +87,8 @@ function Blog() {
                 {datas.desc}
               </p>
             </div>
-            <div className="flex justify-end md:mt-3">
-              <p className="md:text-lg">~{datas.author}</p>
+            <div className="flex justify-end sm:mt-0 md:mt-3">
+              <p className="md:text-lg text-xs">~{datas.author}</p>
             </div>
           </div>
         ))}

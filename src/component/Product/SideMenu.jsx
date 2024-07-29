@@ -33,7 +33,7 @@ function SideMenu({ setOpen, open, toggleDropdown, openDropdown }) {
                 setSelectedCategory(dropdown.category);
               }}
             >
-              <p className="text-base font-lato font-semibold">
+              <p className="text-base font-poppins font-semibold">
                 {dropdown.category}
               </p>
               {openDropdown === index ? <FaChevronDown /> : <FaChevronRight />}

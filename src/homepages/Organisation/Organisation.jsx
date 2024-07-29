@@ -83,7 +83,7 @@ const Organisation = () => {
       <Heading />
       {/* for laptop */}
       <div className="hidden h-[300vh] md:flex font-poppins mb-20" id="mm">
-        <div className="md:w-[50vw] w-[25vw] bg-slate-50 flex justify-center items-center flex-col">
+        <div className="md:w-[50vw] w-[25vw] flex justify-center items-center flex-col">
           {images.map((image, i) => (
             <div
               key={i}
@@ -150,7 +150,7 @@ const Organisation = () => {
             </div>
             <div className="flex justify-end items-center mt-2 text-xs md:text-lg pr-10">
               <p
-                className="max-w-lg min-w-xs text-justify pl-12"
+                className="max-w-lg min-w-xs text-justify pl-12 "
                 style={
                   scrollY > 2400 && scrollY < 2900
                     ? {

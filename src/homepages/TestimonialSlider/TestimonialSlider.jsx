@@ -85,18 +85,9 @@ function TestimonialSlider() {
   };
 
   return (
-    <div
-      className="md:h-[100vh] py-3"
-      style={{
-        objectFit: "cover",
-        width: "100%",
-        backgroundImage: `url(${bgImage})`,
-        backgroundPosition: "left",
-        backgroundSize: "cover",
-      }}
-    >
+    <div className="md:h-[100vh] py-3">
       <div className="flex justify-center items-center flex-col gap-2 md:p-5">
-        <h1 className="text-lg md:text-4xl text-black font-bold headline font-lato uppercase">
+        <h1 className="text-lg md:text-4xl text-custom-green font-bold headline font-lato uppercase">
           Testimonials
         </h1>
         <p
@@ -107,10 +98,7 @@ function TestimonialSlider() {
           }}
         >
           Our experience with CPC Diagnostics has been exceptional. Their
-          products are reliable, and their{" "}
-          <span className="font-semibold font-poppins">
-            support is outstanding.
-          </span>
+          products are reliable, and their support is outstanding.
         </p>
       </div>
 
@@ -121,7 +109,7 @@ function TestimonialSlider() {
         {data.map((item, i) => (
           <div
             key={i}
-            className="cardd bg-white gap-1 p-2 md:p-3 rounded-lg text-gray-500 flex-col flex md:gap-3 font-poppins"
+            className="cardd bg-black/10 gap-1 p-2 md:p-3 rounded-lg text-gray-500 flex-col flex md:gap-3 font-poppins"
           >
             <div className="flex items-center w-[125px] md:w-[550px] md:gap-2 gap-1 md:p-3">
               <img

@@ -44,7 +44,7 @@ function Nav() {
   }, [location.pathname]);
 
   return (
-    <div className=" md:flex sticky top-0 bg-white h-fit w-full z-50 items-center justify-between px-3  shadow-md overflow-visible">
+    <div className=" md:flex sticky bg-white top-0  h-fit w-full z-50 items-center justify-between px-3  shadow-md overflow-visible">
       <div className="left py-2 flex items-center md:px-10 ">
         <div className="block md:hidden">
           <MenuBtn />
@@ -58,12 +58,10 @@ function Nav() {
         </Link>
       </div>
       <div
-        className="md:flex hidden "
+        className="md:flex hidden md:gap-[51px] md:text-[15px]"
         style={{
-          gap: "51px",
           fontFamily: "Poppins, sans-serif",
           fontWeight: "500",
-          fontSize: "15px",
         }}
       >
         <div className="nav-item">

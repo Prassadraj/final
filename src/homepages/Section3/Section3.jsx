@@ -50,13 +50,13 @@ function Section3() {
       <div
         className="p-2 md:p-0 section3 flex flex-col md:flex-row justify-evenly items-center md:h-[500px]
         "
-        style={{
-          background: "linear-gradient(180deg, #ffffff 0%, #7de4c2 150%)",
-        }}
+        // style={{
+        //   background: "linear-gradient(180deg, #ffffff 0%, #7de4c2 150%)",
+        // }}
       >
         <div className="flex flex-col items-start">
           <div className="mb-3" data-aos="zoom-in-left">
-            <p className="font-bold text-gray-900 text-sm md:text-3xl">
+            <p className="font-bold text-custom-green text-sm md:text-3xl">
               Who We Are?
             </p>
           </div>
@@ -80,16 +80,16 @@ function Section3() {
               className="animate-leftRight rounded-lg"
             />
           </div>
-          <div className="absolute w-[80vw] md:w-[30vw] h-[350px] rounded-2xl bg-gradient-to-t from-custom-green to-gray-200 animate-rightUp"></div>
+          {/* <div className="absolute w-[80vw] md:w-[30vw] h-[350px] rounded-2xl bg-gradient-to-t from-custom-green to-gray-200 animate-rightUp"></div> */}
         </div>
       </div>
 
       {/* Section 4 */}
       <div
         className="p-2 md:p-0 section4 flex flex-col md:flex-row justify-evenly items-center md:h-[500px] md:mb-10"
-        style={{
-          background: "linear-gradient(0deg, #ffffff 0%, #7de4c2 150%)",
-        }}
+        // style={{
+        //   background: "linear-gradient(0deg, #ffffff 0%, #7de4c2 150%)",
+        // }}
       >
         <div className="relative hidden md:flex justify-center items-center ">
           <div className="relative -bottom-10 w-[80vw] md:w-[30vw] h-[50vh] rounded-2xl z-10">
@@ -99,11 +99,11 @@ function Section3() {
               className="animate-rightDown rounded-lg"
             />
           </div>
-          <div className="absolute w-[80vw] md:w-[30vw] h-[350px] rounded-2xl bg-gradient-to-t from-custom-green to-gray-200 animate-leftUp"></div>
+          {/* <div className="absolute w-[80vw] md:w-[30vw] h-[350px] rounded-2xl bg-gradient-to-t from-custom-green to-gray-200 animate-leftUp"></div> */}
         </div>
         <div className="flex flex-col items-start">
           <div className="mb-3" data-aos="zoom-in-left">
-            <p className="font-bold text-gray-900 text-sm md:text-3xl">
+            <p className="font-bold text-custom-green text-sm md:text-3xl">
               What We Do?
             </p>
           </div>
