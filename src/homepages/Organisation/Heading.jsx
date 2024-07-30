@@ -12,7 +12,7 @@ function Heading() {
     <div className="flex flex-col justify-center items-center h-[30vh] gap-2">
       <p
         data-aos="zoom-in-right"
-        className="text-lg md:text-3xl text-custom-green font-semibold title1 font-lato uppercase"
+        className="text-lg md:text-3xl text-custom-green font-semibold title1 uppercase"
       >
         Our Sister Organizations
       </p>
