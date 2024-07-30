@@ -45,7 +45,7 @@ function Section3() {
   }, []);
 
   return (
-    <div className="">
+    <div className="font-poppins">
       {/* Section 3 */}
       <div
         className="p-2 md:p-0 section3 flex flex-col md:flex-row justify-evenly items-center md:h-[500px]
@@ -64,7 +64,7 @@ function Section3() {
             className="w-full md:max-w-xl text-sm md:text-xl"
             data-aos="zoom-in-left"
           >
-            <p className="leading-8 font-mont text-justify md:tracking-wider">
+            <p className="leading-8  text-justify md:tracking-wider">
               Everlife CPC Diagnostics is a premier medical laboratory equipment
               supplier in India, providing a comprehensive range of in vitro
               diagnostic (IVD) solutions.
@@ -108,7 +108,7 @@ function Section3() {
             </p>
           </div>
           <div
-            className="w-full md:max-w-xl text-sm md:text-xl font-mont"
+            className="w-full md:max-w-xl text-sm md:text-xl "
             data-aos="zoom-in-left"
           >
             <p className="leading-8 text-justify md:tracking-wider">
