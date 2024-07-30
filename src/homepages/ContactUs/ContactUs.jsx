@@ -16,16 +16,16 @@ function ContactUs() {
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 w-full h-full bg-black opacity-50 z-0 rounded-xl"></div>
-        <div className="relative z-10 p-5 lg:w-1/2 flex flex-col justify-center items-center text-center">
-          <p className="font-bold text-white text-lg md:text-3xl z-10 font-poppins">
+        <div className="relative z-10 md:p-5 lg:w-1/2 flex flex-col justify-center items-center text-center">
+          <p className="font-bold text-white text-lg md:text-3xl  font-poppins">
             Let's Get in Touch
           </p>
-          <p className="text-xl max-w-md text-white mt-2">
+          <p className="md:text-xl max-w-md text-white mt-2">
             We're here to assist you with any questions or concerns. Reach out
             to us and we'll respond as soon as we can.
           </p>
         </div>
-        <div className="relative z-10 p-5 lg:w-1/2 flex flex-col gap-4 items-center mt-10 lg:mt-0">
+        <div className="relative py-3  md:p-5 lg:w-1/2 flex flex-col gap-4 items-center md:mt-10 lg:mt-0">
           <input
             type="text"
             className="w-full lg:w-[30vw] h-[7vh] outline-none text-xl p-3 rounded-lg text-white bg-gray-800"

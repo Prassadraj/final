@@ -85,7 +85,7 @@ function TestimonialSlider() {
   };
 
   return (
-    <div className="md:h-[100vh] py-3">
+    <div className="md:h-[100vh] h-fit py-3 ">
       <div className="flex justify-center items-center flex-col gap-2 md:p-5">
         <p className="text-lg md:text-4xl text-custom-green font-semibold headline font-poppins uppercase">
           Testimonials

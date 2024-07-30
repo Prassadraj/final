@@ -1,0 +1,18 @@
+.scrollable-container {
+  overflow-x: auto; /* Ensure horizontal overflow */
+  scrollbar-width: thin; /* For Firefox */
+}
+
+.scrollable-container::-webkit-scrollbar {
+  height: 8px; /* Height of the scrollbar */
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background-color: #0e3d99; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Color of the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the scrollbar track */
+}

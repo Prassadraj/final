@@ -54,7 +54,7 @@ function Blog() {
     },
   ];
   return (
-    <div className="h-[100vh] bg-white px-2 mb-2 md:mb-0">
+    <div className="md:h-[100vh] bg-white px-2 mb-4 md:mb-0">
       <div className=" flex justify-between  md:px-10">
         <p className="text-left text-custom-green md:text-3xl font-poppins font-bold uppercase">
           Blog Snippets
