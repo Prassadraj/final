@@ -72,7 +72,7 @@ const HorizontalScrollCarousel = ({ cards }) => {
   });
 
   // Adjust these values based on your needs for mobile responsiveness
-  const x = useTransform(scrollYProgress, [0, 1.6], ["1%", "95%"]);
+  const x = useTransform(scrollYProgress, [0, 1.6], ["1%", "-95%"]);
 
   return (
     <section

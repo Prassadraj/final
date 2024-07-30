@@ -9,7 +9,7 @@ function Heading() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center h-[30vh] gap-2">
+    <div className="flex flex-col justify-center items-center md:h-[30vh] gap-2">
       <p
         data-aos="zoom-in-right"
         className="text-lg md:text-3xl text-custom-green font-semibold title1 uppercase"
