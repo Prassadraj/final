@@ -59,14 +59,7 @@ const FeaturedProducts = () => {
       // }}
     >
       <div className="flex h-10 items-center md:pl-24 flex-col md:gap-4 heading p-2 text-center">
-        <span
-          className="font-semibold text-xl md:text-4xl uppercase heading font-lato text-custom-green"
-          // style={{
-          //   background: "linear-gradient(to right, #10b981, black)",
-          //   WebkitBackgroundClip: "text",
-          //   WebkitTextFillColor: "transparent",
-          // }}
-        >
+        <span className="font-semibold text-xl md:text-4xl uppercase heading font-poppins text-custom-green">
           Featured Products
         </span>
         <p className="md:text-xl heading font-poppins text-gray-500">
