@@ -46,7 +46,7 @@ function Nav() {
   return (
     <div className=" md:flex sticky bg-white top-0  h-fit w-full z-50 items-center justify-between px-3  shadow-md overflow-visible">
       <div className="left py-2 flex items-center md:px-10 ">
-        <div className="block md:hidden">
+        <div className="block md:hidden w-fit bg-white">
           <MenuBtn />
         </div>
         <Link to="/">
@@ -60,7 +60,6 @@ function Nav() {
       <div
         className="md:flex hidden md:gap-1 lg:gap-16 md:text-[15px]"
         style={{
-          fontFamily: "Poppins, sans-serif",
           fontWeight: "500",
         }}
       >

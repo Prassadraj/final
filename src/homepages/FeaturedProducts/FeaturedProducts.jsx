@@ -49,15 +49,7 @@ const FeaturedProducts = () => {
   }, []);
 
   return (
-    <div
-      className="pt-10"
-      // style={{
-      //   backgroundImage: `url(${bgImg})`,
-      //   backgroundSize: "contain",
-      //   backgroundPosition: "center",
-      //   backgroundRepeat: "no-repeat",
-      // }}
-    >
+    <div className="pt-10 hidden md:block">
       <div className="flex h-10 items-center md:pl-24 flex-col md:gap-4 heading p-2 text-center">
         <span className="font-semibold text-xl md:text-4xl uppercase heading font-poppins text-custom-green">
           Featured Products
@@ -82,7 +74,7 @@ const HorizontalScrollCarousel = ({ cards }) => {
 
   return (
     <section ref={targetRef} className="relative h-[300vh] products">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+      <div className="sticky top-0 flex md:h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4 md:gap-8">
           {cards.slice(0, 7).map((card) => (
             <Card card={card} key={card.id} />

@@ -127,7 +127,7 @@ function TestimonialSlider() {
         {data.map((_, i) => (
           <p
             key={i}
-            className={`w-1 h-1 md:w-5 md:h-5 rounded-full cursor-pointer ${
+            className={`w-3 h-3 md:w-5 md:h-5 rounded-full cursor-pointer ${
               activeSlide === i ? "bg-black/50" : " border-2 border-black/50"
             }`}
             onClick={() => handleDotClick(i)}
