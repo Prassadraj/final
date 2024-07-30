@@ -364,8 +364,8 @@ const Organisation = () => {
         <div className="grid grid-cols-2 items-center justify-center p-2 gap-4 mb-2">
           <img src={images[0].img} alt="" />
           <div className="flex flex-col items-start justify-center">
-            <img src={organisation1} className=" w-[40px]" alt="" />
-            <p className="text-[9px]">
+            <img src={organisation1} className=" w-[50px]" alt="" />
+            <p className="text-[10px]">
               Jeev Diagnostics Pvt. Ltd. is a collaborative venture between
               Awareness Technology Inc. (USA) and CPC Diagnostics Pvt. Ltd.
               (India), focusing on cutting-edge in vitro clinical chemistry
@@ -376,8 +376,8 @@ const Organisation = () => {
         <div className="grid grid-cols-2 items-center justify-center p-2 gap-4 mb-2">
           <img src={images[1].img} alt="" />
           <div className="flex flex-col items-start justify-center">
-            <img src={organisation2} className=" w-[40px]" alt="" />
-            <p className="text-[9px]">
+            <img src={organisation2} className=" w-[50px]" alt="" />
+            <p className="text-[10px]">
               Sachika, an initiative by CPC Diagnostics Pvt. Ltd., focuses on
               life sciences education, empowering clinicians with contemporary
               bioscience skills.
@@ -387,8 +387,8 @@ const Organisation = () => {
         <div className="grid grid-cols-2 items-center justify-center p-2 gap-4 mb-2">
           <img src={images[2].img} alt="" />
           <div className="flex flex-col items-start justify-center">
-            <img src={organisation3} className=" w-[40px]" alt="" />
-            <p className="text-[9px]">
+            <img src={organisation3} className=" w-[50px]" alt="" />
+            <p className="text-[10px]">
               CPC’s division for diagnostic instrument manufacturing aims at
               empowerment, reliability, and innovation in indigenous
               manufacturing practices.
