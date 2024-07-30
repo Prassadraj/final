@@ -81,10 +81,10 @@ function ProductCategaries() {
                 Categories
               </p>
             </div>
-            <h2 className="text-xl max-w-lg text-start font-poppins text-gray-500">
+            <p className="text-xl max-w-lg text-start font-poppins text-gray-700">
               Explore our diverse range of laboratory equipment for all your
               medical and diagnostic needs.
-            </h2>
+            </p>
             <button className="text-left text-white text-xl bg-sky-400 font-poppins w-fit pl-3 pr-3 pt-2 pb-2 rounded-md font-medium hover:scale-90 transition-all shadow-md">
               Explore Products
             </button>
