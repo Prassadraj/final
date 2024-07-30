@@ -103,16 +103,13 @@ const HorizontalScrollCarousel = ({ cards }) => {
 
 const Card = ({ card }) => {
   return (
-    <div className="relative h-[300px] w-[200px] md:h-[400px] md:w-[350px] overflow-hidden bg-light-green rounded-2xl">
+    <div className="font-poppins` relative h-[300px] w-[200px] md:h-[400px] md:w-[350px] overflow-hidden bg-light-green rounded-2xl">
       <div className="flex justify-center items-center w-full md:mt-10 h-44">
         {/* <Tilt scale={1.2} transitionSpeed={2500}> */}
         <img width="150px" src={card.url} alt="" />
         {/* </Tilt> */}
       </div>
-      <div
-        className="absolute md:top-60 md:left-10 md:right-10 p-0"
-        style={{ fontFamily: "Poppins" }}
-      >
+      <div className="absolute md:top-60 md:left-10 md:right-10 p-0">
         <div className="flex justify-center md:justify-start">
           <p className="md:text-xl font-poppins font-bold ">{card.title}</p>
         </div>
