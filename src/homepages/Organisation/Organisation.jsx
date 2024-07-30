@@ -56,24 +56,24 @@ const Organisation = () => {
     });
 
     // Image animations
-    gsap.utils.toArray(".image").forEach((image) => {
-      gsap.from(image, {
-        scale: 0,
-        duration: 0.5,
-        delay: 0.5,
-        opacity: 0.5,
-        ease: "power3.out",
-        stagger: {
-          amount: 1,
-        },
-        scrollTrigger: {
-          trigger: image,
-          start: "top 120%", // Start animation when top of image reaches 100% of viewport height
-          end: "center center", // End animation when image is at the center of viewport
-          scrub: true,
-        },
-      });
-    });
+    // gsap.utils.toArray(".image").forEach((image) => {
+    //   gsap.from(image, {
+    //     scale: 0,
+    //     duration: 0.5,
+    //     delay: 0.5,
+    //     opacity: 0.5,
+    //     ease: "power3.out",
+    //     stagger: {
+    //       amount: 1,
+    //     },
+    //     scrollTrigger: {
+    //       trigger: image,
+    //       start: "top 120%", // Start animation when top of image reaches 100% of viewport height
+    //       end: "center center", // End animation when image is at the center of viewport
+    //       scrub: true,
+    //     },
+    //   });
+    // });
 
     AOS.init();
   }, []); // Empty dependency array ensures this runs only once on mount
@@ -356,6 +356,43 @@ const Organisation = () => {
                 manufacturing practices.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+      {/* for mobile */}
+      <div className="md:hidden">
+        <div className="grid grid-cols-2 items-center justify-center p-2 gap-4 mb-2">
+          <img src={images[0].img} alt="" />
+          <div className="flex flex-col items-start justify-center">
+            <img src={organisation1} className=" w-[40px]" alt="" />
+            <p className="text-[9px]">
+              Jeev Diagnostics Pvt. Ltd. is a collaborative venture between
+              Awareness Technology Inc. (USA) and CPC Diagnostics Pvt. Ltd.
+              (India), focusing on cutting-edge in vitro clinical chemistry
+              reagents.
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 items-center justify-center p-2 gap-4 mb-2">
+          <img src={images[1].img} alt="" />
+          <div className="flex flex-col items-start justify-center">
+            <img src={organisation2} className=" w-[40px]" alt="" />
+            <p className="text-[9px]">
+              Sachika, an initiative by CPC Diagnostics Pvt. Ltd., focuses on
+              life sciences education, empowering clinicians with contemporary
+              bioscience skills.
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 items-center justify-center p-2 gap-4 mb-2">
+          <img src={images[2].img} alt="" />
+          <div className="flex flex-col items-start justify-center">
+            <img src={organisation3} className=" w-[40px]" alt="" />
+            <p className="text-[9px]">
+              CPC’s division for diagnostic instrument manufacturing aims at
+              empowerment, reliability, and innovation in indigenous
+              manufacturing practices.
+            </p>
           </div>
         </div>
       </div>

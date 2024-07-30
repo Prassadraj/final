@@ -58,7 +58,7 @@ function Nav() {
         </Link>
       </div>
       <div
-        className="md:flex hidden md:gap-[51px] md:text-[15px]"
+        className="md:flex hidden md:gap-1 lg:gap-16 md:text-[15px]"
         style={{
           fontFamily: "Poppins, sans-serif",
           fontWeight: "500",

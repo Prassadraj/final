@@ -70,10 +70,8 @@ const FeaturedProducts = () => {
           Featured Products
         </span>
         <p className="md:text-xl heading font-poppins text-gray-500">
-          We use only the{" "}
-          <span className="font-poppins">best quality materials</span> on the
-          market in order to provide the{" "}
-          <span className="">best products </span> to our patients.
+          We use only the best quality materials n the market in order to
+          provide the best productsto our patients.
         </p>
       </div>
       <HorizontalScrollCarousel cards={featuredCards} />
@@ -106,7 +104,7 @@ const HorizontalScrollCarousel = ({ cards }) => {
 const Card = ({ card }) => {
   return (
     <div className="relative h-[300px] w-[200px] md:h-[400px] md:w-[350px] overflow-hidden bg-light-green rounded-2xl">
-      <div className="flex justify-center items-center w-full md:mt-10">
+      <div className="flex justify-center items-center w-full md:mt-10 h-44">
         {/* <Tilt scale={1.2} transitionSpeed={2500}> */}
         <img width="150px" src={card.url} alt="" />
         {/* </Tilt> */}
@@ -118,9 +116,7 @@ const Card = ({ card }) => {
         <div className="flex justify-center md:justify-start">
           <p className="md:text-xl font-poppins font-bold ">{card.title}</p>
         </div>
-        <p className="text-sm md:text-base line-clamp-2 md:line-clamp-none">
-          {card.content}
-        </p>
+        <p className="text-sm md:text-base line-clamp-3 px-1">{card.content}</p>
       </div>
       <div className="absolute bottom-1 md:bottom-6 w-full">
         <div className="flex justify-center items-center">

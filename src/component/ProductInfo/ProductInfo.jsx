@@ -327,7 +327,7 @@ function ProductInfo() {
                 >
                   <div
                     key={idx}
-                    className="min-w-[200px] p-4 flex flex-col items-center border border-gray-300 rounded-md"
+                    className="min-w-[200px] h-80 p-4 flex flex-col items-center border border-gray-300 rounded-md"
                   >
                     <img
                       src={related.image[0]}
@@ -335,7 +335,7 @@ function ProductInfo() {
                       className="rounded-md h-40 object-cover w-full"
                     />
                     <p className="text-center mt-2 line-clamp-3 text-sm md:text-lg">
-                      {related.description}
+                      {related.title}
                     </p>
                   </div>
                 </Link>

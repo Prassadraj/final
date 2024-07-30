@@ -87,9 +87,9 @@ function TestimonialSlider() {
   return (
     <div className="md:h-[100vh] py-3">
       <div className="flex justify-center items-center flex-col gap-2 md:p-5">
-        <h1 className="text-lg md:text-4xl text-custom-green font-bold headline font-lato uppercase">
+        <p className="text-lg md:text-4xl text-custom-green font-semibold headline font-poppins uppercase">
           Testimonials
-        </h1>
+        </p>
         <p
           className="md:text-xl w-full text-gray-900 tracking-wide"
           style={{
