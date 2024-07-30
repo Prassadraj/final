@@ -7,8 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Tilt from "react-parallax-tilt";
-import bgImg from "../../images/BgImages/slider-bg.webp";
+
 import Magnetic from "../../component/magneticButton/Magnetic";
 import { Link } from "react-router-dom";
 
@@ -73,7 +72,7 @@ const HorizontalScrollCarousel = ({ cards }) => {
   });
 
   // Adjust these values based on your needs for mobile responsiveness
-  const x = useTransform(scrollYProgress, [0, 1.6], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1.6], ["1%", "95%"]);
 
   return (
     <section
@@ -96,9 +95,7 @@ const Card = ({ card }) => {
   return (
     <div className="mt-2 font-poppins` relative h-[250px] w-[150px] md:h-[400px] md:w-[350px] overflow-hidden bg-light-green rounded-2xl">
       <div className="flex justify-center items-center w-full md:mt-10 h-32">
-        {/* <Tilt scale={1.2} transitionSpeed={2500}> */}
         <img className="md:w-[150px] w-[100px]" src={card.url} alt="" />
-        {/* </Tilt> */}
       </div>
       <div className="absolute md:top-60 md:left-10 md:right-10 p-0">
         <div className="flex justify-center md:justify-start">

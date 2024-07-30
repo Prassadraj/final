@@ -104,7 +104,7 @@ function TestimonialSlider() {
 
       <div
         ref={sliderRef}
-        className="custom-scrollbar md:mt-10 md:mx-10 h-[150px] flex md:h-[250px] gap-6 md:overflow-hidden p-2 smooth-scroll"
+        className="custom-scrollbar md:mt-10 md:mx-10 h-[150px] flex md:h-[250px] gap-6 overflow-hidden p-2 smooth-scroll"
       >
         {data.map((item, i) => (
           <div
